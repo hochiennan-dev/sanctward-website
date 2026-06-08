@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# 相依套件 / 建置產物（之後 Vue + Vite 階段會用到）
+node_modules/
+dist/
+.wrangler/
+*.log
+
+# 機密文件 — 請勿提交（投資簡報 / 產品簡報等）
+*.pptx
+*.pdf
+
+# 暫存 / 除錯素材
+prototype/assets/debug.*
+prototype/assets/logo_test.png

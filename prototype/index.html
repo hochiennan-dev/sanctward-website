@@ -1,0 +1,1282 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sanctward — AI 時代的企業信任作業系統</title>
+<meta name="description" content="Sanctward UTP-Ai：整合身份、零信任、特權存取、端點與合規的統一信任平台。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-2:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface-2:#F1F6F2;
+  --ink-1:#0E1714;
+  --ink-2:#46554E;
+  --ink-3:#7E8C85;
+  --line:rgba(13,22,17,.10);
+  --line-2:rgba(13,22,17,.16);
+  --brand:#2DA23F;
+  --brand-ink:#1B8F34;
+  --brand-deep:#14692A;
+  --brand-soft:rgba(45,162,63,.09);
+  --brand-soft2:rgba(45,162,63,.14);
+  --amber:#C98A12;
+  --danger:#D2473F;
+  --r:18px;--r-sm:11px;
+  --maxw:1180px;
+  --font:'Inter','Noto Sans TC',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#fff}
+body{font-family:var(--font);background:transparent;color:var(--ink-1);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+header.nav,section,footer{position:relative;z-index:1}
+h1,h2,h3{letter-spacing:-.015em;line-height:1.16;font-weight:800}
+.ic{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;flex:none}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brand-ink)}
+.eyebrow::before{content:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:14.5px;border-radius:10px;cursor:pointer;padding:11px 20px;transition:.2s;border:1px solid transparent;white-space:nowrap}
+.btn .ic{width:17px;height:17px}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px -10px var(--brand)}
+.btn-primary:hover{background:var(--brand-ink);transform:translateY(-1px)}
+.btn-ghost{background:#fff;border-color:var(--line-2);color:var(--ink-1)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand-ink)}
+.btn-lg{padding:14px 26px;font-size:15.5px}
+
+/* ---- NAV ---- */
+header.nav{position:sticky;top:0;z-index:60;backdrop-filter:saturate(150%) blur(14px);background:linear-gradient(90deg,rgba(45,162,63,.14),rgba(255,255,255,.72) 50%,rgba(45,162,63,.12));border-bottom:1px solid transparent;transition:.3s}
+header.nav.scrolled{background:linear-gradient(90deg,rgba(228,244,231,.96),rgba(255,255,255,.92) 50%,rgba(228,244,231,.96));border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{height:22px;display:block}
+.logo-gl{display:block;flex:none}
+.brand .logo-gl{width:38px;height:46px}
+.foot-lockup .logo-gl{width:32px;height:39px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14.5px;color:var(--ink-2);font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--ink-1)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{font-size:13px;color:var(--ink-3);font-weight:500}.lang b{color:var(--ink-1)}
+.menu-toggle{display:none;background:#fff;border:1px solid var(--line-2);border-radius:9px;width:42px;height:38px;color:var(--ink-1);cursor:pointer}
+.mobile-menu{display:none;padding:14px 28px 22px;border-bottom:1px solid var(--line);background:#fff}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 0;color:var(--ink-2);font-size:16px;border-bottom:1px solid var(--line)}
+
+/* ---- HERO carousel ---- */
+.hero{padding:62px 0 64px;overflow:hidden}
+.hero-vp{overflow:hidden}
+.hero-track{display:flex;transition:transform .6s cubic-bezier(.5,.05,.2,1)}
+.hslide{min-width:100%;display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center}
+.hs-eye{--ac:#1B8F34;display:inline-flex;align-items:center;gap:11px;margin-bottom:22px;padding:10px 18px;border-radius:12px;background:color-mix(in srgb,var(--ac) 11%,#fff);border:1.5px solid var(--ac);color:var(--ac);font-size:14.5px;font-weight:700;letter-spacing:.03em;text-transform:none;line-height:1.35}
+.hs-eye::before{content:"";width:9px;height:9px;border-radius:50%;flex:none;background:var(--ac);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.55}}
+.hs-eye.t-amber{--ac:#B5740F}
+.hs-eye.t-blue{--ac:#2155C9}
+.hs-eye.t-violet{--ac:#6A3FC0}
+.hs h1{font-size:50px;margin:0 0 20px}
+.hs h1 .g{color:var(--brand-ink)}
+.hs p{font-size:18px;color:var(--ink-2);max-width:540px;margin-bottom:28px}
+.hs-cta{display:flex;gap:13px;flex-wrap:wrap}
+.hero-foot{display:flex;align-items:center;justify-content:space-between;margin-top:42px;flex-wrap:wrap;gap:20px}
+.hero-dots{display:flex;gap:9px}
+.hero-dots button{width:34px;height:4px;border-radius:3px;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.3s}
+.hero-dots button.on{background:var(--brand);width:46px}
+.hero-meta{display:flex;gap:26px}
+.hero-meta div{font-size:12.5px;color:var(--ink-3)}
+.hero-meta b{display:block;font-size:20px;color:var(--ink-1);font-weight:800;font-family:'Inter';letter-spacing:-.02em}
+
+/* viz cards (hero right) */
+.viz{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 30px 60px -36px rgba(16,40,24,.28);position:relative}
+.viz-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.viz-head .lbl{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);font-family:'Inter';display:flex;align-items:center;gap:7px}
+.viz-head .lbl .ic{width:15px;height:15px;color:var(--brand)}
+.dot3{display:flex;gap:6px}.dot3 i{width:9px;height:9px;border-radius:50%;background:#D8DEDA;display:block}
+.score-row{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.ring{--v:92;width:92px;height:92px;border-radius:50%;flex:none;position:relative;background:conic-gradient(var(--brand) calc(var(--v)*1%),rgba(13,22,17,.07) 0);display:grid;place-items:center}
+.ring::before{content:"";position:absolute;inset:8px;border-radius:50%;background:#fff}
+.ring b{position:relative;font-size:27px;font-weight:800;font-family:'Inter';color:var(--ink-1)}
+.ring b small{font-size:11px;color:var(--ink-3);font-weight:600}
+.score-meta b{font-size:14.5px}.score-meta span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.tagk{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--brand-soft);color:var(--brand-ink);margin-top:7px}
+.tagk .ic{width:13px;height:13px}
+.sigs{border-top:1px solid var(--line);padding-top:13px;display:grid;gap:9px}
+.sig{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--ink-2)}
+.sig .bar{width:96px;height:5px;border-radius:4px;background:rgba(13,22,17,.07);overflow:hidden}
+.sig .bar i{display:block;height:100%;background:var(--brand);border-radius:4px}
+.note{margin-top:14px;border:1px solid rgba(210,71,63,.3);background:rgba(210,71,63,.06);border-radius:10px;padding:10px 12px;font-size:12px;color:#A23129;display:flex;gap:9px;align-items:flex-start}
+.note .ic{width:16px;height:16px;color:var(--danger);margin-top:1px}
+.note b{color:#7E241E}
+/* code-ish mock */
+.mock{font-family:'Inter',monospace;font-size:12.5px}
+.mrow{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:9px;border:1px solid var(--line);margin-top:8px;background:#FbFdFb}
+.mrow .ic{width:16px;height:16px}
+.mrow.block{border-color:rgba(210,71,63,.35);background:rgba(210,71,63,.05);color:#A23129}
+.mrow.ok{border-color:var(--brand-soft2)}
+.mrow .who{color:var(--ink-3);font-size:11.5px;margin-left:auto}
+.applist{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.app{aspect-ratio:1;border:1px solid var(--line);border-radius:11px;display:grid;place-items:center;background:#FbFdFb;color:var(--brand);font-weight:700;font-size:13px;font-family:'Inter'}
+.app.muted{color:var(--ink-3)}
+.searchbar{display:flex;align-items:center;gap:9px;border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink-2)}
+.searchbar .ic{width:16px;height:16px;color:var(--brand)}
+.searchbar .cnt{margin-left:auto;font-size:11px;color:var(--ink-3);font-family:'Inter'}
+.reslist{margin-top:10px;display:grid;gap:8px}
+.res{border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:12px}
+.res b{font-family:'Inter';font-size:12px}
+.res span{display:block;color:var(--ink-3);font-size:11.5px;margin-top:2px}
+
+/* ---- sections ---- */
+.band{padding:80px 0}
+.band.tight{padding:58px 0}
+.shead{max-width:680px;margin:0 auto 44px;text-align:center}
+.shead h2{font-size:34px;margin:15px 0 13px}
+.shead p{font-size:17px;color:var(--ink-2)}
+
+/* trust strip */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(var(--surface-2),#fff)}
+.trust-in{display:flex;align-items:center;justify-content:center;gap:18px 30px;padding:22px 0;flex-wrap:wrap}
+.trust-in .t-l{font-size:13px;color:var(--ink-3);font-weight:600;flex:none}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink-1);border:1px solid var(--line);background:#fff;border-radius:30px;padding:7px 14px}
+.chip .ic{width:15px;height:15px;color:var(--brand)}
+
+/* thesis stepper */
+.steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px}
+.step{padding:6px 4px}
+.step .si{width:60px;height:60px;border-radius:17px;background:var(--brand-soft);color:var(--brand-ink);display:grid;place-items:center;margin-bottom:16px;box-shadow:0 10px 22px -14px var(--brand)}
+.step .si .ic{width:29px;height:29px}
+.step h3{font-size:20px;margin-bottom:3px}
+.step p{font-size:13.5px;color:var(--ink-2)}
+.step .lyr{font-family:'Inter';font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--ink-3);display:block;margin-bottom:14px}
+.step .en{font-family:'Inter';font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--brand-ink);display:block;margin-bottom:15px}
+.stags{display:flex;flex-wrap:wrap;gap:8px}
+.stags span{font-size:12.5px;font-weight:600;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:6px 12px}
+.layers{display:flex;flex-direction:column;gap:46px;max-width:980px}
+.layer{position:relative;display:flex;align-items:center;gap:22px;border:1px solid var(--line);border-left:5px solid var(--ac);border-radius:16px;padding:22px 28px;background:var(--bgc);box-shadow:0 16px 32px -26px rgba(16,40,24,.45);transition:.25s}
+.layer:hover{transform:translateX(4px)}
+.layer .lic{width:56px;height:56px;border-radius:15px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--ac);flex:none}
+.layer .lic .ic{width:28px;height:28px}
+.layer .lbody{flex:1}
+.layer .lt{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.layer .lk{font-family:'Inter';font-size:11px;font-weight:800;letter-spacing:.1em;color:#fff;background:var(--ac);padding:3px 10px;border-radius:6px}
+.layer h3{font-size:19px}
+.layer .en{font-family:'Inter';font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.02em}
+.layer p{font-size:14px;color:var(--ink-2);line-height:1.62}
+.layer.l1{--ac:#54BD66;--bgc:#FBFDFB}
+.layer.l2{--ac:#2DA23F;--bgc:#F5FAF6;margin-left:6%}
+.layer.l3{--ac:#15692A;--bgc:#EBF5ED;margin-left:12%}
+.lconn{position:absolute;right:34px;bottom:-70px;z-index:6;pointer-events:none}
+.larrow{width:30px;height:auto;display:block;filter:drop-shadow(0 12px 18px rgba(20,70,35,.24))}
+.larrow .chev{animation:flow 1.9s ease-in-out infinite}
+@keyframes flow{0%,100%{transform:translateY(-2px);opacity:.85}50%{transform:translateY(3px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.larrow .chev{animation:none}}
+.step .k{font-family:'Inter';font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin-bottom:9px;display:block}
+.arr{color:var(--line-2);display:grid;place-items:center}.arr .ic{width:26px;height:26px;color:#C3CCC6}
+.thesis-out{margin-top:30px;font-size:17px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;gap:10px}
+.thesis-out b{color:var(--ink-1)}.thesis-out .g{color:var(--brand-ink);font-weight:800}
+
+/* platform tabs explorer */
+.plat{display:grid;grid-template-columns:300px 1fr;gap:30px;align-items:stretch}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tab{display:flex;gap:13px;align-items:flex-start;text-align:left;background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 16px;cursor:pointer;transition:.2s;width:100%}
+.tab:hover{border-color:var(--line-2)}
+.tab.on{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 8px 20px -14px var(--brand)}
+.tab .ti{width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--brand);flex:none}
+.tab.on .ti{background:var(--brand);color:#fff;border-color:var(--brand)}
+.tab .k{font-family:'Inter';font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase}
+.tab h4{font-size:15.5px;margin:2px 0 3px}
+.tab p{font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:center;min-height:340px}
+.pane{display:none}.pane.on{display:contents}
+@keyframes paneFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pane.on>*{animation:paneFade .45s ease}
+.pcopy h3{font-size:23px;margin-bottom:12px}
+.pcopy>p{font-size:14.5px;color:var(--ink-2);margin-bottom:18px}
+.flist{display:grid;gap:11px}
+.flist div{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+.flist .ic{width:19px;height:19px;color:var(--brand);margin-top:1px}
+
+/* differentiators carousel */
+.dcar{position:relative}
+.dcar-vp{overflow:hidden;border-radius:var(--r)}
+.dcar-track{display:flex;transition:transform .6s cubic-bezier(.5,.05,.2,1)}
+.dslide{min-width:100%;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center;padding:4px}
+.dillu-wrap{background:linear-gradient(160deg,#EFF7F1,#fff);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;align-items:center;justify-content:center;min-height:380px}
+.dillu{width:100%;height:auto;display:block}
+.hub{transform-box:fill-box;transform-origin:center;animation:heartbeat 1.5s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.16)}28%{transform:scale(1)}42%{transform:scale(1.16)}58%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hub{animation:none}}
+.dcopy .badge{margin-bottom:16px}
+.dcopy h3{font-size:29px;margin-bottom:16px}
+.dcopy .lead{font-size:16.5px;color:var(--ink-1);font-weight:600;border-left:3px solid var(--brand);padding-left:15px;margin-bottom:17px;line-height:1.5}
+.dcopy p.body{font-size:14.5px;color:var(--ink-2);margin-bottom:22px;line-height:1.72}
+.dcopy .metric{display:flex;align-items:baseline;gap:13px;border-top:1px solid var(--line);padding-top:17px}
+.dcopy .metric b{font-family:'Inter';font-weight:800;font-size:33px;color:var(--brand-ink);letter-spacing:-.02em}
+.dcopy .metric span{font-size:12.5px;color:var(--ink-3)}
+.dcar-foot{display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+.dcar-nav{display:flex;gap:10px}
+.dcar-nav button{width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);background:#fff;color:var(--ink-1);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.dcar-nav button:hover{border-color:var(--brand);color:var(--brand-ink)}
+.dcar-nav .ic{width:20px;height:20px}
+.dcar-dots{display:flex;gap:9px}
+.dcar-dots button{width:34px;height:4px;border-radius:3px;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.3s}
+.dcar-dots button.on{background:var(--brand);width:46px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:5px 11px;border-radius:20px;text-transform:uppercase}
+.badge.road{background:rgba(201,138,18,.12);color:var(--amber);border:1px solid rgba(201,138,18,.3)}
+.badge.live{background:var(--brand-soft);color:var(--brand-ink);border:1px solid rgba(45,162,63,.3)}
+.badge .ic{width:13px;height:13px}
+
+/* metrics band */
+.mband{background:linear-gradient(110deg,#0E1714,#13251A);border-radius:24px;padding:42px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;overflow:hidden}
+.mband .mi{position:relative}
+.mband b{font-family:'Inter';font-weight:800;font-size:38px;color:#fff;letter-spacing:-.02em;display:block}
+.mband span{font-size:13px;color:#9DB3A6;margin-top:5px;display:block}
+.mband .mlabel{position:absolute;top:38px;right:40px;font-size:12px;color:#6E8579;letter-spacing:.1em;font-weight:700}
+
+/* cases tabbed */
+.casewrap{display:grid;grid-template-columns:240px 1fr;gap:26px;align-items:start}
+.ctabs{display:flex;flex-direction:column;gap:7px}
+.ctab{text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;transition:.2s}
+.ctab:hover{border-color:var(--line-2)}
+.ctab.on{border-color:var(--brand);background:var(--brand-soft)}
+.ctab .k{font-family:'Inter';font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.ctab h4{font-size:15px;margin-top:3px}
+.cpane{display:none}.cpane.on{display:block}
+.cbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 24px 48px -36px rgba(16,40,24,.3)}
+.cbox .ctag{font-family:'Inter';font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--brand-ink);text-transform:uppercase}
+.cbox h3{font-size:23px;margin:8px 0 18px}
+.c2{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:22px}
+.c2 .h{font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:11px}
+.c2 ul{list-style:none;display:grid;gap:9px}
+.c2 li{font-size:13.5px;color:var(--ink-2);display:flex;gap:9px;align-items:flex-start}
+.c2 li .ic{width:17px;height:17px;margin-top:2px}
+.c2 .pain li .ic{color:var(--danger)}.c2 .sol li .ic{color:var(--brand)}
+.cres{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px}
+.cres div b{font-family:'Inter';font-weight:800;font-size:25px;color:var(--brand-ink);display:block;letter-spacing:-.02em}
+.cres div span{font-size:12px;color:var(--ink-3)}
+
+/* compare */
+.cmp{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.cmp-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:stretch}
+.cmp-row>div{padding:17px 24px;font-size:14.5px;display:flex;align-items:center}
+.cmp-row:not(:last-child){border-bottom:1px solid var(--line)}
+.cmp-head{background:var(--surface-2);font-weight:700}
+.cmp-head .c-s{color:var(--brand-ink)}
+.cmp .dim{color:var(--ink-3)}.cmp .label{font-weight:600}
+.cmp .c-s{background:var(--brand-soft);font-weight:600;gap:9px}
+.cmp .c-s .ic{width:17px;height:17px;color:var(--brand);flex:none}
+
+/* CTA + footer */
+.cta{padding:78px 0}
+.cta-in{background:linear-gradient(120deg,var(--brand-soft2),var(--brand-soft));border:1px solid rgba(45,162,63,.28);border-radius:24px;padding:52px;text-align:center}
+.cta-in h2{font-size:32px;margin-bottom:13px}
+.cta-in p{color:var(--ink-2);font-size:17px;margin:0 auto 28px;max-width:540px}
+.cta-in .hs-cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gradient(180deg,#FFFFFF 0%,#EFF7F1 55%,#DCEFE1 100%)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.foot-lockup{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.foot-lockup img{height:22px}
+.foot-brand p{font-size:13.5px;color:var(--ink-2);max-width:300px}
+.foot-col h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:15px;font-weight:700}
+.foot-col a{display:block;font-size:14px;color:var(--ink-2);margin-bottom:11px}
+.foot-col a:hover{color:var(--brand-ink)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-3)}
+
+/* section illustration */
+.sec-illu{position:absolute;top:50%;right:-2%;transform:translateY(-50%);width:min(46%,520px);opacity:.6;z-index:0;pointer-events:none}
+.sec-illu .sweep{transform-origin:300px 300px;animation:radar 14s linear infinite}
+@keyframes radar{to{transform:rotate(360deg)}}
+.band>.container{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.sec-illu .sweep{animation:none}}
+
+/* solutions */
+.sols{display:flex;flex-direction:column;gap:40px}
+.soln{display:grid;grid-template-columns:1.02fr 1.06fr;gap:46px;align-items:center}
+.sol-fig{background:linear-gradient(160deg,#EFF7F1,#fff);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-height:330px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 40px -34px rgba(16,40,24,.35)}
+.sol-fig svg{width:100%;height:auto;display:block}
+.soln.rev .sol-fig{order:-1}
+.sol-k{font-family:'Inter';font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink)}
+.soln h3{font-size:24px;margin:11px 0 13px;line-height:1.3}
+.soln .intro{font-size:14.5px;color:var(--ink-2);margin-bottom:18px;line-height:1.68}
+.soln .plist{display:grid;gap:8px;margin-bottom:14px}
+.soln .ph{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+.soln .pi{display:flex;gap:9px;font-size:13.5px;color:var(--ink-2);align-items:flex-start;line-height:1.5}
+.soln .pi .ic{width:17px;height:17px;margin-top:1px;flex:none}
+.soln .pain .ic{color:var(--danger)}
+.soln .fix .ic{color:var(--brand)}
+@media(max-width:900px){.soln{grid-template-columns:1fr;gap:24px}.soln.rev .sol-fig{order:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:980px){
+  .hslide{grid-template-columns:1fr;gap:34px}
+  .hs h1{font-size:38px}
+  .plat{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px}
+  .tab{min-width:230px}
+  .panel{grid-template-columns:1fr}
+  .casewrap{grid-template-columns:1fr}
+  .ctabs{flex-direction:row;overflow-x:auto}
+  .ctab{min-width:150px}
+  .dslide{grid-template-columns:1fr;gap:26px}.dillu-wrap{min-height:280px}
+  .steps{grid-template-columns:1fr;gap:18px}.arr{display:none}
+  .layer.l2,.layer.l3{margin-left:0}
+  .lconn{right:18px;bottom:-60px}
+  .larrow{width:26px}
+  .layer{padding:18px 20px;gap:16px}
+  .mband{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .nav-links,.lang{display:none}.menu-toggle{display:block}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .sec-illu{display:none}
+}
+@media(max-width:560px){
+  .hs h1{font-size:31px}.shead h2{font-size:26px}
+  .c2{grid-template-columns:1fr}.cmp-row{grid-template-columns:1fr}.cmp-row>div{padding:12px 18px}
+  .mband{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.cta-in{padding:34px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- icon + mark symbols -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+<linearGradient id="swGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54DA6C"/><stop offset=".5" stop-color="#2DA23F"/><stop offset="1" stop-color="#16782A"/></linearGradient>
+<symbol id="sw-s" viewBox="0 0 606 752"><path fill="url(#swGrad)" fill-rule="evenodd" clip-rule="evenodd" d="M264.00 8.00 C282.67 7.33 323.11 7.33 338.67 8.00 C354.22 8.67 354.22 11.33 357.33 12.00 C352.89 13.33 338.67 16.89 330.67 20.00 C322.67 23.11 317.56 25.78 309.33 30.67 C301.11 35.56 291.33 40.89 281.33 49.33 C271.33 57.78 258.22 70.22 249.33 81.33 C240.44 92.44 232.89 106.89 228.00 116.00 C223.11 125.11 222.44 128.00 220.00 136.00 C217.56 144.00 214.67 150.67 213.33 164.00 C212.00 177.33 210.89 201.56 212.00 216.00 C213.11 230.44 216.67 240.67 220.00 250.67 C223.33 260.67 230.00 270.89 232.00 276.00 C234.00 281.11 235.11 276.00 232.00 281.33 C228.89 286.67 218.89 299.11 213.33 308.00 C207.78 316.89 201.11 328.89 198.67 334.67 C196.22 340.44 196.44 338.67 198.67 342.67 C200.89 346.67 209.56 354.44 212.00 358.67 C214.44 362.89 218.89 357.33 213.33 368.00 C207.78 378.67 184.44 413.56 178.67 422.67 C177.56 422.67 180.22 425.33 172.00 422.67 C163.78 420.00 142.22 412.44 129.33 406.67 C116.44 400.89 104.00 393.78 94.67 388.00 C85.33 382.22 80.44 378.22 73.33 372.00 C66.22 365.78 58.44 358.22 52.00 350.67 C45.56 343.11 39.78 335.11 34.67 326.67 C29.56 318.22 25.56 312.44 21.33 300.00 C17.11 287.56 11.56 266.89 9.33 252.00 C7.11 237.11 7.33 223.11 8.00 210.67 C8.67 198.22 10.00 189.78 13.33 177.33 C16.67 164.89 22.89 147.33 28.00 136.00 C33.11 124.67 38.67 116.67 44.00 109.33 C49.33 102.00 57.33 94.89 60.00 92.00 C60.00 91.56 60.00 89.78 60.00 89.33 C65.33 84.67 80.00 69.78 92.00 61.33 C104.00 52.89 118.00 45.11 132.00 38.67 C146.00 32.22 160.22 27.11 176.00 22.67 C191.78 18.22 212.00 14.44 226.67 12.00 C241.33 9.56 245.33 8.67 264.00 8.00 Z M525.33 373.33 C531.11 371.33 526.89 370.44 532.00 374.67 C537.11 378.89 548.44 389.11 556.00 398.67 C563.56 408.22 571.33 420.44 577.33 432.00 C583.33 443.56 588.44 454.44 592.00 468.00 C595.56 481.56 598.00 498.00 598.67 513.33 C599.33 528.67 598.89 543.78 596.00 560.00 C593.11 576.22 587.11 596.22 581.33 610.67 C575.56 625.11 570.22 634.67 561.33 646.67 C552.44 658.67 538.22 673.33 528.00 682.67 C517.78 692.00 511.56 696.00 500.00 702.67 C488.44 709.33 473.33 717.11 458.67 722.67 C444.00 728.22 426.67 732.67 412.00 736.00 C397.33 739.33 384.00 741.11 370.67 742.67 C357.33 744.22 351.78 745.11 332.00 745.33 C312.22 745.56 272.44 745.11 252.00 744.00 C231.56 742.89 225.78 741.78 209.33 738.67 C192.89 735.56 162.67 727.56 153.33 725.33 C153.56 724.89 154.44 723.11 154.67 722.67 C163.56 720.67 197.78 713.78 208.00 710.67 C218.22 707.56 204.00 723.33 216.00 704.00 C228.00 684.67 268.00 614.44 280.00 594.67 C292.00 574.89 284.67 587.78 288.00 585.33 C291.33 582.89 294.44 580.89 300.00 580.00 C305.56 579.11 314.22 580.89 321.33 580.00 C328.44 579.11 336.44 576.89 342.67 574.67 C348.89 572.44 354.22 569.56 358.67 566.67 C363.11 563.78 365.78 562.67 369.33 557.33 C372.89 552.00 378.22 543.11 380.00 534.67 C381.78 526.22 380.89 513.78 380.00 506.67 C379.11 499.56 377.33 496.89 374.67 492.00 C372.00 487.11 367.78 481.56 364.00 477.33 C360.22 473.11 354.22 469.33 352.00 466.67 C349.78 464.00 350.89 462.22 350.67 461.33 C358.00 450.22 387.33 405.78 394.67 394.67 C406.89 394.67 450.89 396.00 468.00 394.67 C485.11 393.33 487.78 390.22 497.33 386.67 C506.89 383.11 519.56 375.33 525.33 373.33 Z M14.67 486.67 C35.78 486.00 114.67 487.78 134.67 488.00 C133.78 490.00 137.11 487.78 129.33 500.00 C121.56 512.22 95.11 550.22 88.00 561.33 C80.89 572.44 91.78 558.89 86.67 566.67 C81.56 574.44 63.78 598.00 57.33 608.00 C50.89 618.00 49.56 623.56 48.00 626.67 C47.11 626.22 46.44 630.00 42.67 624.00 C38.89 618.00 30.44 603.56 25.33 590.67 C20.22 577.78 14.89 558.67 12.00 546.67 C9.11 534.67 8.67 527.78 8.00 518.67 C7.33 509.56 8.00 496.44 8.00 492.00 C9.11 491.11 -6.44 487.33 14.67 486.67 Z"/></symbol>
+<symbol id="sw-key" viewBox="0 0 606 752"><path fill="#ffffff" stroke="#1B8F34" stroke-width="11" stroke-opacity="0.42" fill-rule="evenodd" clip-rule="evenodd" d="M388.00 26.67 C403.78 25.33 428.00 25.78 444.00 28.00 C460.00 30.22 470.67 34.00 484.00 40.00 C497.33 46.00 511.78 54.44 524.00 64.00 C536.22 73.56 548.00 85.78 557.33 97.33 C566.67 108.89 574.67 123.11 580.00 133.33 C585.33 143.56 586.89 150.44 589.33 158.67 C591.78 166.89 593.56 171.11 594.67 182.67 C595.78 194.22 596.44 216.44 596.00 228.00 C595.56 239.56 594.00 244.00 592.00 252.00 C590.00 260.00 587.11 268.44 584.00 276.00 C580.89 283.56 577.33 290.67 573.33 297.33 C569.33 304.00 565.78 309.33 560.00 316.00 C554.22 322.67 546.44 330.89 538.67 337.33 C530.89 343.78 522.00 349.78 513.33 354.67 C504.67 359.56 497.11 363.33 486.67 366.67 C476.22 370.00 462.89 373.33 450.67 374.67 C438.44 376.00 424.44 375.56 413.33 374.67 C402.22 373.78 388.89 370.22 384.00 369.33 C383.11 370.00 379.78 371.78 378.67 373.33 C377.56 374.89 381.56 372.22 377.33 378.67 C373.11 385.11 357.56 405.56 353.33 412.00 C349.11 418.44 356.89 410.00 352.00 417.33 C347.11 424.67 328.67 449.56 324.00 456.00 C321.78 456.00 314.44 456.89 310.67 456.00 C306.89 455.11 305.11 451.33 301.33 450.67 C297.56 450.00 290.22 451.78 288.00 452.00 C286.67 454.00 281.11 457.78 280.00 464.00 C278.89 470.22 281.78 483.78 281.33 489.33 C280.89 494.89 279.33 495.11 277.33 497.33 C275.33 499.56 273.56 500.89 269.33 502.67 C265.11 504.44 254.89 507.11 252.00 508.00 C251.33 509.33 248.44 513.11 248.00 516.00 C247.56 518.89 247.11 518.89 249.33 525.33 C251.56 531.78 259.56 546.22 261.33 554.67 C263.11 563.11 262.00 570.67 260.00 576.00 C258.00 581.33 254.44 584.22 249.33 586.67 C244.22 589.11 234.67 589.11 229.33 590.67 C224.00 592.22 220.89 593.33 217.33 596.00 C213.78 598.67 209.78 601.33 208.00 606.67 C206.22 612.00 206.44 622.89 206.67 628.00 C206.89 633.11 208.89 631.56 209.33 637.33 C209.78 643.11 210.89 654.89 209.33 662.67 C207.78 670.44 203.11 679.11 200.00 684.00 C196.89 688.89 196.00 689.56 190.67 692.00 C185.33 694.44 182.89 695.11 168.00 698.67 C153.11 702.22 114.22 711.11 101.33 713.33 C88.44 715.56 92.44 712.22 90.67 712.00 C90.00 710.89 87.56 708.00 86.67 705.33 C85.78 702.67 48.67 754.89 85.33 696.00 C122.00 637.11 269.78 410.89 306.67 352.00 C343.56 293.11 306.67 344.22 306.67 342.67 C305.56 341.56 301.11 337.11 300.00 336.00 C298.44 336.00 292.22 336.00 290.67 336.00 C289.56 337.11 286.00 339.56 284.00 342.67 C282.00 345.78 295.78 328.00 278.67 354.67 C261.56 381.33 197.78 477.11 181.33 502.67 C164.89 528.22 181.56 505.56 180.00 508.00 C178.44 510.44 174.67 513.11 172.00 517.33 C169.33 521.56 167.11 528.44 164.00 533.33 C160.89 538.22 155.33 543.56 153.33 546.67 C151.33 549.78 154.00 548.89 152.00 552.00 C150.00 555.11 143.33 562.22 141.33 565.33 C139.33 568.44 142.00 567.56 140.00 570.67 C138.00 573.78 131.33 580.89 129.33 584.00 C127.33 587.11 130.00 586.22 128.00 589.33 C126.00 592.44 119.33 599.56 117.33 602.67 C115.33 605.78 118.00 604.89 116.00 608.00 C114.00 611.11 107.33 618.22 105.33 621.33 C103.33 624.44 105.56 624.22 104.00 626.67 C102.44 629.11 100.44 629.11 96.00 636.00 C91.56 642.89 80.89 662.44 77.33 668.00 C73.78 673.56 75.11 669.11 74.67 669.33 C74.44 668.89 74.89 671.11 73.33 666.67 C71.78 662.22 66.67 646.67 65.33 642.67 C95.11 596.44 214.22 412.67 244.00 365.33 C273.78 318.00 244.00 359.78 244.00 358.67 C240.67 355.56 227.33 343.11 224.00 340.00 C224.00 339.56 218.22 346.67 224.00 337.33 C229.78 328.00 252.89 293.78 258.67 284.00 C264.44 274.22 259.78 281.33 258.67 278.67 C257.56 276.00 255.11 275.11 252.00 268.00 C248.89 260.89 242.89 247.11 240.00 236.00 C237.11 224.89 235.11 213.56 234.67 201.33 C234.22 189.11 235.11 174.89 237.33 162.67 C239.56 150.44 242.67 139.56 248.00 128.00 C253.33 116.44 260.22 104.44 269.33 93.33 C278.44 82.22 294.44 68.44 302.67 61.33 C310.89 54.22 310.89 54.89 318.67 50.67 C326.44 46.44 337.78 40.00 349.33 36.00 C360.89 32.00 372.22 28.00 388.00 26.67 Z M448.00 86.67 C442.44 87.11 439.56 87.78 434.67 90.67 C429.78 93.56 422.67 98.89 418.67 104.00 C414.67 109.11 412.00 115.11 410.67 121.33 C409.33 127.56 409.11 134.89 410.67 141.33 C412.22 147.78 416.22 155.11 420.00 160.00 C423.78 164.89 429.33 168.22 433.33 170.67 C437.33 173.11 438.44 174.00 444.00 174.67 C449.56 175.33 460.22 176.00 466.67 174.67 C473.11 173.33 478.22 170.00 482.67 166.67 C487.11 163.33 490.67 158.89 493.33 154.67 C496.00 150.44 497.78 146.89 498.67 141.33 C499.56 135.78 499.78 127.11 498.67 121.33 C497.56 115.56 494.67 110.89 492.00 106.67 C489.33 102.44 486.67 99.11 482.67 96.00 C478.67 92.89 473.78 89.56 468.00 88.00 C462.22 86.44 453.56 86.22 448.00 86.67 Z"/></symbol>
+<symbol id="i-id" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8" cy="11" r="2.2"/><path d="M5.4 16.2c.7-1.7 4.5-1.7 5.2 0"/><path d="M14 10h4M14 13.5h4"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.6"/><path d="M10.6 10.6 20 20M16 16l2.2-2.2M18 18l2.2-2.2"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.6"/><rect x="3" y="13" width="18" height="7" rx="1.6"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h5M11 16.5h5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 14l2 2 4-4"/></symbol>
+<symbol id="i-scan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.6"/><path d="M12 12V3.5"/></symbol>
+<symbol id="i-clip" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4.2a3 3 0 0 1 6 0"/><path d="M9 11h6M9 15h4"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l9 16H3L12 3Z"/><path d="M12 10v4M12 17h.01"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5Z"/><path d="M3 13l9 5 9-5"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.6-3.6 11.4-3.6 12 0"/><path d="M16 5.5a3 3 0 0 1 0 6"/></symbol>
+</defs></svg>
+<canvas id="net"></canvas>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top"><canvas class="logo-gl" aria-hidden="true"></canvas><img src="assets/wordmark-black.svg" alt="SANCTWARD"></a>
+    <nav class="nav-links">
+      <a href="#platform">平台</a><a href="#solutions">解決方案</a><a href="#cases">應用案例</a><a href="#">課程</a><a href="#">關於我們</a>
+    </nav>
+    <div class="nav-right">
+      <span class="lang"><b>繁</b> / EN</span>
+      <a class="btn btn-primary" href="#contact">預約 Demo</a>
+      <button class="menu-toggle" id="menuBtn" aria-label="menu"><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#platform">平台</a><a href="#solutions">解決方案</a><a href="#cases">應用案例</a><a href="#">課程</a><a href="#">關於我們</a>
+  </div>
+</header>
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-vp">
+      <div class="hero-track" id="track">
+
+        <div class="hslide">
+          <div>
+            <span class="eyebrow hs-eye">UTP-Ai · Unified Trust Platform driven by AI</span>
+            <h1>AI 時代的<br><span class="g">企業信任作業系統</span></h1>
+            <p>傳統 IAM 只是門禁卡——管「對的人進對的門」。Sanctward 同時是門禁卡、監視器與智慧保全：看得見人在應用裡做什麼、AI Agent 在背後做什麼，以及資料正流向哪裡。</p>
+            <div class="hs-cta">
+              <a class="btn btn-primary btn-lg" href="#platform">探索平台</a>
+              <a class="btn btn-ghost btn-lg" href="#contact">預約 Demo<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="viz">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg>ZTA · TRUST SCORE</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="score-row">
+              <div class="ring" id="ring"><b id="scoreNum">92<small>/100</small></b></div>
+              <div class="score-meta"><b>alice.chen · 連線中</b><span>srv-db-01 · 台北 · TLS 1.3</span><span class="tagk"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>放行 · 信任正常</span></div>
+            </div>
+            <div class="sigs">
+              <div class="sig"><span>Geo-IP 連線地理位置</span><div class="bar"><i style="width:94%"></i></div></div>
+              <div class="sig"><span>行為基線偏差</span><div class="bar"><i style="width:88%"></i></div></div>
+              <div class="sig"><span>設備姿態 / EDR</span><div class="bar"><i style="width:96%"></i></div></div>
+            </div>
+            <div class="note"><svg class="ic" viewBox="0 0 24 24"><use href="#i-alert"/></svg><div><b>ANOMALY DETECTED</b> — 來自東京的 03:14 登入偏離 99% 基線 → 觸發 STEP-UP MFA，分數 −42。</div></div>
+          </div>
+        </div>
+
+        <div class="hslide">
+          <div>
+            <span class="eyebrow hs-eye t-amber">Shadow AI 治理 · Roadmap 2026</span>
+            <h1>看得見資料<br><span class="g">正流向哪個 LLM</span></h1>
+            <p>工程師用 Copilot、業務用 ChatGPT——Sanctward 是阻擋敏感資料流向外部 LLM 的第一道防線：端點看得到 clipboard，Gateway 收斂 LLM 流量。</p>
+            <div class="hs-cta">
+              <a class="btn btn-primary btn-lg" href="#diff">了解 Shadow AI</a>
+              <a class="btn btn-ghost btn-lg" href="#contact">預約 Demo<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="viz">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clip"/></svg>CLIPBOARD DLP · LIVE</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="mock">
+              <div class="mrow block"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>已阻擋貼上 · 偵測到客戶個資<span class="who">→ chatgpt.com</span></div>
+              <div class="mrow block"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>已阻擋貼上 · 信用卡號 (PCI)<span class="who">→ claude.ai</span></div>
+              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--amber)"><use href="#i-alert"/></svg>警示 · 大量貼上 4,200 字<span class="who">→ gemini</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>放行 · 內部知識庫查詢<span class="who">→ 企業 LLM</span></div>
+            </div>
+            <div class="note" style="border-color:var(--brand-soft2);background:var(--brand-soft);color:var(--brand-ink)"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-shield"/></svg><div><b>兩隻手兼具</b>：端點看得到、Gateway 管得住——目前市場唯一。</div></div>
+          </div>
+        </div>
+
+        <div class="hslide">
+          <div>
+            <span class="eyebrow hs-eye t-blue">Zero Trust · ZTA</span>
+            <h1>每一次連線都有<br><span class="g">0–100 信任分數</span></h1>
+            <p>多維度訊號毫秒內加權，動態決定放行、要求 MFA 或直接拒絕——使用者全程無感，分數異常即時降分並強制斷線。</p>
+            <div class="hs-cta">
+              <a class="btn btn-primary btn-lg" href="#platform">探索零信任</a>
+              <a class="btn btn-ghost btn-lg" href="#contact">預約 Demo<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="viz">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-eye"/></svg>BEHAVIORAL BASELINE</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="score-row">
+              <div class="ring" style="--v:48;background:conic-gradient(var(--danger) 48%,rgba(13,22,17,.07) 0)"><b style="color:var(--danger)">48<small>/100</small></b></div>
+              <div class="score-meta"><b>異常登入偵測</b><span>Tokyo/Shibuya · 03:14</span><span class="tagk" style="background:rgba(210,71,63,.1);color:#A23129"><svg class="ic" viewBox="0 0 24 24"><use href="#i-alert"/></svg>要求 Step-up MFA</span></div>
+            </div>
+            <div class="sigs">
+              <div class="sig"><span>不可能移動 Impossible Travel</span><div class="bar"><i style="width:22%;background:var(--danger)"></i></div></div>
+              <div class="sig"><span>非常規時段</span><div class="bar"><i style="width:30%;background:var(--amber)"></i></div></div>
+              <div class="sig"><span>常用應用 / 地點</span><div class="bar"><i style="width:80%"></i></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hslide">
+          <div>
+            <span class="eyebrow hs-eye t-violet">Privileged Access · PAM</span>
+            <h1>連得進去，更<br><span class="g">看得到在做什麼</span></h1>
+            <p>Web RDP/SSH/VNC、完整會話錄影、OCR 全文搜尋、JIT 時限存取——維護人員不接觸密碼，到期權限零殘留。</p>
+            <div class="hs-cta">
+              <a class="btn btn-primary btn-lg" href="#platform">探索特權存取</a>
+              <a class="btn btn-ghost btn-lg" href="#contact">預約 Demo<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="viz">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg>SESSION · OCR 全文搜尋</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="searchbar"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg>DROP TABLE customers<span class="cnt">3 results · 0.18s</span></div>
+            <div class="reslist">
+              <div class="res"><b>sess_01HF…X9</b> · srv-db-01 · contractor.chen<span>2026-04-15 14:32 · psql</span></div>
+              <div class="res"><b>sess_01HG…AA</b> · srv-db-02 · alice.chen<span>2026-05-02 09:11 · psql</span></div>
+              <div class="res"><b>sess_01HJ…QM</b> · srv-app-prod · ops.lee<span>2026-05-19 22:48 · runbook</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="hero-dots" id="heroDots"><button class="on"></button><button></button><button></button><button></button></div>
+      <div class="hero-meta">
+        <div><b>50+</b>多租戶客戶</div><div><b>1,500</b>端點實測上線</div><div><b>1/3</b>傳統組合 TCO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container trust-in">
+    <span class="t-l">為合規而生</span>
+    <div class="chips">
+      <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>ISO 27001</span>
+      <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>SOC 2 Type II</span>
+      <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>金管會遠端維運稽核</span>
+      <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>台灣資通安全管理法</span>
+      <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>On-Premises 資料主權</span>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS stepper -->
+<section class="band tight">
+  <div class="container">
+    <div class="shead reveal" style="max-width:760px;margin:0 auto 40px;text-align:center">
+      <span class="eyebrow">Defense in Depth · 縱深防禦</span>
+      <h2>AI驅動 - 安全再進化</h2>
+    </div>
+    <div class="layers reveal">
+      <div class="layer l1">
+        <div class="lic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></div>
+        <div class="lbody">
+          <div class="lt"><span class="lk">LAYER 01</span><h3>身份與存取</h3><span class="en">Identity &amp; Access</span></div>
+          <p>確認「來者是誰、可否進入」——以統一身份治理與多因素認證，把每一道入口的鑰匙收歸控管，讓每一次登入都有據可循。</p>
+        </div>
+        <span class="lconn"><svg class="larrow" viewBox="0 0 28 84"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#62CE7B"/><stop offset="1" stop-color="#2DA23F"/></linearGradient></defs><rect x="2" y="4" width="24" height="76" rx="12" fill="url(#cg1)"/><g class="chev"><path d="M8 37l6 6 6-6M8 49l6 6 6-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span>
+      </div>
+      <div class="layer l2">
+        <div class="lic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-eye"/></svg></div>
+        <div class="lbody">
+          <div class="lt"><span class="lk">LAYER 02</span><h3>行為可視性</h3><span class="en">Visibility &amp; Audit</span></div>
+          <p>看見「進入之後做了什麼」——全程會話錄影與內容稽核，讓特權操作不再是盲區，事後可回溯、可舉證。</p>
+        </div>
+        <span class="lconn"><svg class="larrow" viewBox="0 0 28 84"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DA23F"/><stop offset="1" stop-color="#15692A"/></linearGradient></defs><rect x="2" y="4" width="24" height="76" rx="12" fill="url(#cg2)"/><g class="chev"><path d="M8 37l6 6 6-6M8 49l6 6 6-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span>
+      </div>
+      <div class="layer l3">
+        <div class="lic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div>
+        <div class="lbody">
+          <div class="lt"><span class="lk">LAYER 03</span><h3>即時主動防禦</h3><span class="en">Active Defense</span></div>
+          <p>在「風險發生的當下」出手——以即時信任評分持續驗證，分數異常立即升級驗證、攔截或強制斷線。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM tabbed explorer -->
+<section class="band" id="platform">
+  <div class="container">
+    <div class="shead reveal" style="max-width:780px;margin:0 auto 44px;text-align:center">
+      <h2>一個平台，五大能力同一條訊號鏈</h2>
+      <p>不是五個產品拼裝——身份流入信任、設備影響分數、分數驅動存取、所有操作寫入稽核。自動輪播，亦可點選展開。</p>
+    </div>
+    <div class="plat reveal">
+      <div class="tabs" id="ptabs">
+        <button class="tab on" data-p="0"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></span><div><span class="k">IAM / SSO</span><h4>身份單一登入</h4><p>聯邦登入、目錄同步、離職即時失效</p></div></button>
+        <button class="tab" data-p="1"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg></span><div><span class="k">PAM</span><h4>特權遠端存取</h4><p>Web RDP/SSH、會話錄影、JIT</p></div></button>
+        <button class="tab" data-p="2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg></span><div><span class="k">ZTA</span><h4>零信任架構</h4><p>0–100 信任評分、行為基線</p></div></button>
+        <button class="tab" data-p="3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></span><div><span class="k">Endpoint</span><h4>端點艦隊管理</h4><p>設備身份、姿態、生命週期</p></div></button>
+        <button class="tab" data-p="4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><div><span class="k">Compliance</span><h4>合規與稽核</h4><p>WORM、Merkle、報表自動化</p></div></button>
+      </div>
+      <div class="panel" id="ppanel">
+        <div class="pane on">
+          <div class="pcopy">
+            <h3>身份單一登入 IAM / SSO</h3>
+            <p>一次登入存取所有系統，舊系統不用改造也能納管。Sanctward 本身就是完整的 OIDC IdP。</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>OIDC / SAML 聯邦 + 表單代填 + 反向代理，9 成認證模式皆可納管</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>AD / LDAP 雙向同步，離職帳號自動停用、零殘留</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>22+ 內建應用範本，選範本、套用、完成</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg>LAUNCHPAD</span></div>
+            <div class="applist">
+              <div class="app">SAP</div><div class="app">Git</div><div class="app">QNAP</div><div class="app">OWA</div>
+              <div class="app muted">Zabbix</div><div class="app muted">pfSense</div><div class="app muted">DSM</div><div class="app muted">+18</div>
+            </div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="pcopy">
+            <h3>特權遠端存取 PAM</h3>
+            <p>讓「連得進去」的同時，確保「看得到在做什麼」。維護人員不需要、也不應該知道目標系統密碼。</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Web RDP/SSH/VNC 零用戶端安裝，或原生客戶端 &lt;15ms 延遲</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>完整會話錄影 + OCR 全文搜尋，關鍵字秒級定位</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>JIT 時限存取、受控帳密注入，到期零殘留</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg>OCR 搜尋</span></div>
+            <div class="searchbar"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg>sudo rm<span class="cnt">2 results · 0.2s</span></div>
+            <div class="reslist"><div class="res"><b>sess_01HK…7P</b> · srv-app-prod<span>ops.lee · 22:48</span></div><div class="res"><b>sess_01HM…2C</b> · srv-db-02<span>contractor.chen · 14:32</span></div></div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="pcopy">
+            <h3>零信任架構 ZTA</h3>
+            <p>不信任任何預設安全環境，每一次存取都基於當下狀態動態評估，毫秒內完成、使用者無感。</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>0–100 即時信任評分：Geo-IP、不可能移動、威脅情報加權</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>行為基線自動學習，偏離即降分、Step-up 或斷線</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Merkle 不可竄改證據鏈，稽核日誌防竄改</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg>TRUST SCORE</span></div>
+            <div class="score-row"><div class="ring" style="--v:92"><b>92<small>/100</small></b></div><div class="score-meta"><b>動態存取決策</b><span>&gt;90 放行 · 60–90 加 MFA · &lt;60 拒絕</span></div></div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="pcopy">
+            <h3>端點艦隊管理 Endpoint</h3>
+            <p>每一台設備都有可驗證的身份——從上線到離線全程受管，1,500 端點實測 99.9% 自動上線。</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>跨平台安裝包 .msi / .pkg / .deb，私有 CA 一次配置自動信任</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>設備姿態評估（OS、加密、EDR）即時餵入信任評分</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>指紋漂移偵測、憑證自動續期、遠端移除</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg>FLEET</span></div>
+            <div class="mock">
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>acme-tpe-014 · Win11 22H2<span class="who">healthy</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>acme-mac-pdx · macOS 14.4<span class="who">healthy</span></div>
+              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--amber)"><use href="#i-alert"/></svg>acme-tpe-221 · 指紋漂移<span class="who">review</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="pcopy">
+            <h3>合規與稽核 Compliance</h3>
+            <p>所有操作有跡可查，所有法規有據可報。稽核從「事後撈 log」變成「適配器自動對應、一鍵產出」。</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>100+ 事件類型、前後對比 delta、敏感欄位自動遮蔽</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>WORM 寫入不可改 + Merkle 證據鏈</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>ISO 27001 / SOC 2 / 金管會 合規適配器自動對應條文</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg>AUDIT LOG</span></div>
+            <div class="mock">
+              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--ink-3)"><use href="#i-doc"/></svg>USER_DISABLED · admin.lin<span class="who">delta ✓</span></div>
+              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--ink-3)"><use href="#i-doc"/></svg>SESSION_RECORDED · srv-db-01<span class="who">WORM</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-shield"/></svg>Merkle root verified<span class="who">#1045</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS bento -->
+<section class="band" id="diff">
+  <div class="container">
+    <div class="shead reveal" style="max-width:820px;margin:0 auto 44px;text-align:center">
+      <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
+      <h2 style="margin-top:16px">三件我們做得到、別人做不到的事</h2>
+      <p>我們同時整合身份事件、會話影像、應用內內容與資料流向四種訊號，形成獨家且越用越完整的信任資料集——這正是三大差異化能力的共同根基。</p>
+    </div>
+    <div class="dcar reveal">
+      <div class="dcar-vp"><div class="dcar-track" id="dtrack">
+
+        <!-- Slide 1: Shadow AI -->
+        <div class="dslide">
+          <div class="dillu-wrap">
+            <svg class="dillu" viewBox="0 0 560 320" fill="none" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs>
+   <filter id="sshad" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+   <path id="passPath" d="M104 150 H472"/>
+   <path id="blockPath" d="M104 150 H272 V236"/>
+ </defs>
+ <circle cx="92" cy="56" r="86" fill="#2DA23F" opacity=".045"/>
+ <circle cx="474" cy="276" r="110" fill="#2DA23F" opacity=".05"/>
+
+ <!-- channels -->
+ <path d="M104 150 H472" stroke="#E3EAE5" stroke-width="11" stroke-linecap="round"/>
+ <path d="M272 150 V232" stroke="#F1D7D5" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 11"/>
+
+ <!-- source endpoint -->
+ <g filter="url(#sshad)"><rect x="18" y="120" width="76" height="60" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g>
+ <rect x="33" y="135" width="42" height="6" rx="3" fill="#9AA9A1"/>
+ <rect x="33" y="148" width="48" height="4" rx="2" fill="#D2DAD4"/>
+ <rect x="33" y="158" width="32" height="4" rx="2" fill="#D2DAD4"/>
+ <text x="19" y="200" font-size="12.5" font-weight="600" fill="#46554E">員工端點</text>
+
+ <!-- green packets (pass) -->
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="0s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="1.13s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="1.13s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="2.26s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="2.26s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+
+ <!-- red packet (sensitive -> blocked) -->
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.7"/><path d="M0 -6 V1" stroke="#D2473F" stroke-width="2.4" stroke-linecap="round"/><circle cx="0" cy="5.5" r="1.5" fill="#D2473F"/><animateMotion dur="4s" begin="0.6s" repeatCount="indefinite" keyPoints="0;0.66;0.66;1" keyTimes="0;0.45;0.62;1" calcMode="linear"><mpath xlink:href="#blockPath"/></animateMotion><animate attributeName="opacity" dur="4s" begin="0.6s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.05;0.62;0.93;1"/></g>
+
+ <!-- magnifier -->
+ <g transform="translate(272,150)">
+   <circle r="28" fill="#ffffff" fill-opacity="0.5" stroke="#1B8F34" stroke-width="3.2"/>
+   <line x1="20" y1="20" x2="40" y2="40" stroke="#1B8F34" stroke-width="5.5" stroke-linecap="round"/>
+   <circle r="16" fill="none" stroke="#2DA23F" stroke-width="2"><animate attributeName="r" values="13;30" dur="1.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.55;0" dur="1.9s" repeatCount="indefinite"/></circle>
+ </g>
+ <path d="M272 60 V120" stroke="#2DA23F" stroke-width="1.5" stroke-dasharray="2 5" opacity=".5"/><g transform="translate(272,40)"><rect x="-95" y="-20" width="190" height="40" rx="20" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><text x="0" y="6" text-anchor="middle" font-size="17" font-weight="800" fill="#1B8F34">Sanctward 即時檢查</text></g>
+
+ <!-- pass card -->
+ <g filter="url(#sshad)"><rect x="406" y="118" width="146" height="62" rx="14" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g>
+ <g transform="translate(426,149)"><circle r="13" fill="#EAF6EC"/><path d="M-5 0 l3.5 3.5 6.5-7.5" stroke="#1B8F34" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <text x="450" y="144" font-size="13.5" font-weight="700" fill="#3B4540">正常放行</text>
+ <text x="450" y="163" font-size="11.5" font-weight="600" fill="#1B8F34">核可 AI · 全程稽核</text>
+
+ <!-- blocked bin -->
+ <g filter="url(#sshad)"><rect x="206" y="236" width="134" height="52" rx="13" fill="#fff" stroke="#F0D2D0" stroke-width="1.6"/></g>
+ <g transform="translate(228,262)"><circle r="13" fill="#FBEEEE"/><path d="M-5 -5 L5 5 M5 -5 L-5 5" stroke="#D2473F" stroke-width="2.3" stroke-linecap="round"/></g>
+ <text x="250" y="258" font-size="13.5" font-weight="700" fill="#3B4540">異常攔截</text>
+ <text x="250" y="277" font-size="11.5" font-weight="600" fill="#C2362E">敏感資料 · 不外流</text>
+</svg>
+          </div>
+          <div class="dcopy">
+            <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
+            <h3>Shadow AI 治理</h3>
+            <p class="lead">「我們公司過去 7 天，有沒有人把客戶資料貼進 ChatGPT？」</p>
+            <p class="body">69% 的組織懷疑員工正在使用未授權的 GenAI 工具，平均一家企業有 14 個 AI 工具在跑，IT 卻只掌握其中 4–5 個。要真正管住 Shadow AI 需要「兩隻手」缺一不可——第一隻手在員工端點，看得到 clipboard、看得到瀏覽器連去哪個 LLM；第二隻手在流量收斂點，強制只能透過企業 Gateway 連到核可的模型。純端點 DLP 能看不能管、純網路 DLP 能管不能看，Sanctward 是目前市場唯一兩隻手兼具的廠商。</p>
+            <div class="metric"><b>94%</b><span>某金融客戶外洩行為<br>3 個月降幅（情境示意）</span></div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Agent Passport -->
+        <div class="dslide">
+          <div class="dillu-wrap">
+            <svg class="dillu" viewBox="0 0 560 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs>
+   <filter id="sshad2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+   <path id="passPath2" d="M104 150 H472"/>
+   <path id="blockPath2" d="M104 150 H272 V236"/>
+ </defs>
+ <circle cx="92" cy="56" r="86" fill="#2DA23F" opacity=".045"/>
+ <circle cx="474" cy="276" r="110" fill="#2DA23F" opacity=".05"/>
+ <path d="M104 150 H472" stroke="#E3EAE5" stroke-width="11" stroke-linecap="round"/>
+ <path d="M272 150 V232" stroke="#F1D7D5" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 11"/>
+ <g filter="url(#sshad2)"><rect x="18" y="120" width="76" height="60" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g>
+ <circle cx="40" cy="143" r="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/>
+ <rect x="55" y="139" width="28" height="5" rx="2.5" fill="#9AA9A1"/>
+ <rect x="33" y="160" width="48" height="4" rx="2" fill="#D2DAD4"/>
+ <text x="19" y="200" font-size="12.5" font-weight="600" fill="#46554E">AI Agent 進場</text>
+ <path d="M272 60 V118" stroke="#2DA23F" stroke-width="1.5" stroke-dasharray="2 5" opacity=".5"/>
+ <g transform="translate(272,40)"><rect x="-112" y="-20" width="224" height="40" rx="20" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><text x="0" y="6" text-anchor="middle" font-size="16" font-weight="800" fill="#1B8F34">Identity Broker · 核發護照</text></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="7" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><circle cx="-8" cy="0" r="5" fill="#fff" stroke="#2DA23F" stroke-width="1.4"/><rect x="0" y="-4" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".5"/><rect x="0" y="3" width="9" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#passPath2"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="0s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="7" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><circle cx="-8" cy="0" r="5" fill="#fff" stroke="#2DA23F" stroke-width="1.4"/><rect x="0" y="-4" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".5"/><rect x="0" y="3" width="9" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="1.13s" repeatCount="indefinite"><mpath xlink:href="#passPath2"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="1.13s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="7" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><circle cx="-8" cy="0" r="5" fill="#fff" stroke="#2DA23F" stroke-width="1.4"/><rect x="0" y="-4" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".5"/><rect x="0" y="3" width="9" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="2.26s" repeatCount="indefinite"><mpath xlink:href="#passPath2"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="2.26s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="7" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.7"/><text x="-8" y="4" text-anchor="middle" font-size="12" font-weight="800" fill="#D2473F">?</text><rect x="0" y="-4" width="12" height="3" rx="1.5" fill="#D2473F" opacity=".4"/><rect x="0" y="3" width="8" height="3" rx="1.5" fill="#D2473F" opacity=".3"/><animateMotion dur="4s" begin="0.6s" repeatCount="indefinite" keyPoints="0;0.66;0.66;1" keyTimes="0;0.45;0.62;1" calcMode="linear"><mpath xlink:href="#blockPath2"/></animateMotion><animate attributeName="opacity" dur="4s" begin="0.6s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.05;0.62;0.93;1"/></g>
+ <g class="hub">
+   <rect x="244" y="122" width="56" height="56" rx="16" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.6"/>
+   <path d="M272 134 l16 6 v11 c0 10-6 16-16 20 -10-4-16-10-16-20 v-11 z" fill="#fff" stroke="#1B8F34" stroke-width="2"/>
+   <path d="M265 152 l5 5 10-11" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <g filter="url(#sshad2)"><rect x="406" y="118" width="146" height="62" rx="14" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g>
+ <g transform="translate(426,149)"><circle r="13" fill="#EAF6EC"/><path d="M-5 0 l3.5 3.5 6.5-7.5" stroke="#1B8F34" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <text x="450" y="144" font-size="13.5" font-weight="700" fill="#3B4540">已納管 Agent</text>
+ <text x="450" y="163" font-size="11.5" font-weight="600" fill="#1B8F34">有負責人 · 可稽核</text>
+ <g filter="url(#sshad2)"><rect x="206" y="236" width="134" height="52" rx="13" fill="#fff" stroke="#F0D2D0" stroke-width="1.6"/></g>
+ <g transform="translate(228,262)"><circle r="13" fill="#FBEEEE"/><path d="M-5 -5 L5 5 M5 -5 L-5 5" stroke="#D2473F" stroke-width="2.3" stroke-linecap="round"/></g>
+ <text x="250" y="258" font-size="13.5" font-weight="700" fill="#3B4540">幽靈 Agent</text>
+ <text x="250" y="277" font-size="11.5" font-weight="600" fill="#C2362E">未納管 · 攔截</text>
+</svg>
+          </div>
+          <div class="dcopy">
+            <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
+            <h3>AI Agent Passport</h3>
+            <p class="lead">「我們公司到底有幾個 AI Agent？誰負責？出事找得到人嗎？」</p>
+            <p class="body">MCP、function-calling、autonomous workflow，讓每家企業內部很快會有「比員工數還多的 AI Agent」。但這些非人類身份多半是幽靈——沒有負責人、沒有權限邊界、沒有稽核軌跡。Sanctward 把每個 AI Agent 當成可治理的「員工」：發給可驗證的身份護照（private_key_jwt / Client Credentials），綁定負責人、限定可存取的系統與資料、全程稽核，異常即時鎖定、可一鍵撤銷。我們搶先定義這個新類別的標準，後進者要追 2–3 年。</p>
+            <div class="metric"><b>47→0</b><span>某科技公司幽靈 Agent<br>1 週納管（情境示意）</span></div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Session Intelligence -->
+        <div class="dslide">
+          <div class="dillu-wrap">
+            <svg class="dillu" viewBox="0 0 560 320" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="sshad3" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <circle cx="92" cy="58" r="86" fill="#2DA23F" opacity=".045"/>
+ <circle cx="470" cy="278" r="110" fill="#2DA23F" opacity=".05"/>
+ <g filter="url(#sshad3)"><rect x="60" y="36" width="440" height="48" rx="13" fill="#fff" stroke="#D9E2DC" stroke-width="1.5"/></g>
+ <circle cx="88" cy="60" r="8.5" stroke="#2DA23F" stroke-width="2"/><path d="M94.5 66.5 L102 74" stroke="#2DA23F" stroke-width="2" stroke-linecap="round"/>
+ <text x="116" y="65" font-size="14" fill="#46554E">DROP TABLE customers</text>
+ <text x="404" y="64" font-size="11.5" font-weight="700" fill="#1B8F34">0.18s</text>
+ <g transform="translate(76,118)"><rect width="60" height="78" rx="9" fill="#F7FAF8" stroke="#DCE5DF" stroke-width="1.4"/><rect x="12" y="16" width="36" height="5" rx="2.5" fill="#C8D2CC"/><rect x="12" y="28" width="26" height="4" rx="2" fill="#D7DFD9"/><rect x="12" y="50" width="36" height="14" rx="4" fill="#EEF3F0"/></g>
+ <g transform="translate(144,118)"><rect width="60" height="78" rx="9" fill="#F7FAF8" stroke="#DCE5DF" stroke-width="1.4"/><rect x="12" y="16" width="36" height="5" rx="2.5" fill="#C8D2CC"/><rect x="12" y="28" width="26" height="4" rx="2" fill="#D7DFD9"/><rect x="12" y="50" width="36" height="14" rx="4" fill="#EEF3F0"/></g>
+ <g transform="translate(212,118)"><rect width="60" height="78" rx="9" fill="#F7FAF8" stroke="#DCE5DF" stroke-width="1.4"/><rect x="12" y="16" width="36" height="5" rx="2.5" fill="#C8D2CC"/><rect x="12" y="28" width="26" height="4" rx="2" fill="#D7DFD9"/><rect x="12" y="50" width="36" height="14" rx="4" fill="#EEF3F0"/></g>
+ <g transform="translate(348,118)"><rect width="60" height="78" rx="9" fill="#F7FAF8" stroke="#DCE5DF" stroke-width="1.4"/><rect x="12" y="16" width="36" height="5" rx="2.5" fill="#C8D2CC"/><rect x="12" y="28" width="26" height="4" rx="2" fill="#D7DFD9"/><rect x="12" y="50" width="36" height="14" rx="4" fill="#EEF3F0"/></g>
+ <g transform="translate(416,118)"><rect width="60" height="78" rx="9" fill="#F7FAF8" stroke="#DCE5DF" stroke-width="1.4"/><rect x="12" y="16" width="36" height="5" rx="2.5" fill="#C8D2CC"/><rect x="12" y="28" width="26" height="4" rx="2" fill="#D7DFD9"/><rect x="12" y="50" width="36" height="14" rx="4" fill="#EEF3F0"/></g>
+ <g transform="translate(280,112)"><rect width="60" height="86" rx="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.5"/><rect x="12" y="18" width="36" height="5" rx="2.5" fill="#2DA23F" opacity=".6"/><rect x="12" y="30" width="26" height="4" rx="2" fill="#2DA23F" opacity=".4"/><g transform="translate(30,62)"><circle r="12" fill="#fff" stroke="#2DA23F" stroke-width="1.6"/><path d="M-5 0 l3.5 3.5 6.5-7.5" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><animate attributeName="opacity" values="1;0.82;1" dur="1.6s" repeatCount="indefinite"/></g>
+ <rect x="56" y="112" width="40" height="88" rx="11" fill="#2DA23F" opacity="0.12"><animateTransform attributeName="transform" type="translate" values="0,0;392,0;0,0" keyTimes="0;0.5;1" dur="3.2s" repeatCount="indefinite"/></rect>
+ <path d="M310 198 V230" stroke="#2DA23F" stroke-width="1.5" stroke-dasharray="2 5" opacity=".5"/>
+ <g filter="url(#sshad3)"><rect x="150" y="230" width="262" height="56" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g>
+ <g transform="translate(176,258)"><circle r="13" fill="#EAF6EC"/><path d="M-5 0 l3.5 3.5 6.5-7.5" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <text x="200" y="253" font-size="13" font-weight="700" fill="#3B4540">sess_01HF…X9 · srv-db-01</text>
+ <text x="200" y="271" font-size="11.5" font-weight="600" fill="#1B8F34">0.18 秒定位連線片段 · contractor.chen</text>
+</svg>
+          </div>
+          <div class="dcopy">
+            <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
+            <h3>Session Intelligence</h3>
+            <p class="lead">「給我過去 90 天，所有對正式資料庫 schema change 的證據。」</p>
+            <p class="body">傳統錄影是「事後翻數小時影片」的負債；Sanctward 把每一段會話錄影變成可搜尋的「Google for actions」。端側錄影、OCR 全文索引、WORM 不可竄改儲存，讓你用一句自然語言就定位到任何操作發生的精確時間點與連線片段。稽核員拿到的不再是一堆原始 log，而是對應條文、附帶證據片段的現成證據包——SOC 2 稽核證據準備從一週縮短到 30 分鐘。</p>
+            <div class="metric"><b>1 週→30 分</b><span>SOC 2 稽核證據<br>準備時間（情境示意）</span></div>
+          </div>
+        </div>
+
+      </div></div>
+      <div class="dcar-foot">
+        <div class="dcar-dots" id="ddots"><button class="on"></button><button></button><button></button></div>
+        <div class="dcar-nav">
+          <button id="dprev" aria-label="上一個"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button id="dnext" aria-label="下一個"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOLUTIONS -->
+<section class="band" id="solutions">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="eyebrow">Solutions · 解決方案</span>
+      <h2>把舊架構的困境，換成零信任的解法</h2>
+      <p>從 VPN、遠端存取到身份與合規——六個最常見的場景，Sanctward 一套平台一次補上。</p>
+    </div>
+    <div class="sols">
+      <div class="soln"><div class="sol-copy reveal">
+        <span class="sol-k">取代 SSL VPN</span>
+        <h3>從「開放整個內網」到「只開放被授權的應用」</h3>
+        <p class="intro">傳統 SSL VPN 連上後，等於把整座內網對使用者敞開，而且看不見加密隧道裡究竟發生什麼事——這正是橫向移動與資料外洩最常見的破口。</p>
+        <div class="plist pain"><div class="ph">困境</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>過度信任：連上即可橫向移動到任意內網主機。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>看不見內容：加密隧道內的操作無法即時監控。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>缺端點控管：不檢查設備是否合規就放行，帳密被盜即長驅直入。</span></div></div>
+        <div class="plist fix"><div class="ph">Sanctward 解法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>零信任 per-app 授權，後端位置隱藏，沒有「內網」可供橫移。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>每次連線即時信任評分、持續再驗證，異常即降分或強制斷線。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>端點 Agent 檢查設備姿態（OS／加密／EDR）合規才放行。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>連線過程<b style="color:var(--brand-ink)">全程錄影存證</b>，並即時建立 OCR 全文索引——事後可用關鍵字秒級回放、定位任何畫面。</span></div></div>
+      </div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shV" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pV" d="M92 165 H214 M214 165 C 300 165 330 118 388 100"/></defs>
+ <g filter="url(#shV)"><rect x="22" y="138" width="70" height="56" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g>
+ <circle cx="44" cy="160" r="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><rect x="58" y="156" width="22" height="5" rx="2.5" fill="#9AA9A1"/><rect x="33" y="176" width="46" height="4" rx="2" fill="#D2DAD4"/>
+ <text x="24" y="214" font-size="12" font-weight="600" fill="#46554E">使用者</text>
+ <path d="M92 165 H190" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#shV)"><rect x="190" y="116" width="96" height="98" rx="16" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.4"/></g>
+ <circle cx="238" cy="165" r="42" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="40;58" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+ <path d="M238 130 l16 6 v12 c0 11-7 17-16 21 -9-4-16-10-16-21 v-12 z" fill="#fff" stroke="#1B8F34" stroke-width="2"/><path d="M231 150 l5 5 10-11" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="238" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B8F34">信任閘道</text>
+ <text x="238" y="232" text-anchor="middle" font-size="10.5" fill="#46554E">身份 · 設備姿態 · 信任評分</text><g transform="translate(238,278)"><rect x="-90" y="-15" width="180" height="30" rx="15" fill="#fff" stroke="#D2473F" stroke-width="1.4"/><circle cx="-72" cy="0" r="4.5" fill="#D2473F"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle><text x="6" y="4" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2362E">全程錄影存證 · 可搜尋索引</text></g>
+ <g filter="url(#shV)"><rect x="372" y="74" width="132" height="52" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.7"/></g>
+ <g transform="translate(392,100)"><circle r="11" fill="#EAF6EC"/><path d="M-4 0 l3 3 5.5-6.5" stroke="#1B8F34" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <text x="412" y="97" font-size="12.5" font-weight="700" fill="#3B4540">已授權應用</text><text x="412" y="114" font-size="10.5" fill="#1B8F34" font-weight="600">放行 · 全程錄影存證</text>
+ <g filter="url(#shV)"><rect x="372" y="150" width="132" height="46" rx="12" fill="#F8F9F9" stroke="#E6E0E0" stroke-width="1.4"/></g>
+ <g transform="translate(390,173)"><rect x="-7" y="-4" width="14" height="11" rx="2.5" fill="#fff" stroke="#9AA0A0" stroke-width="1.4"/><path d="M-4 -4 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#9AA0A0" stroke-width="1.4"/></g>
+ <text x="410" y="170" font-size="12" font-weight="600" fill="#7E8C85">未授權系統</text><text x="410" y="186" font-size="10.5" fill="#A23129" font-weight="600">無法橫向移動</text>
+ <g filter="url(#shV)"><rect x="372" y="218" width="132" height="46" rx="12" fill="#F8F9F9" stroke="#E6E0E0" stroke-width="1.4"/></g>
+ <g transform="translate(390,241)"><rect x="-7" y="-4" width="14" height="11" rx="2.5" fill="#fff" stroke="#9AA0A0" stroke-width="1.4"/><path d="M-4 -4 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#9AA0A0" stroke-width="1.4"/></g>
+ <text x="410" y="238" font-size="12" font-weight="600" fill="#7E8C85">未授權系統</text><text x="410" y="254" font-size="10.5" fill="#A23129" font-weight="600">後端位置隱藏</text>
+ <path d="M286 174 C 320 178 344 174 372 173" stroke="#D2473F" stroke-width="2" stroke-dasharray="2 6" opacity=".7"/>
+ <g transform="translate(348,174)"><circle r="11" fill="#fff" stroke="#D2473F" stroke-width="2"/><path d="M-4 -4 L4 4 M4 -4 L-4 4" stroke="#D2473F" stroke-width="2" stroke-linecap="round"/></g>
+ <path d="M286 196 C 322 222 344 238 372 241" stroke="#D2473F" stroke-width="2" stroke-dasharray="2 6" opacity=".5"/>
+ <g opacity="0"><rect x="-14" y="-10" width="28" height="20" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><rect x="-8" y="-2" width="16" height="3" rx="1.5" fill="#2DA23F" opacity=".5"/><animateMotion dur="3s" repeatCount="indefinite"><mpath xlink:href="#pV"/></animateMotion><animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.08;0.5;0.9;1"/></g>
+</svg></div></div>
+      <div class="soln rev"><div class="sol-copy reveal">
+        <span class="sol-k">取代遠端存取軟體 · 強化遠端協定</span>
+        <h3>RDP / VNC / SSH / Telnet，全走一道受控閘道</h3>
+        <p class="intro">在端點安裝第三方遠端軟體，等於在公司內開了一條 IT 看不到的常駐通道；而直接對外開放遠端連接埠，則是把攻擊面攤在網路上。兩者都讓「誰連進來、做了什麼」變成黑洞。</p>
+        <div class="plist pain"><div class="ph">困境</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>端點常駐通道繞過企業管控，誰連入、做了什麼，看不到也查不到。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>連線碼或帳密一旦外流即遭接管，無錄影、無稽核軌跡。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>對外暴露 RDP／VNC／SSH／Telnet 連接埠，成為直接攻擊入口。</span></div></div>
+        <div class="plist fix"><div class="ph">Sanctward 解法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>四種協定全走 Sanctward 閘道，端點免裝第三方軟體、後端埠不對外。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>全程會話錄影 + OCR 全文搜尋 + 指令稽核；受控帳密注入，維護人員不接觸明文密碼。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>JIT 時限存取、到期零殘留；剪貼簿 DLP 與檔案傳輸 SHA-256 完整性驗證。</span></div></div>
+      </div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shR" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pR1" d="M96 78 C 158 86 172 150 206 166"/><path id="pR2" d="M96 134 C 160 140 182 160 206 170"/><path id="pR3" d="M96 190 C 160 188 182 180 206 174"/><path id="pR4" d="M96 246 C 160 240 184 188 206 178"/><path id="pRs" d="M326 172 H408"/></defs>
+ <g font-size="12.5" font-weight="700">
+  <g filter="url(#shR)"><rect x="18" y="58" width="78" height="40" rx="10" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="35" y="83" fill="#1B8F34">RDP</text>
+  <g filter="url(#shR)"><rect x="18" y="114" width="78" height="40" rx="10" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="35" y="139" fill="#1B8F34">VNC</text>
+  <g filter="url(#shR)"><rect x="18" y="170" width="78" height="40" rx="10" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="35" y="195" fill="#1B8F34">SSH</text>
+  <g filter="url(#shR)"><rect x="18" y="226" width="78" height="40" rx="10" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="30" y="251" fill="#1B8F34">Telnet</text></g>
+ <path d="M96 78 C 158 86 172 150 206 166" stroke="#DDE7E0" stroke-width="2"/><path d="M96 134 C 160 140 182 160 206 170" stroke="#DDE7E0" stroke-width="2"/><path d="M96 190 C 160 188 182 180 206 174" stroke="#DDE7E0" stroke-width="2"/><path d="M96 246 C 160 240 184 188 206 178" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#shR)"><rect x="206" y="104" width="120" height="120" rx="18" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.4"/></g>
+ <circle cx="224" cy="124" r="5" fill="#D2473F"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle><text x="234" y="128" font-size="10.5" font-weight="700" fill="#C2362E">REC</text>
+ <path d="M266 138 l18 7 v13 c0 12-8 19-18 23 -10-4-18-11-18-23 v-13 z" fill="#fff" stroke="#1B8F34" stroke-width="2"/><path d="M258 160 l6 6 11-12" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="266" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">Sanctward 閘道</text>
+ <path d="M326 172 H408" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#shR)"><rect x="414" y="104" width="86" height="34" rx="8" fill="#fff" stroke="#E4EAE6" stroke-width="1.4"/></g><circle cx="427" cy="121" r="3" fill="#2DA23F"/><rect x="437" y="115" width="50" height="5" rx="2.5" fill="#E1E8E3"/><rect x="437" y="124" width="36" height="4" rx="2" fill="#EDF1EE"/>
+ <g filter="url(#shR)"><rect x="414" y="146" width="86" height="34" rx="8" fill="#fff" stroke="#E4EAE6" stroke-width="1.4"/></g><circle cx="427" cy="163" r="3" fill="#2DA23F"/><rect x="437" y="157" width="50" height="5" rx="2.5" fill="#E1E8E3"/><rect x="437" y="166" width="36" height="4" rx="2" fill="#EDF1EE"/>
+ <g filter="url(#shR)"><rect x="414" y="188" width="86" height="34" rx="8" fill="#fff" stroke="#E4EAE6" stroke-width="1.4"/></g><circle cx="427" cy="205" r="3" fill="#2DA23F"/><rect x="437" y="199" width="50" height="5" rx="2.5" fill="#E1E8E3"/><rect x="437" y="208" width="36" height="4" rx="2" fill="#EDF1EE"/>
+ <text x="457" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7E8C85">後端多台主機 · 不對外</text>
+ <g opacity="0"><circle r="6" fill="#2DA23F"/><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#pR1"/></animateMotion><animate attributeName="opacity" dur="2.4s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><circle r="6" fill="#2DA23F"/><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite"><mpath xlink:href="#pR2"/></animateMotion><animate attributeName="opacity" dur="2.4s" begin="0.6s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><circle r="6" fill="#2DA23F"/><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath xlink:href="#pR3"/></animateMotion><animate attributeName="opacity" dur="2.4s" begin="1.2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><circle r="6" fill="#2DA23F"/><animateMotion dur="2.4s" begin="1.8s" repeatCount="indefinite"><mpath xlink:href="#pR4"/></animateMotion><animate attributeName="opacity" dur="2.4s" begin="1.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><rect x="-7" y="-6" width="14" height="12" rx="3" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.4s" begin="0.3s" repeatCount="indefinite"><mpath xlink:href="#pRs"/></animateMotion><animate attributeName="opacity" dur="2.4s" begin="0.3s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+</svg></div></div>
+      <div class="soln"><div class="sol-copy reveal">
+        <span class="sol-k">連線共享 · Session Shadow</span>
+        <h3>同一個畫面，多人共視、即時接管、全程留痕</h3>
+        <p class="intro">遠端協作、教育訓練、緊急處置與稽核監看，常常需要「看到同一個畫面」。Sanctward 讓管理者即時共享任何進行中的 RDP／VNC／SSH／Telnet 連線畫面，並能由「觀看」無縫切換為「接管」，過程全程錄影並即時產生可搜尋索引。</p>
+        <div class="plist pain"><div class="ph">困境</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>遠端協助時各自連線、無法同畫面協作，出狀況難以即時介入。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>緊急時需資深人員接手，卻無法即時接管同一個連線。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>監看與教學過程沒有紀錄，事後無法回溯、缺乏稽核軌跡。</span></div></div>
+        <div class="plist fix"><div class="ph">Sanctward 解法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Multi-Session Shadow：即時觀看任何進行中的連線，多人同時共視同一畫面。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>一鍵由「觀看」切換為「接管」，由授權人員直接操作緊急處置。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>全程錄影 + 即時 OCR 全文索引——誰觀看、誰接管、做了什麼，全部留痕可搜尋。</span></div></div>
+      </div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shS" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pS1" d="M94 78 C 150 96 168 120 186 132"/><path id="pS2" d="M100 168 C 150 168 170 162 186 160"/><path id="pS3" d="M94 258 C 150 232 168 200 186 188"/></defs>
+ <!-- shared session screen -->
+ <g filter="url(#shS)"><rect x="186" y="92" width="150" height="118" rx="12" fill="#0E1714" stroke="#2DA23F" stroke-width="2"/></g>
+ <rect x="186" y="92" width="150" height="22" rx="11" fill="#16241B"/>
+ <circle cx="201" cy="103" r="4.6" fill="#D2473F"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
+ <text x="212" y="107" font-size="10" font-weight="700" fill="#7FE394">REC · RDP LIVE</text>
+ <rect x="200" y="128" width="80" height="6" rx="3" fill="#3FA85A" opacity=".8"/><rect x="200" y="142" width="118" height="5" rx="2.5" fill="#2C6E40"/><rect x="200" y="154" width="96" height="5" rx="2.5" fill="#2C6E40"/><rect x="200" y="166" width="110" height="5" rx="2.5" fill="#2C6E40"/><rect x="200" y="184" width="64" height="14" rx="4" fill="#1C5230"/>
+ <text x="261" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">共享連線畫面</text>
+ <!-- viewers -->
+ <g filter="url(#shS)"><rect x="18" y="56" width="74" height="44" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><circle cx="38" cy="78" r="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><text x="52" y="74" font-size="10.5" font-weight="700" fill="#3B4540">稽核</text><text x="52" y="88" font-size="9" fill="#7E8C85">監看</text>
+ <g filter="url(#shS)"><rect x="14" y="146" width="84" height="46" rx="11" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2"/></g><circle cx="35" cy="169" r="9" fill="#fff" stroke="#1B8F34" stroke-width="1.5"/><path d="M31 169 l3 3 5-6" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="50" y="165" font-size="10.5" font-weight="800" fill="#1B8F34">接管</text><text x="50" y="179" font-size="9" fill="#1B8F34">Control</text>
+ <circle cx="56" cy="169" r="34" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="28;42" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.45;0" dur="1.8s" repeatCount="indefinite"/></circle>
+ <g filter="url(#shS)"><rect x="18" y="238" width="74" height="44" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><circle cx="38" cy="260" r="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><text x="52" y="256" font-size="10.5" font-weight="700" fill="#3B4540">訓練</text><text x="52" y="270" font-size="9" fill="#7E8C85">共視</text>
+ <path d="M94 78 C 150 96 168 120 186 132" stroke="#DDE7E0" stroke-width="2"/><path d="M100 168 C 150 168 170 162 186 160" stroke="#2DA23F" stroke-width="2"/><path d="M94 258 C 150 232 168 200 186 188" stroke="#DDE7E0" stroke-width="2"/>
+ <g opacity="0"><circle r="5" fill="#2DA23F"/><animateMotion dur="2.2s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#pS1"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><circle r="5.5" fill="#1B8F34"/><animateMotion dur="2.2s" begin="0.5s" repeatCount="indefinite"><mpath xlink:href="#pS2"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="0.5s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><circle r="5" fill="#2DA23F"/><animateMotion dur="2.2s" begin="1s" repeatCount="indefinite"><mpath xlink:href="#pS3"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <!-- live index panel -->
+ <g filter="url(#shS)"><rect x="358" y="92" width="148" height="118" rx="12" fill="#fff" stroke="#D9E2DC" stroke-width="1.5"/></g>
+ <circle cx="376" cy="112" r="7" stroke="#2DA23F" stroke-width="1.8"/><path d="M381 117 l6 6" stroke="#2DA23F" stroke-width="1.8" stroke-linecap="round"/>
+ <text x="390" y="116" font-size="10.5" font-weight="700" fill="#1B8F34">即時 OCR 索引</text>
+ <g><rect x="372" y="130" width="120" height="20" rx="5" fill="#F4FAF6" stroke="#E0EAE3" stroke-width="1"/><text x="380" y="144" font-size="9.5" fill="#46554E">00:12 開啟資料庫</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.3;1" dur="4s" repeatCount="indefinite"/></g>
+ <g><rect x="372" y="156" width="120" height="20" rx="5" fill="#F4FAF6" stroke="#E0EAE3" stroke-width="1"/><text x="380" y="170" font-size="9.5" fill="#46554E">00:48 schema change</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4;0.55;1" dur="4s" repeatCount="indefinite"/></g>
+ <g><rect x="372" y="182" width="120" height="20" rx="5" fill="#F4FAF6" stroke="#E0EAE3" stroke-width="1"/><text x="380" y="196" font-size="9.5" fill="#46554E">01:20 匯出報表</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.65;0.8;1" dur="4s" repeatCount="indefinite"/></g>
+ <text x="432" y="228" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7E8C85">全程留痕 · 可搜尋</text>
+</svg></div></div>
+      <div class="soln rev"><div class="sol-copy reveal">
+        <span class="sol-k">統一身份與 MFA</span>
+        <h3>多帳號、多系統、多種 MFA，收斂成一次登入</h3>
+        <p class="intro">每套系統各有帳號密碼、各自一套 MFA（甚至完全沒有），管理分散、稽核有盲區，員工離職時帳號更難以一次收回乾淨。</p>
+        <div class="plist pain"><div class="ph">困境</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>帳號分散：員工每套系統各一組帳密，IT 重設與回收耗時又易遺漏。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>MFA 不一致：有的 TOTP、有的簡訊、有的全無，體驗差又留風險。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg><span>舊系統不支援 SSO／MFA，長期游離在統一管控之外。</span></div></div>
+        <div class="plist fix"><div class="ph">Sanctward 解法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>表單代填／反向代理／OIDC・SAML 聯邦，9 成以上認證模式皆可納管，舊系統不改造也能接。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>內建 IdP 提供一致 MFA（TOTP），對所有應用統一，並可依風險動態升級驗證。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>AD／LDAP 同步，離職一處停用、全系統即時失效，條件式存取一致套用。</span></div></div>
+      </div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pm1" d="M120 70 C 175 96 200 140 224 158"/><path id="pm2" d="M116 140 C 165 146 198 158 224 162"/><path id="pm3" d="M122 212 C 175 198 198 178 224 168"/><path id="pm4" d="M134 274 C 185 236 202 186 226 172"/><path id="pmo" d="M286 165 H362"/></defs>
+ <g font-size="10.5" font-weight="700">
+  <g filter="url(#shM)"><rect x="14" y="53" width="106" height="34" rx="9" fill="#fff" stroke="#E6E0E0" stroke-width="1.4"/></g><text x="27" y="74" fill="#A23129">帳號 A · TOTP</text>
+  <g filter="url(#shM)"><rect x="10" y="123" width="106" height="34" rx="9" fill="#fff" stroke="#E6E0E0" stroke-width="1.4"/></g><text x="23" y="144" fill="#A23129">帳號 B · 簡訊</text>
+  <g filter="url(#shM)"><rect x="16" y="195" width="106" height="34" rx="9" fill="#fff" stroke="#E6E0E0" stroke-width="1.4"/></g><text x="29" y="216" fill="#A23129">帳號 C · 無</text>
+  <g filter="url(#shM)"><rect x="28" y="257" width="106" height="34" rx="9" fill="#fff" stroke="#E6E0E0" stroke-width="1.4"/></g><text x="41" y="278" fill="#A23129">帳號 D · ?</text></g>
+ <path d="M120 70 C 175 96 200 140 224 158" stroke="#E7DCDC" stroke-width="2"/><path d="M116 140 C 165 146 198 158 224 162" stroke="#E7DCDC" stroke-width="2"/><path d="M122 212 C 175 198 198 178 224 168" stroke="#E7DCDC" stroke-width="2"/><path d="M134 274 C 185 236 202 186 226 172" stroke="#E7DCDC" stroke-width="2"/>
+ <g filter="url(#shM)"><circle cx="256" cy="165" r="44" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.4"/></g>
+ <circle cx="256" cy="165" r="44" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="44;58" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+ <path d="M256 150 l13 5 v9 c0 8-5 13-13 16 -8-3-13-8-13-16 v-9 z" fill="#fff" stroke="#1B8F34" stroke-width="1.8"/><path d="M250 165 l4 4 8-9" stroke="#1B8F34" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="256" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">統一身份 · 一致 MFA</text>
+ <path d="M300 165 H362" stroke="#2DA23F" stroke-width="2"/>
+ <g font-size="11" font-weight="600">
+  <g filter="url(#shM)"><rect x="362" y="92" width="66" height="50" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="378" y="121" fill="#3B4540">系統 1</text>
+  <g filter="url(#shM)"><rect x="438" y="92" width="66" height="50" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="454" y="121" fill="#3B4540">系統 2</text>
+  <g filter="url(#shM)"><rect x="362" y="150" width="66" height="50" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="378" y="179" fill="#3B4540">系統 3</text>
+  <g filter="url(#shM)"><rect x="438" y="150" width="66" height="50" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="454" y="179" fill="#3B4540">系統 4</text></g>
+ <text x="433" y="226" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1B8F34">一次登入 · 全部存取</text>
+ <g opacity="0"><rect x="-13" y="-9" width="26" height="18" rx="5" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.3"/><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#pm1"/></animateMotion><animate attributeName="opacity" dur="2.6s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.55;0.62"/></g>
+ <g opacity="0"><rect x="-13" y="-9" width="26" height="18" rx="5" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.3"/><animateMotion dur="2.6s" begin="0.5s" repeatCount="indefinite"><mpath xlink:href="#pm2"/></animateMotion><animate attributeName="opacity" dur="2.6s" begin="0.5s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.55;0.62"/></g>
+ <g opacity="0"><rect x="-13" y="-9" width="26" height="18" rx="5" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.3"/><animateMotion dur="2.6s" begin="1s" repeatCount="indefinite"><mpath xlink:href="#pm3"/></animateMotion><animate attributeName="opacity" dur="2.6s" begin="1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.55;0.62"/></g>
+ <g opacity="0"><rect x="-7" y="-6" width="14" height="12" rx="3" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.6s" begin="0.4s" repeatCount="indefinite"><mpath xlink:href="#pmo"/></animateMotion><animate attributeName="opacity" dur="2.6s" begin="0.4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+</svg></div></div>
+      <div class="soln"><div class="sol-copy reveal"><span class="sol-k">台灣合規</span><h3>台灣資安法 · 個資法 · 金管會，一次對齊</h3><p class="intro">《資通安全管理法》及其分級辦法、《個人資料保護法》、金管會遠端維運要求，對日誌留存、存取控制與稽核軌跡都有明確規範。Sanctward 直接對映這些條文，並由合規適配器自動產出可審證據。</p><div class="plist fix"><div class="ph">符合條文 · 對應做法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>《資通安全責任等級分級辦法》要求日誌至少保存 6 個月，並記錄帳號／權限變更、登入、IP 與資料存取 → 100+ 稽核事件＋WORM 不可竄改＋Merkle 證據鏈，保存期限可設定。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>高／中責任等級要求重要系統採多因素驗證與嚴格存取控制 → 內建 IdP 一致 MFA（TOTP）、RBAC 細粒度權限、條件式存取、離職即時失效。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>金管會遠端維運／委外稽核要求保留連線紀錄與錄影 → RDP／SSH／VNC／Telnet 全程錄影＋OCR 指令搜尋＋受控帳密注入＋JIT 時限存取。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>《個人資料保護法》第 27 條安全維護措施與存取軌跡 → 個資系統存取全程留痕、敏感欄位自動遮蔽、可回溯舉證。</span></div></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shC1" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pC1" d="M92 160 H188"/></defs>
+ <g font-size="10" font-weight="600">
+  <g filter="url(#shC1)"><rect x="14" y="92" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="111" font-size="11" fill="#46554E">帳號停用</text>
+  <g filter="url(#shC1)"><rect x="14" y="146" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="165" font-size="11" fill="#46554E">會話錄影</text>
+  <g filter="url(#shC1)"><rect x="14" y="200" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="219" font-size="11" fill="#46554E">登入紀錄</text></g>
+ <text x="20" y="252" font-size="10.5" font-weight="600" fill="#7E8C85">100+ 稽核事件 · WORM</text>
+ <path d="M92 107 C 140 110 160 150 188 158" stroke="#DDE7E0" stroke-width="2"/><path d="M92 161 H188" stroke="#DDE7E0" stroke-width="2"/><path d="M92 215 C 140 212 160 172 188 164" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#shC1)"><rect x="188" y="116" width="96" height="92" rx="16" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.4"/></g>
+ <circle cx="236" cy="162" r="40" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="38;54" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+ <g transform="translate(236,150)" stroke="#1B8F34" stroke-width="2" fill="none"><circle r="9"/><path d="M0 -15 V-11 M0 11 V15 M-15 0 H-11 M11 0 H15 M-10.6 -10.6 l2.8 2.8 M10.6 -10.6 l-2.8 2.8 M-10.6 10.6 l2.8 -2.8 M10.6 10.6 l-2.8 -2.8"/></g>
+ <text x="236" y="200" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B8F34">合規適配器</text>
+ <path d="M284 162 H352" stroke="#2DA23F" stroke-width="2"/>
+ <g font-weight="600"><g filter="url(#shC1)"><rect x="352" y="78" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,91)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="95" font-size="10.5" fill="#3B4540">資通安全管理法</text><g filter="url(#shC1)"><rect x="352" y="116" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,129)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="133" font-size="10.5" fill="#3B4540">資安責任分級辦法</text><g filter="url(#shC1)"><rect x="352" y="154" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,167)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="171" font-size="10.5" fill="#3B4540">個人資料保護法</text><g filter="url(#shC1)"><rect x="352" y="192" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,205)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="209" font-size="10.5" fill="#3B4540">金管會遠端維運</text></g><rect x="350" y="74" width="158" height="32" rx="8" fill="#2DA23F" opacity="0.1"><animateTransform attributeName="transform" type="translate" values="0,0;0,114;0,0" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite"/></rect>
+ <g filter="url(#shC1)"><rect x="392" y="232" width="74" height="58" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g>
+ <path d="M404 244 h36 l8 8 v32 h-44 z" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><path d="M440 244 v8 h8" fill="none" stroke="#2DA23F" stroke-width="1.5"/><path d="M412 268 l5 5 9-10" stroke="#1B8F34" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="429" y="226" text-anchor="middle" font-size="10" font-weight="700" fill="#1B8F34">證據包</text>
+ <g opacity="0"><rect x="-10" y="-7" width="20" height="14" rx="4" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.2s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#pC1"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><rect x="-10" y="-7" width="20" height="14" rx="4" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.2s" begin="1.1s" repeatCount="indefinite"><mpath xlink:href="#pC1"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="1.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+</svg></div></div><div class="soln rev"><div class="sol-copy reveal"><span class="sol-k">國際合規</span><h3>ISO 27001 · SOC 2 · GDPR · NIS2 · HIPAA</h3><p class="intro">跨足海外須同時對應國際框架的存取控制、稽核記錄與事件應變要求。Sanctward 的控制項可直接對映到各框架的具體條款，一鍵產出證據包。</p><div class="plist fix"><div class="ph">符合條文 · 對應做法</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>ISO/IEC 27001:2022 A.8.5 安全認證、A.8.15 記錄、A.8.16 監視、A.5.15 存取控制 → 統一 SSO／MFA、100+ 事件記錄、即時監控與信任評分。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>SOC 2 Trust Services CC6 存取控制、CC7 監控與事件回應 → RBAC＋MFA、WORM 稽核軌跡、行為基線異常偵測。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>EU GDPR 第 32 條處理安全、第 30 條處理紀錄、第 33 條 72 小時外洩通報 → 加密與存取控制、完整稽核軌跡、異常即時告警支援通報時限。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>EU NIS2 第 21 條（MFA、存取控制、日誌）與第 23 條事件通報 → 強制 MFA／持續驗證、不可竄改日誌、事件調查證據鏈。</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>US HIPAA §164.312 技術保全（存取控制、稽核控制、認證） → 唯一身份識別、會話錄影與稽核、強認證機制。</span></div></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="shC2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
+  <path id="pC2" d="M92 160 H188"/></defs>
+ <g font-size="10" font-weight="600">
+  <g filter="url(#shC2)"><rect x="14" y="92" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="111" font-size="11" fill="#46554E">帳號停用</text>
+  <g filter="url(#shC2)"><rect x="14" y="146" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="165" font-size="11" fill="#46554E">會話錄影</text>
+  <g filter="url(#shC2)"><rect x="14" y="200" width="78" height="30" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="30" y="219" font-size="11" fill="#46554E">登入紀錄</text></g>
+ <text x="20" y="252" font-size="10.5" font-weight="600" fill="#7E8C85">100+ 稽核事件 · WORM</text>
+ <path d="M92 107 C 140 110 160 150 188 158" stroke="#DDE7E0" stroke-width="2"/><path d="M92 161 H188" stroke="#DDE7E0" stroke-width="2"/><path d="M92 215 C 140 212 160 172 188 164" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#shC2)"><rect x="188" y="116" width="96" height="92" rx="16" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.4"/></g>
+ <circle cx="236" cy="162" r="40" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="38;54" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+ <g transform="translate(236,150)" stroke="#1B8F34" stroke-width="2" fill="none"><circle r="9"/><path d="M0 -15 V-11 M0 11 V15 M-15 0 H-11 M11 0 H15 M-10.6 -10.6 l2.8 2.8 M10.6 -10.6 l-2.8 2.8 M-10.6 10.6 l2.8 -2.8 M10.6 10.6 l-2.8 -2.8"/></g>
+ <text x="236" y="200" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B8F34">合規適配器</text>
+ <path d="M284 162 H352" stroke="#2DA23F" stroke-width="2"/>
+ <g font-weight="600"><g filter="url(#shC2)"><rect x="352" y="64" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,77)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="81" font-size="10.5" fill="#3B4540">ISO 27001:2022</text><g filter="url(#shC2)"><rect x="352" y="96" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,109)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="113" font-size="10.5" fill="#3B4540">SOC 2（TSC）</text><g filter="url(#shC2)"><rect x="352" y="128" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,141)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="145" font-size="10.5" fill="#3B4540">EU GDPR · 第32條</text><g filter="url(#shC2)"><rect x="352" y="160" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,173)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="177" font-size="10.5" fill="#3B4540">EU NIS2 · 第21條</text><g filter="url(#shC2)"><rect x="352" y="192" width="154" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(366,205)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="380" y="209" font-size="10.5" fill="#3B4540">US HIPAA</text></g><rect x="350" y="60" width="158" height="30" rx="8" fill="#2DA23F" opacity="0.1"><animateTransform attributeName="transform" type="translate" values="0,0;0,160;0,0" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite"/></rect>
+ <g filter="url(#shC2)"><rect x="392" y="232" width="74" height="58" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g>
+ <path d="M404 244 h36 l8 8 v32 h-44 z" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><path d="M440 244 v8 h8" fill="none" stroke="#2DA23F" stroke-width="1.5"/><path d="M412 268 l5 5 9-10" stroke="#1B8F34" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="429" y="226" text-anchor="middle" font-size="10" font-weight="700" fill="#1B8F34">證據包</text>
+ <g opacity="0"><rect x="-10" y="-7" width="20" height="14" rx="4" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.2s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#pC2"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+ <g opacity="0"><rect x="-10" y="-7" width="20" height="14" rx="4" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><animateMotion dur="2.2s" begin="1.1s" repeatCount="indefinite"><mpath xlink:href="#pC2"/></animateMotion><animate attributeName="opacity" dur="2.2s" begin="1.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.1;0.85;1"/></g>
+</svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS band -->
+<section class="band tight">
+  <div class="container reveal">
+    <div class="mband">
+      <div class="mi"><b>50+</b><span>原生多租戶 · MSP-Ready</span></div>
+      <div class="mi"><b>99.9%</b><span>1,500 端點實測自動上線</span></div>
+      <div class="mi"><b>100+</b><span>稽核事件 · WORM 不可竄改</span></div>
+      <div class="mi"><b>1–2 週</b><span>快速導入上線</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES tabbed -->
+<section class="band" id="cases">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="eyebrow">Real-world Scenarios</span>
+      <h2>四個典型應用場景</h2>
+      <p>從痛點到量化成效——選擇產業查看。</p>
+    </div>
+    <div class="casewrap reveal">
+      <div class="ctabs" id="ctabs">
+        <button class="ctab on" data-c="0"><span class="k">Manufacturing</span><h4>製造業</h4></button>
+        <button class="ctab" data-c="1"><span class="k">Banking</span><h4>金融業</h4></button>
+        <button class="ctab" data-c="2"><span class="k">Zero Trust</span><h4>科技業遠端</h4></button>
+        <button class="ctab" data-c="3"><span class="k">MSP</span><h4>服務商</h4></button>
+      </div>
+      <div id="cpanes">
+        <div class="cpane on">
+          <div class="cbox">
+            <span class="ctag">Manufacturing · 製造業</span>
+            <h3>500 員工、5 個 IT、十幾套系統</h3>
+            <div class="c2">
+              <div class="pain"><div class="h">痛點</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>IT 每週 10+ 小時處理密碼重設</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>離職帳號 3 個月後才發現殘留</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>外包維護須給設備密碼</li>
+              </ul></div>
+              <div class="sol"><div class="h">Sanctward 解法</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>全系統整合統一登入、隱藏真實位置</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>AD 同步，離職當天停用、足跡永久保留</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>外包走 JIT 全程錄影，免第三方 VPN</li>
+              </ul></div>
+            </div>
+            <div class="cres"><div><b>−80%</b><span>IT 帳號管理工時</span></div><div><b>0</b><span>員工／廠商帳號殘留</span></div></div>
+          </div>
+        </div>
+        <div class="cpane">
+          <div class="cbox">
+            <span class="ctag">Banking · 金融業</span>
+            <h3>金管會遠端維運稽核</h3>
+            <div class="c2">
+              <div class="pain"><div class="h">痛點</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>VPN + RDP 無法強制錄影</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>廠商、IT 都知道密碼，外流風險高</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>翻錄影找指令耗時數天</li>
+              </ul></div>
+              <div class="sol"><div class="h">Sanctward 解法</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>遠端維運走閘道強制錄影</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>代登入維護人員不接觸密碼</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>OCR 全文搜尋秒速定位指令</li>
+              </ul></div>
+            </div>
+            <div class="cres"><div><b>天→小時</b><span>稽核調查時間</span></div><div><b>0</b><span>特權帳號外流</span></div></div>
+          </div>
+        </div>
+        <div class="cpane">
+          <div class="cbox">
+            <span class="ctag">Zero Trust · 科技業</span>
+            <h3>全員遠端、跨國分布、大量外包</h3>
+            <div class="c2">
+              <div class="pain"><div class="h">痛點</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>帳號共用 / 異常登入難偵測</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>外包權限授予與回收混亂</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>跨國登入真偽難辨</li>
+              </ul></div>
+              <div class="sol"><div class="h">Sanctward 解法</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Agent 部署所有受管設備，狀態即時透明</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Trust Policy 分群：研發 ≥85、外包限工時</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Impossible Travel 自動降分</li>
+              </ul></div>
+            </div>
+            <div class="cres"><div><b>即時可見</b><span>CISO 信任儀表板</span></div><div><b>0</b><span>外包殘留帳號</span></div></div>
+          </div>
+        </div>
+        <div class="cpane">
+          <div class="cbox">
+            <span class="ctag">MSP · 服務商</span>
+            <h3>自建系統服務 30 個客戶</h3>
+            <div class="c2">
+              <div class="pain"><div class="h">痛點</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>為每客戶維護獨立帳號體系</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>各客戶環境獨立，無法統一管理</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>維運成本隨客戶數線性成長</li>
+              </ul></div>
+              <div class="sol"><div class="h">Sanctward 解法</div><ul>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>Platform Admin 建立 30+ 租戶</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>五層完全隔離，互不干擾</li>
+                <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>一個介面管理所有客戶、品牌化入口</li>
+              </ul></div>
+            </div>
+            <div class="cres"><div><b>30+</b><span>租戶單平台管理</span></div><div><b>5 層</b><span>完整架構隔離</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VS LEGACY -->
+<section class="band tight">
+  <div class="container">
+    <div class="shead reveal"><span class="eyebrow">Sanctward vs Legacy</span><h2>把分散的多套產品，換成一套原生整合平台</h2></div>
+    <div class="cmp reveal">
+      <div class="cmp-row cmp-head"><div>關鍵維度</div><div>傳統多套組合</div><div class="c-s">Sanctward</div></div>
+      <div class="cmp-row"><div class="label">管理介面</div><div class="dim">5 個分散介面</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>一個統一介面</div></div>
+      <div class="cmp-row"><div class="label">三年總成本 TCO</div><div class="dim">基準高，需整合多家</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>約 1/3 · 單一品牌</div></div>
+      <div class="cmp-row"><div class="label">部署週期</div><div class="dim">3–6 個月</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>2 週–1 個月</div></div>
+      <div class="cmp-row"><div class="label">資料主權</div><div class="dim">資料在 SaaS 雲端</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>完全 On-Premises</div></div>
+      <div class="cmp-row"><div class="label">多租戶</div><div class="dim">需自行整合套裝</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>原生多租戶平台</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-in reveal">
+      <h2>看 Sanctward 如何在你的環境落地</h2>
+      <p>30 分鐘線上 Demo，依你的產業與系統環境，示範身份、零信任、特權存取的整合運作。</p>
+      <div class="hs-cta">
+        <a class="btn btn-primary btn-lg" href="#">預約 Demo</a>
+        <a class="btn btn-ghost btn-lg" href="#">下載產品總覽</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-lockup"><canvas class="logo-gl" aria-hidden="true"></canvas><img src="assets/wordmark-black.svg" alt="SANCTWARD"></div>
+        <p>森沃科技股份有限公司 · SANCTWARD CO., LTD.<br>AI 時代的企業信任作業系統。</p>
+      </div>
+      <div class="foot-col"><h4>平台</h4><a href="#">IAM / SSO</a><a href="#">特權存取 PAM</a><a href="#">零信任 ZTA</a><a href="#">端點艦隊</a><a href="#">合規稽核</a></div>
+      <div class="foot-col"><h4>資源</h4><a href="#">應用案例</a><a href="#">產品總覽</a><a href="#">課程與培訓</a><a href="#">技術文件</a></div>
+      <div class="foot-col"><h4>公司</h4><a href="#">關於我們</a><a href="#">預約 Demo</a><a href="#">聯絡我們</a><a href="#">隱私權政策</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 森沃科技股份有限公司 SANCTWARD CO., LTD. 版權所有</span><span>台灣 · 日本 · 北美</span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+const mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+mb.addEventListener('click',()=>mm.classList.toggle('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// hero carousel (horizontal slide)
+const track=document.getElementById('track');
+const hdots=[...document.querySelectorAll('#heroDots button')];
+let hi=0,htimer;const HN=hdots.length;
+function hgo(i){hi=(i+HN)%HN;track.style.transform='translateX(-'+(hi*100)+'%)';hdots.forEach((d,k)=>d.classList.toggle('on',k===hi));}
+function hauto(){htimer=setInterval(()=>hgo(hi+1),6000);}
+hdots.forEach((d,i)=>d.addEventListener('click',()=>{clearInterval(htimer);hgo(i);hauto();}));
+hauto();
+const heroEl=document.querySelector('.hero');
+heroEl.addEventListener('mouseenter',()=>clearInterval(htimer));
+heroEl.addEventListener('mouseleave',hauto);
+
+// platform tabs
+const ptabs=[...document.querySelectorAll('#ptabs .tab')];
+const panes=[...document.querySelectorAll('#ppanel .pane')];
+let pi=0,ptimer;
+function setP(i){pi=(i+ptabs.length)%ptabs.length;ptabs.forEach((x,k)=>x.classList.toggle('on',k===pi));panes.forEach((x,k)=>x.classList.toggle('on',k===pi));}
+function pauto(){ptimer=setInterval(()=>setP(pi+1),3800);}
+ptabs.forEach(t=>t.addEventListener('click',()=>{clearInterval(ptimer);setP(+t.dataset.p);pauto();}));
+pauto();
+var platEl=document.getElementById('platform');
+platEl.addEventListener('mouseenter',()=>clearInterval(ptimer));
+platEl.addEventListener('mouseleave',pauto);
+
+// cases tabs
+const ctabs=[...document.querySelectorAll('#ctabs .ctab')];
+const cpanes=[...document.querySelectorAll('#cpanes .cpane')];
+ctabs.forEach(t=>t.addEventListener('click',()=>{const i=+t.dataset.c;ctabs.forEach(x=>x.classList.remove('on'));cpanes.forEach(x=>x.classList.remove('on'));t.classList.add('on');cpanes[i].classList.add('on')}));
+
+// differentiators carousel
+const dtrack=document.getElementById('dtrack');
+const ddots=[...document.querySelectorAll('#ddots button')];
+let di=0,dtimer;const DN=ddots.length;
+function dgo(i){di=(i+DN)%DN;dtrack.style.transform='translateX(-'+(di*100)+'%)';ddots.forEach((d,k)=>d.classList.toggle('on',k===di))}
+function dauto(){dtimer=setInterval(()=>dgo(di+1),7000)}
+ddots.forEach((d,i)=>d.addEventListener('click',()=>{clearInterval(dtimer);dgo(i);dauto()}));
+document.getElementById('dprev').addEventListener('click',()=>{clearInterval(dtimer);dgo(di-1);dauto()});
+document.getElementById('dnext').addEventListener('click',()=>{clearInterval(dtimer);dgo(di+1);dauto()});
+dauto();
+const diffEl=document.getElementById('diff');
+diffEl.addEventListener('mouseenter',()=>clearInterval(dtimer));
+diffEl.addEventListener('mouseleave',dauto);
+
+// trust ring count-up
+const ring=document.getElementById('ring'),num=document.getElementById('scoreNum');
+let st=false;
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!st){st=true;let v=0;const t=setInterval(()=>{v+=2;if(v>=92){v=92;clearInterval(t)}ring.style.setProperty('--v',v);num.innerHTML=v+'<small>/100</small>'},18)}}),{threshold:.5}).observe(ring);
+
+// animated green node network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');
+let NW,NH,pts;
+function nsize(){const d=Math.min(devicePixelRatio||1,2);NW=innerWidth;NH=innerHeight;cv.width=NW*d;cv.height=NH*d;cx.setTransform(d,0,0,d,0,0)}
+function ninit(){nsize();const n=Math.min(90,Math.round(NW*NH/16000));pts=[];for(let i=0;i<n;i++)pts.push({x:Math.random()*NW,y:Math.random()*NH,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2.4+1})}
+const LINK=150;
+function nstep(){cx.clearRect(0,0,NW,NH);
+ for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<-20)p.x=NW+20;if(p.x>NW+20)p.x=-20;if(p.y<-20)p.y=NH+20;if(p.y>NH+20)p.y=-20;}
+ for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);if(d<LINK){cx.strokeStyle='rgba(45,162,63,'+(.16*(1-d/LINK))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+ for(const p of pts){cx.beginPath();cx.fillStyle='rgba(45,162,63,.5)';cx.arc(p.x,p.y,p.r,0,6.2832);cx.fill()}
+ requestAnimationFrame(nstep)}
+addEventListener('resize',ninit);ninit();nstep();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+ if(!window.THREE){return;}
+ var SUBS=["M264.00 8.00 C282.67 7.33 323.11 7.33 338.67 8.00 C354.22 8.67 354.22 11.33 357.33 12.00 C352.89 13.33 338.67 16.89 330.67 20.00 C322.67 23.11 317.56 25.78 309.33 30.67 C301.11 35.56 291.33 40.89 281.33 49.33 C271.33 57.78 258.22 70.22 249.33 81.33 C240.44 92.44 232.89 106.89 228.00 116.00 C223.11 125.11 222.44 128.00 220.00 136.00 C217.56 144.00 214.67 150.67 213.33 164.00 C212.00 177.33 210.89 201.56 212.00 216.00 C213.11 230.44 216.67 240.67 220.00 250.67 C223.33 260.67 230.00 270.89 232.00 276.00 C234.00 281.11 235.11 276.00 232.00 281.33 C228.89 286.67 218.89 299.11 213.33 308.00 C207.78 316.89 201.11 328.89 198.67 334.67 C196.22 340.44 196.44 338.67 198.67 342.67 C200.89 346.67 209.56 354.44 212.00 358.67 C214.44 362.89 218.89 357.33 213.33 368.00 C207.78 378.67 184.44 413.56 178.67 422.67 C177.56 422.67 180.22 425.33 172.00 422.67 C163.78 420.00 142.22 412.44 129.33 406.67 C116.44 400.89 104.00 393.78 94.67 388.00 C85.33 382.22 80.44 378.22 73.33 372.00 C66.22 365.78 58.44 358.22 52.00 350.67 C45.56 343.11 39.78 335.11 34.67 326.67 C29.56 318.22 25.56 312.44 21.33 300.00 C17.11 287.56 11.56 266.89 9.33 252.00 C7.11 237.11 7.33 223.11 8.00 210.67 C8.67 198.22 10.00 189.78 13.33 177.33 C16.67 164.89 22.89 147.33 28.00 136.00 C33.11 124.67 38.67 116.67 44.00 109.33 C49.33 102.00 57.33 94.89 60.00 92.00 C60.00 91.56 60.00 89.78 60.00 89.33 C65.33 84.67 80.00 69.78 92.00 61.33 C104.00 52.89 118.00 45.11 132.00 38.67 C146.00 32.22 160.22 27.11 176.00 22.67 C191.78 18.22 212.00 14.44 226.67 12.00 C241.33 9.56 245.33 8.67 264.00 8.00 Z", "M388.00 26.67 C403.78 25.33 428.00 25.78 444.00 28.00 C460.00 30.22 470.67 34.00 484.00 40.00 C497.33 46.00 511.78 54.44 524.00 64.00 C536.22 73.56 548.00 85.78 557.33 97.33 C566.67 108.89 574.67 123.11 580.00 133.33 C585.33 143.56 586.89 150.44 589.33 158.67 C591.78 166.89 593.56 171.11 594.67 182.67 C595.78 194.22 596.44 216.44 596.00 228.00 C595.56 239.56 594.00 244.00 592.00 252.00 C590.00 260.00 587.11 268.44 584.00 276.00 C580.89 283.56 577.33 290.67 573.33 297.33 C569.33 304.00 565.78 309.33 560.00 316.00 C554.22 322.67 546.44 330.89 538.67 337.33 C530.89 343.78 522.00 349.78 513.33 354.67 C504.67 359.56 497.11 363.33 486.67 366.67 C476.22 370.00 462.89 373.33 450.67 374.67 C438.44 376.00 424.44 375.56 413.33 374.67 C402.22 373.78 388.89 370.22 384.00 369.33 C383.11 370.00 379.78 371.78 378.67 373.33 C377.56 374.89 381.56 372.22 377.33 378.67 C373.11 385.11 357.56 405.56 353.33 412.00 C349.11 418.44 356.89 410.00 352.00 417.33 C347.11 424.67 328.67 449.56 324.00 456.00 C321.78 456.00 314.44 456.89 310.67 456.00 C306.89 455.11 305.11 451.33 301.33 450.67 C297.56 450.00 290.22 451.78 288.00 452.00 C286.67 454.00 281.11 457.78 280.00 464.00 C278.89 470.22 281.78 483.78 281.33 489.33 C280.89 494.89 279.33 495.11 277.33 497.33 C275.33 499.56 273.56 500.89 269.33 502.67 C265.11 504.44 254.89 507.11 252.00 508.00 C251.33 509.33 248.44 513.11 248.00 516.00 C247.56 518.89 247.11 518.89 249.33 525.33 C251.56 531.78 259.56 546.22 261.33 554.67 C263.11 563.11 262.00 570.67 260.00 576.00 C258.00 581.33 254.44 584.22 249.33 586.67 C244.22 589.11 234.67 589.11 229.33 590.67 C224.00 592.22 220.89 593.33 217.33 596.00 C213.78 598.67 209.78 601.33 208.00 606.67 C206.22 612.00 206.44 622.89 206.67 628.00 C206.89 633.11 208.89 631.56 209.33 637.33 C209.78 643.11 210.89 654.89 209.33 662.67 C207.78 670.44 203.11 679.11 200.00 684.00 C196.89 688.89 196.00 689.56 190.67 692.00 C185.33 694.44 182.89 695.11 168.00 698.67 C153.11 702.22 114.22 711.11 101.33 713.33 C88.44 715.56 92.44 712.22 90.67 712.00 C90.00 710.89 87.56 708.00 86.67 705.33 C85.78 702.67 48.67 754.89 85.33 696.00 C122.00 637.11 269.78 410.89 306.67 352.00 C343.56 293.11 306.67 344.22 306.67 342.67 C305.56 341.56 301.11 337.11 300.00 336.00 C298.44 336.00 292.22 336.00 290.67 336.00 C289.56 337.11 286.00 339.56 284.00 342.67 C282.00 345.78 295.78 328.00 278.67 354.67 C261.56 381.33 197.78 477.11 181.33 502.67 C164.89 528.22 181.56 505.56 180.00 508.00 C178.44 510.44 174.67 513.11 172.00 517.33 C169.33 521.56 167.11 528.44 164.00 533.33 C160.89 538.22 155.33 543.56 153.33 546.67 C151.33 549.78 154.00 548.89 152.00 552.00 C150.00 555.11 143.33 562.22 141.33 565.33 C139.33 568.44 142.00 567.56 140.00 570.67 C138.00 573.78 131.33 580.89 129.33 584.00 C127.33 587.11 130.00 586.22 128.00 589.33 C126.00 592.44 119.33 599.56 117.33 602.67 C115.33 605.78 118.00 604.89 116.00 608.00 C114.00 611.11 107.33 618.22 105.33 621.33 C103.33 624.44 105.56 624.22 104.00 626.67 C102.44 629.11 100.44 629.11 96.00 636.00 C91.56 642.89 80.89 662.44 77.33 668.00 C73.78 673.56 75.11 669.11 74.67 669.33 C74.44 668.89 74.89 671.11 73.33 666.67 C71.78 662.22 66.67 646.67 65.33 642.67 C95.11 596.44 214.22 412.67 244.00 365.33 C273.78 318.00 244.00 359.78 244.00 358.67 C240.67 355.56 227.33 343.11 224.00 340.00 C224.00 339.56 218.22 346.67 224.00 337.33 C229.78 328.00 252.89 293.78 258.67 284.00 C264.44 274.22 259.78 281.33 258.67 278.67 C257.56 276.00 255.11 275.11 252.00 268.00 C248.89 260.89 242.89 247.11 240.00 236.00 C237.11 224.89 235.11 213.56 234.67 201.33 C234.22 189.11 235.11 174.89 237.33 162.67 C239.56 150.44 242.67 139.56 248.00 128.00 C253.33 116.44 260.22 104.44 269.33 93.33 C278.44 82.22 294.44 68.44 302.67 61.33 C310.89 54.22 310.89 54.89 318.67 50.67 C326.44 46.44 337.78 40.00 349.33 36.00 C360.89 32.00 372.22 28.00 388.00 26.67 Z", "M448.00 86.67 C442.44 87.11 439.56 87.78 434.67 90.67 C429.78 93.56 422.67 98.89 418.67 104.00 C414.67 109.11 412.00 115.11 410.67 121.33 C409.33 127.56 409.11 134.89 410.67 141.33 C412.22 147.78 416.22 155.11 420.00 160.00 C423.78 164.89 429.33 168.22 433.33 170.67 C437.33 173.11 438.44 174.00 444.00 174.67 C449.56 175.33 460.22 176.00 466.67 174.67 C473.11 173.33 478.22 170.00 482.67 166.67 C487.11 163.33 490.67 158.89 493.33 154.67 C496.00 150.44 497.78 146.89 498.67 141.33 C499.56 135.78 499.78 127.11 498.67 121.33 C497.56 115.56 494.67 110.89 492.00 106.67 C489.33 102.44 486.67 99.11 482.67 96.00 C478.67 92.89 473.78 89.56 468.00 88.00 C462.22 86.44 453.56 86.22 448.00 86.67 Z", "M525.33 373.33 C531.11 371.33 526.89 370.44 532.00 374.67 C537.11 378.89 548.44 389.11 556.00 398.67 C563.56 408.22 571.33 420.44 577.33 432.00 C583.33 443.56 588.44 454.44 592.00 468.00 C595.56 481.56 598.00 498.00 598.67 513.33 C599.33 528.67 598.89 543.78 596.00 560.00 C593.11 576.22 587.11 596.22 581.33 610.67 C575.56 625.11 570.22 634.67 561.33 646.67 C552.44 658.67 538.22 673.33 528.00 682.67 C517.78 692.00 511.56 696.00 500.00 702.67 C488.44 709.33 473.33 717.11 458.67 722.67 C444.00 728.22 426.67 732.67 412.00 736.00 C397.33 739.33 384.00 741.11 370.67 742.67 C357.33 744.22 351.78 745.11 332.00 745.33 C312.22 745.56 272.44 745.11 252.00 744.00 C231.56 742.89 225.78 741.78 209.33 738.67 C192.89 735.56 162.67 727.56 153.33 725.33 C153.56 724.89 154.44 723.11 154.67 722.67 C163.56 720.67 197.78 713.78 208.00 710.67 C218.22 707.56 204.00 723.33 216.00 704.00 C228.00 684.67 268.00 614.44 280.00 594.67 C292.00 574.89 284.67 587.78 288.00 585.33 C291.33 582.89 294.44 580.89 300.00 580.00 C305.56 579.11 314.22 580.89 321.33 580.00 C328.44 579.11 336.44 576.89 342.67 574.67 C348.89 572.44 354.22 569.56 358.67 566.67 C363.11 563.78 365.78 562.67 369.33 557.33 C372.89 552.00 378.22 543.11 380.00 534.67 C381.78 526.22 380.89 513.78 380.00 506.67 C379.11 499.56 377.33 496.89 374.67 492.00 C372.00 487.11 367.78 481.56 364.00 477.33 C360.22 473.11 354.22 469.33 352.00 466.67 C349.78 464.00 350.89 462.22 350.67 461.33 C358.00 450.22 387.33 405.78 394.67 394.67 C406.89 394.67 450.89 396.00 468.00 394.67 C485.11 393.33 487.78 390.22 497.33 386.67 C506.89 383.11 519.56 375.33 525.33 373.33 Z", "M14.67 486.67 C35.78 486.00 114.67 487.78 134.67 488.00 C133.78 490.00 137.11 487.78 129.33 500.00 C121.56 512.22 95.11 550.22 88.00 561.33 C80.89 572.44 91.78 558.89 86.67 566.67 C81.56 574.44 63.78 598.00 57.33 608.00 C50.89 618.00 49.56 623.56 48.00 626.67 C47.11 626.22 46.44 630.00 42.67 624.00 C38.89 618.00 30.44 603.56 25.33 590.67 C20.22 577.78 14.89 558.67 12.00 546.67 C9.11 534.67 8.67 527.78 8.00 518.67 C7.33 509.56 8.00 496.44 8.00 492.00 C9.11 491.11 -6.44 487.33 14.67 486.67 Z"];
+ function parse(sp){
+  var sh=new THREE.Shape();var toks=sp.match(/[MCZ]|-?\d*\.?\d+/g);if(!toks)return sh;var i=0;
+  while(i<toks.length){var t=toks[i];
+   if(t==='M'){i++;var x=+toks[i++],y=+toks[i++];sh.moveTo(x,y);}
+   else if(t==='C'){i++;}
+   else if(t==='Z'){i++;sh.closePath();}
+   else{var x1=+toks[i++],y1=+toks[i++],x2=+toks[i++],y2=+toks[i++],ex=+toks[i++],ey=+toks[i++];sh.bezierCurveTo(x1,y1,x2,y2,ex,ey);}
+  }
+  return sh;
+ }
+ var EX={depth:78,bevelEnabled:true,bevelThickness:8,bevelSize:6,bevelSegments:2,steps:1};
+ function build(canvas){
+  var r=canvas.getBoundingClientRect();var W=r.width||38,H=r.height||46;
+  var rnd=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  rnd.setPixelRatio(Math.min(window.devicePixelRatio||1,2));rnd.setSize(W,H,false);
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(30,W/H,1,5000);
+  scene.add(new THREE.AmbientLight(0xffffff,0.82));
+  var L=new THREE.DirectionalLight(0xffffff,0.9);L.position.set(220,520,720);scene.add(L);
+  var L2=new THREE.DirectionalLight(0xffffff,0.32);L2.position.set(-320,-120,360);scene.add(L2);
+  var green=new THREE.MeshStandardMaterial({color:0x2da23f,metalness:0.25,roughness:0.45,side:THREE.DoubleSide});
+  var white=new THREE.MeshStandardMaterial({color:0xffffff,metalness:0.1,roughness:0.55,side:THREE.DoubleSide});
+  var mg=new THREE.Group();
+  var SP=[0,3,4];
+  for(var k=0;k<SP.length;k++){mg.add(new THREE.Mesh(new THREE.ExtrudeGeometry(parse(SUBS[SP[k]]),EX),green));}
+  var key=parse(SUBS[1]);key.holes.push(parse(SUBS[2]));
+  var kgeo=new THREE.ExtrudeGeometry(key,EX);
+  var km=new THREE.Mesh(kgeo,white);
+  var kedge=new THREE.LineSegments(new THREE.EdgesGeometry(kgeo,34),new THREE.LineBasicMaterial({color:0x808a84}));
+  km.add(kedge);
+  mg.add(km);
+  mg.scale.y=-1;
+  var pivot=new THREE.Group();pivot.add(mg);scene.add(pivot);
+  var box=new THREE.Box3().setFromObject(mg);var c=box.getCenter(new THREE.Vector3());var sz=box.getSize(new THREE.Vector3());
+  mg.position.sub(c);
+  var maxd=Math.max(sz.x,sz.y)*1.1;
+  cam.position.set(0,0,(maxd/2)/Math.tan(THREE.MathUtils.degToRad(15)));
+  pivot.rotation.x=-0.12;
+  var t=0;
+  (function loop(){requestAnimationFrame(loop);t+=0.011;pivot.rotation.y=t;rnd.render(scene,cam);})();
+ }
+ document.querySelectorAll('canvas.logo-gl').forEach(build);
+})();
+</script>
+</body>
+</html>
