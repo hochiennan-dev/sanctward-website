@@ -15,3 +15,8 @@ dist/
 # 暫存 / 除錯素材
 prototype/assets/debug.*
 prototype/assets/logo_test.png
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
