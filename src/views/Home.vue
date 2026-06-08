@@ -110,6 +110,22 @@
   </div>
 </section>
 
+<!-- UTP-Ai -->
+<section class="utp">
+  <div class="utp-inner reveal">
+    <span class="utp-label">UTP-Ai</span>
+    <p class="utp-expand">Unified Trust Platform driven by AI</p>
+    <h2 class="utp-h">{{ $t('utpHeading') }}</h2>
+    <p class="utp-intro">{{ $t('utpIntro') }}</p>
+    <div class="utp-grid">
+      <div class="utp-col"><span class="utp-c-k">Unified</span><h3>{{ $t('utpU_h') }}</h3><p>{{ $t('utpU_p') }}</p></div>
+      <div class="utp-col"><span class="utp-c-k">Trust</span><h3>{{ $t('utpT_h') }}</h3><p>{{ $t('utpT_p') }}</p></div>
+      <div class="utp-col accent"><span class="utp-c-k">driven by AI</span><h3>{{ $t('utpAi_h') }}</h3><p>{{ $t('utpAi_p') }}</p></div>
+    </div>
+    <p class="utp-spirit"><b>Driven by AI</b>{{ $t('utpSpirit') }}</p>
+  </div>
+</section>
+
 <!-- TRUST STRIP -->
 <section class="trust">
   <div class="container trust-in">
@@ -275,8 +291,7 @@
       <h2 style="margin-top:16px">{{ $t('k115') }}</h2>
       <p>{{ $t('k116') }}</p>
     </div>
-    <div class="dcar reveal">
-      <div class="dcar-vp"><div class="dcar-track" id="dtrack">
+    <div class="dstack reveal">
 
         <!-- Slide 1: Shadow AI -->
         <div class="dslide">
@@ -334,13 +349,13 @@
             <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
             <h3>{{ $t('k123') }}</h3>
             <p class="lead">{{ $t('k124') }}</p>
-            <p class="body">{{ $t('k125') }}</p>
+            <p class="body">{{ $t('k125') }}</p><div class="edu"><div class="edu-item"><span class="edu-h">{{ $t('eduWhy') }}</span><p>{{ $t('d1why') }}</p></div><div class="edu-item"><span class="edu-h">{{ $t('eduHow') }}</span><p>{{ $t('d1how') }}</p></div></div>
             <div class="metric"><b>94%</b><span>{{ $t('k126') }}<br>{{ $t('k127') }}</span></div>
           </div>
         </div>
 
         <!-- Slide 2: Agent Passport -->
-        <div class="dslide">
+        <div class="dslide rev">
           <div class="dillu-wrap">
             <svg class="dillu" viewBox="0 0 560 320" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
  <defs>
@@ -382,7 +397,7 @@
             <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
             <h3>AI Agent Passport</h3>
             <p class="lead">{{ $t('k134') }}</p>
-            <p class="body">{{ $t('k135') }}</p>
+            <p class="body">{{ $t('k135') }}</p><div class="edu"><div class="edu-item"><span class="edu-h">{{ $t('eduWhy') }}</span><p>{{ $t('d2why') }}</p></div><div class="edu-item"><span class="edu-h">{{ $t('eduHow') }}</span><p>{{ $t('d2how') }}</p></div></div>
             <div class="metric"><b>47→0</b><span>{{ $t('k136') }}<br>{{ $t('k137') }}</span></div>
           </div>
         </div>
@@ -416,19 +431,11 @@
             <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
             <h3>Session Intelligence</h3>
             <p class="lead">{{ $t('k139') }}</p>
-            <p class="body">{{ $t('k140') }}</p>
+            <p class="body">{{ $t('k140') }}</p><div class="edu"><div class="edu-item"><span class="edu-h">{{ $t('eduWhy') }}</span><p>{{ $t('d3why') }}</p></div><div class="edu-item"><span class="edu-h">{{ $t('eduHow') }}</span><p>{{ $t('d3how') }}</p></div></div>
             <div class="metric"><b>{{ $t('k141') }}</b><span>{{ $t('k142') }}<br>{{ $t('k143') }}</span></div>
           </div>
         </div>
 
-      </div></div>
-      <div class="dcar-foot">
-        <div class="dcar-dots" id="ddots"><button class="on"></button><button></button><button></button></div>
-        <div class="dcar-nav">
-          <button id="dprev" :aria-label="$t('k322')"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-          <button id="dnext" :aria-label="$t('k323')"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -508,20 +515,6 @@ onMounted(() => {
   platEl.addEventListener('mouseleave', pauto)
   cleanups.push(() => clearInterval(ptimer))
 
-
-  // differentiators carousel
-  const dtrack = document.getElementById('dtrack')
-  const ddots = [...document.querySelectorAll('#ddots button')]
-  let di = 0; const DN = ddots.length
-  const dgo = (i) => { di = (i + DN) % DN; dtrack.style.transform = 'translateX(-' + (di * 100) + '%)'; ddots.forEach((d, k) => d.classList.toggle('on', k === di)) }
-  const dauto = () => { dtimer = setInterval(() => dgo(di + 1), 7000) }
-  ddots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(dtimer); dgo(i); dauto() }))
-  document.getElementById('dprev').addEventListener('click', () => { clearInterval(dtimer); dgo(di - 1); dauto() })
-  document.getElementById('dnext').addEventListener('click', () => { clearInterval(dtimer); dgo(di + 1); dauto() })
-  dauto()
-  const diffEl = document.getElementById('diff')
-  diffEl.addEventListener('mouseenter', () => clearInterval(dtimer))
-  diffEl.addEventListener('mouseleave', dauto)
 
   // trust ring count-up
   const ring = document.getElementById('ring'), num = document.getElementById('scoreNum')
