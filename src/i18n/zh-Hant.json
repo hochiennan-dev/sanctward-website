@@ -437,5 +437,13 @@
   "pfd_events": "稽核事件",
   "pfd_adapter": "合規適配器",
   "pfd_pack": "證據包",
-  "comingSoon": "即將推出"
+  "comingSoon": "即將推出",
+  "pf_iam_mfa": "免費內建 MFA（TOTP 兩步驟驗證），帳號數不限、不額外收費——即使密碼外洩，攻擊者沒有第二因素也無法登入。",
+  "eduIdpH": "內建 IdP 運作原理",
+  "pf_idp_how": "Sanctward 內建完整的 OIDC 身份提供者（IdP）：對外發布標準 OIDC Discovery Endpoint，其他應用只要填入 Discovery URL 與 Client ID／Secret，即可把登入交給 Sanctward，使其成為全公司的單一登入中心。支援 authorization_code、client_credentials（M2M）、refresh_token 流程，JWT 以 RS256／ES256 簽章，可分別設定 ID／Access／Refresh Token 效期、注入自訂 Claims，並以多組 Redirect URI、IP 白名單與速率限制防止濫用。",
+  "eduMfaH": "整合第三方 MFA（OIDC）",
+  "pf_mfa_oidc": "除了自帶 MFA，Sanctward 也能反向作為 SP 串接外部身份來源：透過認證閘道器接上任何標準 OIDC／SAML／LDAP，甚至以 RADIUS-over-OIDC 把既有的 RADIUS 類 MFA（硬體 Token、推播驗證）納入同一條登入流程。設定時自動解析對方的 Discovery URL、一鍵複製 Callback URL，並提供 pass／warn／fail 連線測試即時驗證整合是否成功。",
+  "pfd_idp_apps": "應用以 OIDC 登入 →",
+  "pfd_idp_ext": "← 串接外部 OIDC／RADIUS MFA",
+  "pfd_idp_mfa": "內建 MFA · TOTP"
 }

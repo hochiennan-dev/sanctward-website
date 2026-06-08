@@ -437,5 +437,13 @@
   "pfd_events": "Audit events",
   "pfd_adapter": "Adapter",
   "pfd_pack": "Evidence",
-  "comingSoon": "Coming soon"
+  "comingSoon": "Coming soon",
+  "pf_iam_mfa": "Free built-in MFA (TOTP two-factor), unlimited accounts at no extra cost—even if a password leaks, an attacker without the second factor can't sign in.",
+  "eduIdpH": "How the built-in IdP works",
+  "pf_idp_how": "Sanctward ships a complete OIDC Identity Provider: it publishes a standard OIDC Discovery endpoint, so any app can hand login to Sanctward just by entering the Discovery URL plus a Client ID/Secret—making Sanctward the company's single sign-on hub. It supports authorization_code, client_credentials (M2M) and refresh_token flows, signs JWTs with RS256/ES256, lets you set ID/Access/Refresh token TTLs and inject custom claims, and guards against abuse with multiple redirect URIs, IP allowlists and rate limits.",
+  "eduMfaH": "Integrating third-party MFA (OIDC)",
+  "pf_mfa_oidc": "Beyond its own MFA, Sanctward can act as a Service Provider against external identity sources: through auth gateways it connects to any standard OIDC/SAML/LDAP—and via RADIUS-over-OIDC it folds existing RADIUS-based MFA (hardware tokens, push approval) into one login flow. Setup auto-parses the provider's Discovery URL, gives a one-click Callback URL, and offers pass/warn/fail connection tests to verify the integration instantly.",
+  "pfd_idp_apps": "Apps sign in via OIDC →",
+  "pfd_idp_ext": "← External OIDC / RADIUS MFA",
+  "pfd_idp_mfa": "Built-in MFA · TOTP"
 }
