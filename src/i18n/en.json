@@ -385,7 +385,7 @@
   "utpT_p": "Zero trust by default: trust no preset environment—every connection is scored in real time and continuously verified to allow, step up, or block.",
   "utpAi_h": "Driven by AI",
   "utpAi_p": "AI is the engine that binds it all together—and the core spirit: it reads four signals at once (identity, behavior, in-app content and data flow), seeing what people do, what AI agents do behind the scenes, and where data is going. This ever-richer signal dataset is a moat no one can replicate.",
-  "utpSpirit": " isn't a tagline—it's the design starting point of the whole architecture: AI is the engine that makes 'unified' and 'trust' actually work.",
+  "utpSpirit": " is a starting point — the whole architecture is designed to be the engine that makes 'unified' and 'trust' real",
   "d1why": "Of all the data employees paste into public AI, source code leaks the most; once it enters a public model it may train future versions—handing over trade secrets and IP. And it happens at the 'browser and clipboard' layer, where traditional network or endpoint tools often can't see or stop it.",
   "d1how": "Real control needs 'two hands': an endpoint agent that sees the clipboard and which LLM the browser reaches, and an enterprise Gateway as a traffic choke point that inspects and blocks content before it reaches an external LLM—while offering an approved enterprise-LLM path. Interlocked, they let you both see and control.",
   "d2why": "MCP, function-calling and autonomous workflows mean companies will soon have 'more AI agents than employees.' Without an owner, permission boundary or audit trail, these non-human identities are unaccountable ghosts—if abused or hijacked, no one notices and no one is responsible.",
