@@ -1,0 +1,10 @@
+{
+  // Cloudflare Worker（純靜態資產）設定 — 服務 Vite 建置後的 dist/
+  "name": "sanctward-website",
+  "compatibility_date": "2026-06-08",
+  "assets": {
+    "directory": "./dist",
+    // SPA 路由：找不到的路徑都回 index.html（取代 _redirects）
+    "not_found_handling": "single-page-application"
+  }
+}
