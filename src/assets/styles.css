@@ -330,3 +330,36 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
   .c2{grid-template-columns:1fr}.cmp-row{grid-template-columns:1fr}.cmp-row>div{padding:12px 18px}
   .mband{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.cta-in{padding:34px 22px}
 }
+
+
+/* ---- About / Contact pages ---- */
+.page-hero{padding:84px 0 26px;text-align:center}
+.page-hero .eyebrow{justify-content:center}
+.page-hero h1{font-size:44px;margin:16px 0 16px;line-height:1.16}
+.page-hero p{font-size:18px;color:var(--ink-2);max-width:700px;margin:0 auto}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cap5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.val-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:.25s}
+.val-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 20px 40px -30px rgba(16,40,24,.4)}
+.val-card .vi{width:46px;height:46px;border-radius:13px;background:var(--brand-soft);color:var(--brand-ink);display:grid;place-items:center;margin-bottom:15px}
+.val-card .vi .ic{width:23px;height:23px}
+.val-card .k{font-family:'Inter';font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--brand-ink)}
+.val-card h3{font-size:18px;margin:4px 0 8px}
+.val-card p{font-size:14px;color:var(--ink-2);line-height:1.62}
+.cap5 .val-card{padding:20px 18px}
+.cap5 .val-card h3{font-size:16px}
+.cap5 .val-card p{font-size:12.5px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+.cinfo .ci-row{display:flex;gap:14px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}
+.cinfo .ci-row:first-child{padding-top:0}
+.cinfo .ci-row .ic{width:21px;height:21px;color:var(--brand);margin-top:2px;flex:none}
+.cinfo .ci-row b{display:block;font-size:14.5px;margin-bottom:2px}
+.cinfo .ci-row span{font-size:14px;color:var(--ink-2)}
+.cform{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 24px 48px -36px rgba(16,40,24,.3)}
+.cform label{display:block;font-size:13px;font-weight:600;margin:15px 0 6px;color:var(--ink-1)}
+.cform label:first-of-type{margin-top:0}
+.cform input,.cform textarea{width:100%;border:1px solid var(--line-2);border-radius:10px;padding:12px 13px;font-size:14px;font-family:inherit;background:#fff;color:var(--ink-1);transition:border-color .2s}
+.cform textarea{min-height:120px;resize:vertical}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--brand)}
+.cform .btn{margin-top:20px;width:100%}
+@media(max-width:860px){.val-grid{grid-template-columns:1fr}.cap5{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr;gap:28px}.page-hero h1{font-size:34px}}

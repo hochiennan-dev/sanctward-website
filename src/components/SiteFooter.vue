@@ -8,7 +8,7 @@
       </div>
       <div class="foot-col"><h4>平台</h4><a href="#">IAM / SSO</a><a href="#">特權存取 PAM</a><a href="#">零信任 ZTA</a><a href="#">端點艦隊</a><a href="#">合規稽核</a></div>
       <div class="foot-col"><h4>資源</h4><a href="#">應用案例</a><a href="#">產品總覽</a><a href="#">課程與培訓</a><a href="#">技術文件</a></div>
-      <div class="foot-col"><h4>公司</h4><a href="#">關於我們</a><a href="#">預約 Demo</a><a href="#">聯絡我們</a><a href="#">隱私權政策</a></div>
+      <div class="foot-col"><h4>公司</h4><router-link to="/about">關於我們</router-link><router-link to="/contact">預約 Demo</router-link><router-link to="/contact">聯絡我們</router-link><a href="#">隱私權政策</a></div>
     </div>
     <div class="foot-bottom"><span>© 2026 森沃科技股份有限公司 SANCTWARD CO., LTD. 版權所有</span><span>台灣 · 日本 · 北美</span></div>
   </div>

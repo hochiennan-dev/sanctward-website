@@ -746,7 +746,7 @@
       <h2>看 Sanctward 如何在你的環境落地</h2>
       <p>30 分鐘線上 Demo，依你的產業與系統環境，示範身份、零信任、特權存取的整合運作。</p>
       <div class="hs-cta">
-        <a class="btn btn-primary btn-lg" href="#">預約 Demo</a>
+        <router-link class="btn btn-primary btn-lg" to="/contact">預約 Demo</router-link>
         <a class="btn btn-ghost btn-lg" href="#">下載產品總覽</a>
       </div>
     </div>
