@@ -1,0 +1,756 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "SANCTWARD" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "SANCTWARD" [ref=e7]
+      - navigation [ref=e8]:
+        - link "平台" [ref=e9] [cursor=pointer]:
+          - /url: /#platform
+        - link "解決方案" [ref=e10] [cursor=pointer]:
+          - /url: /#solutions
+        - link "應用案例" [ref=e11] [cursor=pointer]:
+          - /url: /#cases
+        - link "課程" [ref=e12] [cursor=pointer]:
+          - /url: "#"
+        - link "關於我們" [ref=e13] [cursor=pointer]:
+          - /url: /about
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - button "繁" [ref=e16] [cursor=pointer]
+          - generic [ref=e17]: /
+          - button "EN" [ref=e18] [cursor=pointer]
+        - link "預約 Demo" [ref=e19] [cursor=pointer]:
+          - /url: /contact
+  - generic [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: UTP-Ai · Unified Trust Platform driven by AI
+          - heading "AI 時代的 企業信任作業系統" [level=1] [ref=e27]:
+            - text: AI 時代的
+            - text: 企業信任作業系統
+          - paragraph [ref=e28]: 傳統 IAM 只是門禁卡——管「對的人進對的門」。Sanctward 同時是門禁卡、監視器與智慧保全：看得見人在應用裡做什麼、AI Agent 在背後做什麼，以及資料正流向哪裡。
+          - generic [ref=e29]:
+            - link "探索平台" [ref=e30] [cursor=pointer]:
+              - /url: "#platform"
+            - link "預約 Demo" [ref=e31] [cursor=pointer]:
+              - /url: "#contact"
+              - text: 預約 Demo
+              - img [ref=e32]
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - img [ref=e37]
+            - text: ZTA · TRUST SCORE
+          - generic [ref=e43]:
+            - generic [ref=e45]: 92/100
+            - generic [ref=e46]:
+              - text: alice.chen · 連線中
+              - generic [ref=e47]: srv-db-01 · 台北 · TLS 1.3
+              - generic [ref=e48]:
+                - img [ref=e49]
+                - text: 放行 · 信任正常
+          - generic [ref=e51]:
+            - generic [ref=e53]: Geo-IP 連線地理位置
+            - generic [ref=e57]: 行為基線偏差
+            - generic [ref=e61]: 設備姿態 / EDR
+          - generic [ref=e64]:
+            - img [ref=e65]
+            - generic [ref=e67]: ANOMALY DETECTED — 來自東京的 03:14 登入偏離 99% 基線 → 觸發 STEP-UP MFA，分數 −42。
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: Shadow AI 治理 · Roadmap 2026
+          - heading "看得見資料 正流向哪個 LLM" [level=1] [ref=e71]:
+            - text: 看得見資料
+            - text: 正流向哪個 LLM
+          - paragraph [ref=e72]: 工程師用 Copilot、業務用 ChatGPT——Sanctward 是阻擋敏感資料流向外部 LLM 的第一道防線：端點看得到 clipboard，Gateway 收斂 LLM 流量。
+          - generic [ref=e73]:
+            - link "了解 Shadow AI" [ref=e74] [cursor=pointer]:
+              - /url: "#diff"
+            - link "預約 Demo" [ref=e75] [cursor=pointer]:
+              - /url: "#contact"
+              - text: 預約 Demo
+              - img [ref=e76]
+        - generic [ref=e78]:
+          - generic [ref=e80]:
+            - img [ref=e81]
+            - text: CLIPBOARD DLP · LIVE
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - img [ref=e89]
+              - text: 已阻擋貼上 · 偵測到客戶個資
+              - generic [ref=e91]: → chatgpt.com
+            - generic [ref=e92]:
+              - img [ref=e93]
+              - text: 已阻擋貼上 · 信用卡號 (PCI)
+              - generic [ref=e95]: → claude.ai
+            - generic [ref=e96]:
+              - img [ref=e97]
+              - text: 警示 · 大量貼上 4,200 字
+              - generic [ref=e99]: → gemini
+            - generic [ref=e100]:
+              - img [ref=e101]
+              - text: 放行 · 內部知識庫查詢
+              - generic [ref=e103]: → 企業 LLM
+          - generic [ref=e104]:
+            - img [ref=e105]
+            - generic [ref=e107]: 兩隻手兼具：端點看得到、Gateway 管得住——目前市場唯一。
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: Zero Trust · ZTA
+          - heading "每一次連線都有 0–100 信任分數" [level=1] [ref=e111]:
+            - text: 每一次連線都有
+            - text: 0–100 信任分數
+          - paragraph [ref=e112]: 多維度訊號毫秒內加權，動態決定放行、要求 MFA 或直接拒絕——使用者全程無感，分數異常即時降分並強制斷線。
+          - generic [ref=e113]:
+            - link "探索零信任" [ref=e114] [cursor=pointer]:
+              - /url: "#platform"
+            - link "預約 Demo" [ref=e115] [cursor=pointer]:
+              - /url: "#contact"
+              - text: 預約 Demo
+              - img [ref=e116]
+        - generic [ref=e118]:
+          - generic [ref=e120]:
+            - img [ref=e121]
+            - text: BEHAVIORAL BASELINE
+          - generic [ref=e127]:
+            - generic [ref=e129]: 48/100
+            - generic [ref=e130]:
+              - text: 異常登入偵測
+              - generic [ref=e131]: Tokyo/Shibuya · 03:14
+              - generic [ref=e132]:
+                - img [ref=e133]
+                - text: 要求 Step-up MFA
+          - generic [ref=e135]:
+            - generic [ref=e137]: 不可能移動 Impossible Travel
+            - generic [ref=e141]: 非常規時段
+            - generic [ref=e145]: 常用應用 / 地點
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - generic [ref=e150]: Privileged Access · PAM
+          - heading "連得進去，更 看得到在做什麼" [level=1] [ref=e151]:
+            - text: 連得進去，更
+            - text: 看得到在做什麼
+          - paragraph [ref=e152]: Web RDP/SSH/VNC、完整會話錄影、OCR 全文搜尋、JIT 時限存取——維護人員不接觸密碼，到期權限零殘留。
+          - generic [ref=e153]:
+            - link "探索特權存取" [ref=e154] [cursor=pointer]:
+              - /url: "#platform"
+            - link "預約 Demo" [ref=e155] [cursor=pointer]:
+              - /url: "#contact"
+              - text: 預約 Demo
+              - img [ref=e156]
+        - generic [ref=e158]:
+          - generic [ref=e160]:
+            - img [ref=e161]
+            - text: SESSION · OCR 全文搜尋
+          - generic [ref=e167]:
+            - img [ref=e168]
+            - text: DROP TABLE customers
+            - generic [ref=e170]: 3 results · 0.18s
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - text: sess_01HF…X9 · srv-db-01 · contractor.chen
+              - generic [ref=e173]: 2026-04-15 14:32 · psql
+            - generic [ref=e174]:
+              - text: sess_01HG…AA · srv-db-02 · alice.chen
+              - generic [ref=e175]: 2026-05-02 09:11 · psql
+            - generic [ref=e176]:
+              - text: sess_01HJ…QM · srv-app-prod · ops.lee
+              - generic [ref=e177]: 2026-05-19 22:48 · runbook
+    - generic [ref=e178]:
+      - generic [ref=e179]:
+        - button [ref=e180] [cursor=pointer]
+        - button [ref=e181] [cursor=pointer]
+        - button [ref=e182] [cursor=pointer]
+        - button [ref=e183] [cursor=pointer]
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: 50+
+          - text: 多租戶客戶
+        - generic [ref=e187]:
+          - generic [ref=e188]: 1,500
+          - text: 端點實測上線
+        - generic [ref=e189]:
+          - generic [ref=e190]: 1/3
+          - text: 傳統組合 TCO
+  - generic [ref=e192]:
+    - generic [ref=e193]: 為合規而生
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - img [ref=e196]
+        - text: ISO 27001
+      - generic [ref=e198]:
+        - img [ref=e199]
+        - text: SOC 2 Type II
+      - generic [ref=e201]:
+        - img [ref=e202]
+        - text: 金管會遠端維運稽核
+      - generic [ref=e204]:
+        - img [ref=e205]
+        - text: 台灣資通安全管理法
+      - generic [ref=e207]:
+        - img [ref=e208]
+        - text: On-Premises 資料主權
+  - generic [ref=e211]:
+    - generic [ref=e212]:
+      - generic [ref=e213]: Defense in Depth · 縱深防禦
+      - heading "AI驅動 - 安全再進化" [level=2] [ref=e214]
+    - generic [ref=e215]:
+      - generic [ref=e216]:
+        - img [ref=e218]
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e222]: LAYER 01
+            - heading "身份與存取" [level=3] [ref=e223]
+            - generic [ref=e224]: Identity & Access
+          - paragraph [ref=e225]: 確認「來者是誰、可否進入」——以統一身份治理與多因素認證，把每一道入口的鑰匙收歸控管，讓每一次登入都有據可循。
+        - generic:
+          - img
+      - generic [ref=e226]:
+        - img [ref=e228]
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]: LAYER 02
+            - heading "行為可視性" [level=3] [ref=e233]
+            - generic [ref=e234]: Visibility & Audit
+          - paragraph [ref=e235]: 看見「進入之後做了什麼」——全程會話錄影與內容稽核，讓特權操作不再是盲區，事後可回溯、可舉證。
+        - generic:
+          - img
+      - generic [ref=e236]:
+        - img [ref=e238]
+        - generic [ref=e240]:
+          - generic [ref=e241]:
+            - generic [ref=e242]: LAYER 03
+            - heading "即時主動防禦" [level=3] [ref=e243]
+            - generic [ref=e244]: Active Defense
+          - paragraph [ref=e245]: 在「風險發生的當下」出手——以即時信任評分持續驗證，分數異常立即升級驗證、攔截或強制斷線。
+  - generic [ref=e247]:
+    - generic [ref=e248]:
+      - heading "一個平台，五大能力同一條訊號鏈" [level=2] [ref=e249]
+      - paragraph [ref=e250]: 不是五個產品拼裝——身份流入信任、設備影響分數、分數驅動存取、所有操作寫入稽核。自動輪播，亦可點選展開。
+    - generic [ref=e251]:
+      - generic [ref=e252]:
+        - button "IAM / SSO 身份單一登入 聯邦登入、目錄同步、離職即時失效" [ref=e253] [cursor=pointer]:
+          - img [ref=e255]
+          - generic [ref=e257]:
+            - text: IAM / SSO
+            - heading "身份單一登入" [level=4] [ref=e258]
+            - paragraph [ref=e259]: 聯邦登入、目錄同步、離職即時失效
+        - button "PAM 特權遠端存取 Web RDP/SSH、會話錄影、JIT" [ref=e260] [cursor=pointer]:
+          - img [ref=e262]
+          - generic [ref=e264]:
+            - text: PAM
+            - heading "特權遠端存取" [level=4] [ref=e265]
+            - paragraph [ref=e266]: Web RDP/SSH、會話錄影、JIT
+        - button "ZTA 零信任架構 0–100 信任評分、行為基線" [ref=e267] [cursor=pointer]:
+          - img [ref=e269]
+          - generic [ref=e271]:
+            - text: ZTA
+            - heading "零信任架構" [level=4] [ref=e272]
+            - paragraph [ref=e273]: 0–100 信任評分、行為基線
+        - button "Endpoint 端點艦隊管理 設備身份、姿態、生命週期" [ref=e274] [cursor=pointer]:
+          - img [ref=e276]
+          - generic [ref=e278]:
+            - text: Endpoint
+            - heading "端點艦隊管理" [level=4] [ref=e279]
+            - paragraph [ref=e280]: 設備身份、姿態、生命週期
+        - button "Compliance 合規與稽核 WORM、Merkle、報表自動化" [ref=e281] [cursor=pointer]:
+          - img [ref=e283]
+          - generic [ref=e285]:
+            - text: Compliance
+            - heading "合規與稽核" [level=4] [ref=e286]
+            - paragraph [ref=e287]: WORM、Merkle、報表自動化
+      - generic [ref=e289]:
+        - generic [ref=e290]:
+          - heading "身份單一登入 IAM / SSO" [level=3] [ref=e291]
+          - paragraph [ref=e292]: 一次登入存取所有系統，舊系統不用改造也能納管。Sanctward 本身就是完整的 OIDC IdP。
+          - generic [ref=e293]:
+            - generic [ref=e294]:
+              - img [ref=e295]
+              - text: OIDC / SAML 聯邦 + 表單代填 + 反向代理，9 成認證模式皆可納管
+            - generic [ref=e297]:
+              - img [ref=e298]
+              - text: AD / LDAP 雙向同步，離職帳號自動停用、零殘留
+            - generic [ref=e300]:
+              - img [ref=e301]
+              - text: 22+ 內建應用範本，選範本、套用、完成
+        - generic [ref=e303]:
+          - generic [ref=e305]:
+            - img [ref=e306]
+            - text: LAUNCHPAD
+          - generic [ref=e308]:
+            - generic [ref=e309]: SAP
+            - generic [ref=e310]: Git
+            - generic [ref=e311]: QNAP
+            - generic [ref=e312]: OWA
+            - generic [ref=e313]: Zabbix
+            - generic [ref=e314]: pfSense
+            - generic [ref=e315]: DSM
+            - generic [ref=e316]: "+18"
+  - generic [ref=e318]:
+    - generic [ref=e319]:
+      - generic [ref=e320]:
+        - img [ref=e321]
+        - text: Roadmap 2026
+      - heading "三件我們做得到、別人做不到的事" [level=2] [ref=e323]
+      - paragraph [ref=e324]: 我們同時整合身份事件、會話影像、應用內內容與資料流向四種訊號，形成獨家且越用越完整的信任資料集——這正是三大差異化能力的共同根基。
+    - generic [ref=e325]:
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - img [ref=e330]:
+            - generic [ref=e338]: 員工端點
+            - generic [ref=e360]: Sanctward 即時檢查
+            - generic [ref=e366]: 正常放行
+            - generic [ref=e367]: 核可 AI · 全程稽核
+            - generic [ref=e373]: 異常攔截
+            - generic [ref=e374]: 敏感資料 · 不外流
+          - generic [ref=e375]:
+            - generic [ref=e376]:
+              - img [ref=e377]
+              - text: Roadmap 2026
+            - heading "Shadow AI 治理" [level=3] [ref=e379]
+            - paragraph [ref=e380]: 「我們公司過去 7 天，有沒有人把客戶資料貼進 ChatGPT？」
+            - paragraph [ref=e381]: 69% 的組織懷疑員工正在使用未授權的 GenAI 工具，平均一家企業有 14 個 AI 工具在跑，IT 卻只掌握其中 4–5 個。要真正管住 Shadow AI 需要「兩隻手」缺一不可——第一隻手在員工端點，看得到 clipboard、看得到瀏覽器連去哪個 LLM；第二隻手在流量收斂點，強制只能透過企業 Gateway 連到核可的模型。純端點 DLP 能看不能管、純網路 DLP 能管不能看，Sanctward 是目前市場唯一兩隻手兼具的廠商。
+            - generic [ref=e382]:
+              - generic [ref=e383]: 94%
+              - generic [ref=e384]:
+                - text: 某金融客戶外洩行為
+                - text: 3 個月降幅（情境示意）
+        - generic [ref=e385]:
+          - img [ref=e387]:
+            - generic [ref=e395]: AI Agent 進場
+            - generic [ref=e398]: Identity Broker · 核發護照
+            - generic [ref=e416]: "?"
+            - generic [ref=e428]: 已納管 Agent
+            - generic [ref=e429]: 有負責人 · 可稽核
+            - generic [ref=e435]: 幽靈 Agent
+            - generic [ref=e436]: 未納管 · 攔截
+          - generic [ref=e437]:
+            - generic [ref=e438]:
+              - img [ref=e439]
+              - text: Roadmap 2026
+            - heading "AI Agent Passport" [level=3] [ref=e441]
+            - paragraph [ref=e442]: 「我們公司到底有幾個 AI Agent？誰負責？出事找得到人嗎？」
+            - paragraph [ref=e443]: MCP、function-calling、autonomous workflow，讓每家企業內部很快會有「比員工數還多的 AI Agent」。但這些非人類身份多半是幽靈——沒有負責人、沒有權限邊界、沒有稽核軌跡。Sanctward 把每個 AI Agent 當成可治理的「員工」：發給可驗證的身份護照（private_key_jwt / Client Credentials），綁定負責人、限定可存取的系統與資料、全程稽核，異常即時鎖定、可一鍵撤銷。我們搶先定義這個新類別的標準，後進者要追 2–3 年。
+            - generic [ref=e444]:
+              - generic [ref=e445]: 47→0
+              - generic [ref=e446]:
+                - text: 某科技公司幽靈 Agent
+                - text: 1 週納管（情境示意）
+        - generic [ref=e447]:
+          - img [ref=e449]:
+            - generic [ref=e456]: DROP TABLE customers
+            - generic [ref=e457]: 0.18s
+            - generic [ref=e496]: sess_01HF…X9 · srv-db-01
+            - generic [ref=e497]: 0.18 秒定位連線片段 · contractor.chen
+          - generic [ref=e498]:
+            - generic [ref=e499]:
+              - img [ref=e500]
+              - text: Roadmap 2026
+            - heading "Session Intelligence" [level=3] [ref=e502]
+            - paragraph [ref=e503]: 「給我過去 90 天，所有對正式資料庫 schema change 的證據。」
+            - paragraph [ref=e504]: 傳統錄影是「事後翻數小時影片」的負債；Sanctward 把每一段會話錄影變成可搜尋的「Google for actions」。端側錄影、OCR 全文索引、WORM 不可竄改儲存，讓你用一句自然語言就定位到任何操作發生的精確時間點與連線片段。稽核員拿到的不再是一堆原始 log，而是對應條文、附帶證據片段的現成證據包——SOC 2 稽核證據準備從一週縮短到 30 分鐘。
+            - generic [ref=e505]:
+              - generic [ref=e506]: 1 週→30 分
+              - generic [ref=e507]:
+                - text: SOC 2 稽核證據
+                - text: 準備時間（情境示意）
+      - generic [ref=e508]:
+        - generic [ref=e509]:
+          - button [ref=e510] [cursor=pointer]
+          - button [ref=e511] [cursor=pointer]
+          - button [ref=e512] [cursor=pointer]
+        - generic [ref=e513]:
+          - button "上一個" [ref=e514] [cursor=pointer]:
+            - img [ref=e515]
+          - button "下一個" [ref=e517] [cursor=pointer]:
+            - img [ref=e518]
+  - generic [ref=e521]:
+    - generic [ref=e522]:
+      - generic [ref=e523]: Solutions · 解決方案
+      - heading "把舊架構的困境，換成零信任的解法" [level=2] [ref=e524]
+      - paragraph [ref=e525]: 從 VPN、遠端存取到身份與合規——六個最常見的場景，Sanctward 一套平台一次補上。
+    - generic [ref=e526]:
+      - generic [ref=e527]:
+        - generic [ref=e528]:
+          - text: 取代 SSL VPN
+          - heading "從「開放整個內網」到「只開放被授權的應用」" [level=3] [ref=e529]
+          - paragraph [ref=e530]: 傳統 SSL VPN 連上後，等於把整座內網對使用者敞開，而且看不見加密隧道裡究竟發生什麼事——這正是橫向移動與資料外洩最常見的破口。
+          - generic [ref=e531]:
+            - generic [ref=e532]: 困境
+            - generic [ref=e533]:
+              - img [ref=e534]
+              - generic [ref=e536]: 過度信任：連上即可橫向移動到任意內網主機。
+            - generic [ref=e537]:
+              - img [ref=e538]
+              - generic [ref=e540]: 看不見內容：加密隧道內的操作無法即時監控。
+            - generic [ref=e541]:
+              - img [ref=e542]
+              - generic [ref=e544]: 缺端點控管：不檢查設備是否合規就放行，帳密被盜即長驅直入。
+          - generic [ref=e545]:
+            - generic [ref=e546]: Sanctward 解法
+            - generic [ref=e547]:
+              - img [ref=e548]
+              - generic [ref=e550]: 零信任 per-app 授權，後端位置隱藏，沒有「內網」可供橫移。
+            - generic [ref=e551]:
+              - img [ref=e552]
+              - generic [ref=e554]: 每次連線即時信任評分、持續再驗證，異常即降分或強制斷線。
+            - generic [ref=e555]:
+              - img [ref=e556]
+              - generic [ref=e558]: 端點 Agent 檢查設備姿態（OS／加密／EDR）合規才放行。
+            - generic [ref=e559]:
+              - img [ref=e560]
+              - generic [ref=e562]: 連線過程全程錄影存證，並即時建立 OCR 全文索引——事後可用關鍵字秒級回放、定位任何畫面。
+        - img [ref=e564]:
+          - generic [ref=e570]: 使用者
+          - generic [ref=e576]: 信任閘道
+          - generic [ref=e577]: 身份 · 設備姿態 · 信任評分
+          - generic [ref=e581]: 全程錄影存證 · 可搜尋索引
+          - generic [ref=e587]: 已授權應用
+          - generic [ref=e588]: 放行 · 全程錄影存證
+          - generic [ref=e594]: 未授權系統
+          - generic [ref=e595]: 無法橫向移動
+          - generic [ref=e601]: 未授權系統
+          - generic [ref=e602]: 後端位置隱藏
+      - generic [ref=e611]:
+        - generic [ref=e612]:
+          - text: 取代遠端存取軟體 · 強化遠端協定
+          - heading "RDP / VNC / SSH / Telnet，全走一道受控閘道" [level=3] [ref=e613]
+          - paragraph [ref=e614]: 在端點安裝第三方遠端軟體，等於在公司內開了一條 IT 看不到的常駐通道；而直接對外開放遠端連接埠，則是把攻擊面攤在網路上。兩者都讓「誰連進來、做了什麼」變成黑洞。
+          - generic [ref=e615]:
+            - generic [ref=e616]: 困境
+            - generic [ref=e617]:
+              - img [ref=e618]
+              - generic [ref=e620]: 端點常駐通道繞過企業管控，誰連入、做了什麼，看不到也查不到。
+            - generic [ref=e621]:
+              - img [ref=e622]
+              - generic [ref=e624]: 連線碼或帳密一旦外流即遭接管，無錄影、無稽核軌跡。
+            - generic [ref=e625]:
+              - img [ref=e626]
+              - generic [ref=e628]: 對外暴露 RDP／VNC／SSH／Telnet 連接埠，成為直接攻擊入口。
+          - generic [ref=e629]:
+            - generic [ref=e630]: Sanctward 解法
+            - generic [ref=e631]:
+              - img [ref=e632]
+              - generic [ref=e634]: 四種協定全走 Sanctward 閘道，端點免裝第三方軟體、後端埠不對外。
+            - generic [ref=e635]:
+              - img [ref=e636]
+              - generic [ref=e638]: 全程會話錄影 + OCR 全文搜尋 + 指令稽核；受控帳密注入，維護人員不接觸明文密碼。
+            - generic [ref=e639]:
+              - img [ref=e640]
+              - generic [ref=e642]: JIT 時限存取、到期零殘留；剪貼簿 DLP 與檔案傳輸 SHA-256 完整性驗證。
+        - img [ref=e644]:
+          - generic [ref=e645]:
+            - generic [ref=e648]: RDP
+            - generic [ref=e651]: VNC
+            - generic [ref=e654]: SSH
+            - generic [ref=e657]: Telnet
+          - generic [ref=e665]: REC
+          - generic [ref=e668]: Sanctward 閘道
+          - generic [ref=e684]: 後端多台主機 · 不對外
+      - generic [ref=e695]:
+        - generic [ref=e696]:
+          - text: 連線共享 · Session Shadow
+          - heading "同一個畫面，多人共視、即時接管、全程留痕" [level=3] [ref=e697]
+          - paragraph [ref=e698]: 遠端協作、教育訓練、緊急處置與稽核監看，常常需要「看到同一個畫面」。Sanctward 讓管理者即時共享任何進行中的 RDP／VNC／SSH／Telnet 連線畫面，並能由「觀看」無縫切換為「接管」，過程全程錄影並即時產生可搜尋索引。
+          - generic [ref=e699]:
+            - generic [ref=e700]: 困境
+            - generic [ref=e701]:
+              - img [ref=e702]
+              - generic [ref=e704]: 遠端協助時各自連線、無法同畫面協作，出狀況難以即時介入。
+            - generic [ref=e705]:
+              - img [ref=e706]
+              - generic [ref=e708]: 緊急時需資深人員接手，卻無法即時接管同一個連線。
+            - generic [ref=e709]:
+              - img [ref=e710]
+              - generic [ref=e712]: 監看與教學過程沒有紀錄，事後無法回溯、缺乏稽核軌跡。
+          - generic [ref=e713]:
+            - generic [ref=e714]: Sanctward 解法
+            - generic [ref=e715]:
+              - img [ref=e716]
+              - generic [ref=e718]: Multi-Session Shadow：即時觀看任何進行中的連線，多人同時共視同一畫面。
+            - generic [ref=e719]:
+              - img [ref=e720]
+              - generic [ref=e722]: 一鍵由「觀看」切換為「接管」，由授權人員直接操作緊急處置。
+            - generic [ref=e723]:
+              - img [ref=e724]
+              - generic [ref=e726]: 全程錄影 + 即時 OCR 全文索引——誰觀看、誰接管、做了什麼，全部留痕可搜尋。
+        - img [ref=e728]:
+          - generic [ref=e733]: REC · RDP LIVE
+          - generic [ref=e739]: 共享連線畫面
+          - generic [ref=e743]: 稽核
+          - generic [ref=e744]: 監看
+          - generic [ref=e749]: 接管
+          - generic [ref=e750]: Control
+          - generic [ref=e755]: 訓練
+          - generic [ref=e756]: 共視
+          - generic [ref=e770]: 即時 OCR 索引
+          - generic [ref=e773]: 00:12 開啟資料庫
+          - generic [ref=e776]: 00:48 schema change
+          - generic [ref=e779]: 01:20 匯出報表
+          - generic [ref=e780]: 全程留痕 · 可搜尋
+      - generic [ref=e781]:
+        - generic [ref=e782]:
+          - text: 統一身份與 MFA
+          - heading "多帳號、多系統、多種 MFA，收斂成一次登入" [level=3] [ref=e783]
+          - paragraph [ref=e784]: 每套系統各有帳號密碼、各自一套 MFA（甚至完全沒有），管理分散、稽核有盲區，員工離職時帳號更難以一次收回乾淨。
+          - generic [ref=e785]:
+            - generic [ref=e786]: 困境
+            - generic [ref=e787]:
+              - img [ref=e788]
+              - generic [ref=e790]: 帳號分散：員工每套系統各一組帳密，IT 重設與回收耗時又易遺漏。
+            - generic [ref=e791]:
+              - img [ref=e792]
+              - generic [ref=e794]: MFA 不一致：有的 TOTP、有的簡訊、有的全無，體驗差又留風險。
+            - generic [ref=e795]:
+              - img [ref=e796]
+              - generic [ref=e798]: 舊系統不支援 SSO／MFA，長期游離在統一管控之外。
+          - generic [ref=e799]:
+            - generic [ref=e800]: Sanctward 解法
+            - generic [ref=e801]:
+              - img [ref=e802]
+              - generic [ref=e804]: 表單代填／反向代理／OIDC・SAML 聯邦，9 成以上認證模式皆可納管，舊系統不改造也能接。
+            - generic [ref=e805]:
+              - img [ref=e806]
+              - generic [ref=e808]: 內建 IdP 提供一致 MFA（TOTP），對所有應用統一，並可依風險動態升級驗證。
+            - generic [ref=e809]:
+              - img [ref=e810]
+              - generic [ref=e812]: AD／LDAP 同步，離職一處停用、全系統即時失效，條件式存取一致套用。
+        - img [ref=e814]:
+          - generic [ref=e815]:
+            - generic [ref=e818]: 帳號 A · TOTP
+            - generic [ref=e821]: 帳號 B · 簡訊
+            - generic [ref=e824]: 帳號 C · 無
+            - generic [ref=e827]: 帳號 D · ?
+          - generic [ref=e837]: 統一身份 · 一致 MFA
+          - generic [ref=e838]:
+            - generic [ref=e841]: 系統 1
+            - generic [ref=e844]: 系統 2
+            - generic [ref=e847]: 系統 3
+            - generic [ref=e850]: 系統 4
+          - generic [ref=e851]: 一次登入 · 全部存取
+      - generic [ref=e860]:
+        - generic [ref=e861]:
+          - text: 台灣合規
+          - heading "台灣資安法 · 個資法 · 金管會，一次對齊" [level=3] [ref=e862]
+          - paragraph [ref=e863]: 《資通安全管理法》及其分級辦法、《個人資料保護法》、金管會遠端維運要求，對日誌留存、存取控制與稽核軌跡都有明確規範。Sanctward 直接對映這些條文，並由合規適配器自動產出可審證據。
+          - generic [ref=e864]:
+            - generic [ref=e865]: 符合條文 · 對應做法
+            - generic [ref=e866]:
+              - img [ref=e867]
+              - generic [ref=e869]: 《資通安全責任等級分級辦法》要求日誌至少保存 6 個月，並記錄帳號／權限變更、登入、IP 與資料存取 → 100+ 稽核事件＋WORM 不可竄改＋Merkle 證據鏈，保存期限可設定。
+            - generic [ref=e870]:
+              - img [ref=e871]
+              - generic [ref=e873]: 高／中責任等級要求重要系統採多因素驗證與嚴格存取控制 → 內建 IdP 一致 MFA（TOTP）、RBAC 細粒度權限、條件式存取、離職即時失效。
+            - generic [ref=e874]:
+              - img [ref=e875]
+              - generic [ref=e877]: 金管會遠端維運／委外稽核要求保留連線紀錄與錄影 → RDP／SSH／VNC／Telnet 全程錄影＋OCR 指令搜尋＋受控帳密注入＋JIT 時限存取。
+            - generic [ref=e878]:
+              - img [ref=e879]
+              - generic [ref=e881]: 《個人資料保護法》第 27 條安全維護措施與存取軌跡 → 個資系統存取全程留痕、敏感欄位自動遮蔽、可回溯舉證。
+        - img [ref=e883]:
+          - generic [ref=e884]:
+            - generic [ref=e887]: 帳號停用
+            - generic [ref=e890]: 會話錄影
+            - generic [ref=e893]: 登入紀錄
+          - generic [ref=e894]: 100+ 稽核事件 · WORM
+          - generic [ref=e903]: 合規適配器
+          - generic [ref=e904]:
+            - generic [ref=e910]: 資通安全管理法
+            - generic [ref=e916]: 資安責任分級辦法
+            - generic [ref=e922]: 個人資料保護法
+            - generic [ref=e928]: 金管會遠端維運
+          - generic [ref=e935]: 證據包
+      - generic [ref=e940]:
+        - generic [ref=e941]:
+          - text: 國際合規
+          - heading "ISO 27001 · SOC 2 · GDPR · NIS2 · HIPAA" [level=3] [ref=e942]
+          - paragraph [ref=e943]: 跨足海外須同時對應國際框架的存取控制、稽核記錄與事件應變要求。Sanctward 的控制項可直接對映到各框架的具體條款，一鍵產出證據包。
+          - generic [ref=e944]:
+            - generic [ref=e945]: 符合條文 · 對應做法
+            - generic [ref=e946]:
+              - img [ref=e947]
+              - generic [ref=e949]: ISO/IEC 27001:2022 A.8.5 安全認證、A.8.15 記錄、A.8.16 監視、A.5.15 存取控制 → 統一 SSO／MFA、100+ 事件記錄、即時監控與信任評分。
+            - generic [ref=e950]:
+              - img [ref=e951]
+              - generic [ref=e953]: SOC 2 Trust Services CC6 存取控制、CC7 監控與事件回應 → RBAC＋MFA、WORM 稽核軌跡、行為基線異常偵測。
+            - generic [ref=e954]:
+              - img [ref=e955]
+              - generic [ref=e957]: EU GDPR 第 32 條處理安全、第 30 條處理紀錄、第 33 條 72 小時外洩通報 → 加密與存取控制、完整稽核軌跡、異常即時告警支援通報時限。
+            - generic [ref=e958]:
+              - img [ref=e959]
+              - generic [ref=e961]: EU NIS2 第 21 條（MFA、存取控制、日誌）與第 23 條事件通報 → 強制 MFA／持續驗證、不可竄改日誌、事件調查證據鏈。
+            - generic [ref=e962]:
+              - img [ref=e963]
+              - generic [ref=e965]: US HIPAA §164.312 技術保全（存取控制、稽核控制、認證） → 唯一身份識別、會話錄影與稽核、強認證機制。
+        - img [ref=e967]:
+          - generic [ref=e968]:
+            - generic [ref=e971]: 帳號停用
+            - generic [ref=e974]: 會話錄影
+            - generic [ref=e977]: 登入紀錄
+          - generic [ref=e978]: 100+ 稽核事件 · WORM
+          - generic [ref=e987]: 合規適配器
+          - generic [ref=e988]:
+            - generic [ref=e994]: ISO 27001:2022
+            - generic [ref=e1000]: SOC 2（TSC）
+            - generic [ref=e1006]: EU GDPR · 第32條
+            - generic [ref=e1012]: EU NIS2 · 第21條
+            - generic [ref=e1018]: US HIPAA
+          - generic [ref=e1025]: 證據包
+  - generic [ref=e1032]:
+    - generic [ref=e1033]:
+      - generic [ref=e1034]: 50+
+      - generic [ref=e1035]: 原生多租戶 · MSP-Ready
+    - generic [ref=e1036]:
+      - generic [ref=e1037]: 99.9%
+      - generic [ref=e1038]: 1,500 端點實測自動上線
+    - generic [ref=e1039]:
+      - generic [ref=e1040]: 100+
+      - generic [ref=e1041]: 稽核事件 · WORM 不可竄改
+    - generic [ref=e1042]:
+      - generic [ref=e1043]: 1–2 週
+      - generic [ref=e1044]: 快速導入上線
+  - generic [ref=e1046]:
+    - generic [ref=e1047]:
+      - generic [ref=e1048]: Real-world Scenarios
+      - heading "四個典型應用場景" [level=2] [ref=e1049]
+      - paragraph [ref=e1050]: 從痛點到量化成效——選擇產業查看。
+    - generic [ref=e1051]:
+      - generic [ref=e1052]:
+        - button "Manufacturing 製造業" [ref=e1053] [cursor=pointer]:
+          - text: Manufacturing
+          - heading "製造業" [level=4] [ref=e1054]
+        - button "Banking 金融業" [ref=e1055] [cursor=pointer]:
+          - text: Banking
+          - heading "金融業" [level=4] [ref=e1056]
+        - button "Zero Trust 科技業遠端" [ref=e1057] [cursor=pointer]:
+          - text: Zero Trust
+          - heading "科技業遠端" [level=4] [ref=e1058]
+        - button "MSP 服務商" [ref=e1059] [cursor=pointer]:
+          - text: MSP
+          - heading "服務商" [level=4] [ref=e1060]
+      - generic [ref=e1063]:
+        - text: Manufacturing · 製造業
+        - heading "500 員工、5 個 IT、十幾套系統" [level=3] [ref=e1064]
+        - generic [ref=e1065]:
+          - generic [ref=e1066]:
+            - generic [ref=e1067]: 痛點
+            - list [ref=e1068]:
+              - listitem [ref=e1069]:
+                - img [ref=e1070]
+                - text: IT 每週 10+ 小時處理密碼重設
+              - listitem [ref=e1072]:
+                - img [ref=e1073]
+                - text: 離職帳號 3 個月後才發現殘留
+              - listitem [ref=e1075]:
+                - img [ref=e1076]
+                - text: 外包維護須給設備密碼
+          - generic [ref=e1078]:
+            - generic [ref=e1079]: Sanctward 解法
+            - list [ref=e1080]:
+              - listitem [ref=e1081]:
+                - img [ref=e1082]
+                - text: 全系統整合統一登入、隱藏真實位置
+              - listitem [ref=e1084]:
+                - img [ref=e1085]
+                - text: AD 同步，離職當天停用、足跡永久保留
+              - listitem [ref=e1087]:
+                - img [ref=e1088]
+                - text: 外包走 JIT 全程錄影，免第三方 VPN
+        - generic [ref=e1090]:
+          - generic [ref=e1091]:
+            - generic [ref=e1092]: −80%
+            - text: IT 帳號管理工時
+          - generic [ref=e1093]:
+            - generic [ref=e1094]: "0"
+            - text: 員工／廠商帳號殘留
+  - generic [ref=e1096]:
+    - generic [ref=e1097]:
+      - generic [ref=e1098]: Sanctward vs Legacy
+      - heading "把分散的多套產品，換成一套原生整合平台" [level=2] [ref=e1099]
+    - generic [ref=e1100]:
+      - generic [ref=e1101]:
+        - generic [ref=e1102]: 關鍵維度
+        - generic [ref=e1103]: 傳統多套組合
+        - generic [ref=e1104]: Sanctward
+      - generic [ref=e1105]:
+        - generic [ref=e1106]: 管理介面
+        - generic [ref=e1107]: 5 個分散介面
+        - generic [ref=e1108]:
+          - img [ref=e1109]
+          - text: 一個統一介面
+      - generic [ref=e1111]:
+        - generic [ref=e1112]: 三年總成本 TCO
+        - generic [ref=e1113]: 基準高，需整合多家
+        - generic [ref=e1114]:
+          - img [ref=e1115]
+          - text: 約 1/3 · 單一品牌
+      - generic [ref=e1117]:
+        - generic [ref=e1118]: 部署週期
+        - generic [ref=e1119]: 3–6 個月
+        - generic [ref=e1120]:
+          - img [ref=e1121]
+          - text: 2 週–1 個月
+      - generic [ref=e1123]:
+        - generic [ref=e1124]: 資料主權
+        - generic [ref=e1125]: 資料在 SaaS 雲端
+        - generic [ref=e1126]:
+          - img [ref=e1127]
+          - text: 完全 On-Premises
+      - generic [ref=e1129]:
+        - generic [ref=e1130]: 多租戶
+        - generic [ref=e1131]: 需自行整合套裝
+        - generic [ref=e1132]:
+          - img [ref=e1133]
+          - text: 原生多租戶平台
+  - generic [ref=e1137]:
+    - heading "看 Sanctward 如何在你的環境落地" [level=2] [ref=e1138]
+    - paragraph [ref=e1139]: 30 分鐘線上 Demo，依你的產業與系統環境，示範身份、零信任、特權存取的整合運作。
+    - generic [ref=e1140]:
+      - link "預約 Demo" [ref=e1141] [cursor=pointer]:
+        - /url: /contact
+      - link "下載產品總覽" [ref=e1142] [cursor=pointer]:
+        - /url: "#"
+  - contentinfo [ref=e1143]:
+    - generic [ref=e1144]:
+      - generic [ref=e1145]:
+        - generic [ref=e1146]:
+          - img "SANCTWARD" [ref=e1149]
+          - paragraph [ref=e1150]:
+            - text: 森沃科技股份有限公司 · SANCTWARD CO., LTD.
+            - text: AI 時代的企業信任作業系統。
+        - generic [ref=e1151]:
+          - heading "平台" [level=4] [ref=e1152]
+          - link "IAM / SSO" [ref=e1153] [cursor=pointer]:
+            - /url: "#"
+          - link "特權存取 PAM" [ref=e1154] [cursor=pointer]:
+            - /url: "#"
+          - link "零信任 ZTA" [ref=e1155] [cursor=pointer]:
+            - /url: "#"
+          - link "端點艦隊" [ref=e1156] [cursor=pointer]:
+            - /url: "#"
+          - link "合規稽核" [ref=e1157] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e1158]:
+          - heading "資源" [level=4] [ref=e1159]
+          - link "應用案例" [ref=e1160] [cursor=pointer]:
+            - /url: "#"
+          - link "產品總覽" [ref=e1161] [cursor=pointer]:
+            - /url: "#"
+          - link "課程與培訓" [ref=e1162] [cursor=pointer]:
+            - /url: "#"
+          - link "技術文件" [ref=e1163] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e1164]:
+          - heading "公司" [level=4] [ref=e1165]
+          - link "關於我們" [ref=e1166] [cursor=pointer]:
+            - /url: /about
+          - link "預約 Demo" [ref=e1167] [cursor=pointer]:
+            - /url: /contact
+          - link "聯絡我們" [ref=e1168] [cursor=pointer]:
+            - /url: /contact
+          - link "隱私權政策" [ref=e1169] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e1170]:
+        - generic [ref=e1171]: © 2026 森沃科技股份有限公司 SANCTWARD CO., LTD. 版權所有
+        - generic [ref=e1172]: 台灣 · 日本 · 北美

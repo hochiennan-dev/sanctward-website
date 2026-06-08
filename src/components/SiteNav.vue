@@ -3,7 +3,7 @@
   <div class="container nav-inner">
     <router-link class="brand" to="/"><Logo3D /><img src="/assets/wordmark-black.svg" alt="SANCTWARD"></router-link>
     <nav class="nav-links">
-      <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/#solutions">{{ $t('k1') }}</router-link><router-link to="/#cases">{{ $t('k2') }}</router-link><a href="#">{{ $t('k3') }}</a><router-link to="/about">{{ $t('k4') }}</router-link>
+      <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
     </nav>
     <div class="nav-right">
       <span class="lang"><button type="button" class="lang-btn" :class="{ on: locale === 'zh-Hant' }" @click="setLang('zh-Hant')">繁</button><span class="lang-sep">/</span><button type="button" class="lang-btn" :class="{ on: locale === 'en' }" @click="setLang('en')">EN</button></span>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/#solutions">{{ $t('k1') }}</router-link><router-link to="/#cases">{{ $t('k2') }}</router-link><a href="#">{{ $t('k3') }}</a><router-link to="/about">{{ $t('k4') }}</router-link>
+    <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
   </div>
 </header>
 </template>

@@ -5,6 +5,8 @@ const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/about', name: 'about', component: () => import('../views/About.vue') },
   { path: '/contact', name: 'contact', component: () => import('../views/Contact.vue') },
+  { path: '/solutions', name: 'solutions', component: () => import('../views/Solutions.vue') },
+  { path: '/cases', name: 'cases', component: () => import('../views/Cases.vue') },
 ]
 
 export default createRouter({
