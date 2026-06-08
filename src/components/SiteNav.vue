@@ -3,16 +3,16 @@
   <div class="container nav-inner">
     <router-link class="brand" to="/"><Logo3D /><img src="/assets/wordmark-black.svg" alt="SANCTWARD"></router-link>
     <nav class="nav-links">
-      <router-link to="/#platform">平台</router-link><router-link to="/#solutions">解決方案</router-link><router-link to="/#cases">應用案例</router-link><a href="#">課程</a><router-link to="/about">關於我們</router-link>
+      <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/#solutions">{{ $t('k1') }}</router-link><router-link to="/#cases">{{ $t('k2') }}</router-link><a href="#">{{ $t('k3') }}</a><router-link to="/about">{{ $t('k4') }}</router-link>
     </nav>
     <div class="nav-right">
-      <span class="lang"><b>繁</b> / EN</span>
-      <router-link class="btn btn-primary" to="/contact">預約 Demo</router-link>
+      <span class="lang"><button type="button" class="lang-btn" :class="{ on: locale === 'zh-Hant' }" @click="setLang('zh-Hant')">繁</button><span class="lang-sep">/</span><button type="button" class="lang-btn" :class="{ on: locale === 'en' }" @click="setLang('en')">EN</button></span>
+      <router-link class="btn btn-primary" to="/contact">{{ $t('k6') }}</router-link>
       <button class="menu-toggle" id="menuBtn" aria-label="menu"><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <router-link to="/#platform">平台</router-link><router-link to="/#solutions">解決方案</router-link><router-link to="/#cases">應用案例</router-link><a href="#">課程</a><router-link to="/about">關於我們</router-link>
+    <router-link to="/#platform">{{ $t('k0') }}</router-link><router-link to="/#solutions">{{ $t('k1') }}</router-link><router-link to="/#cases">{{ $t('k2') }}</router-link><a href="#">{{ $t('k3') }}</a><router-link to="/about">{{ $t('k4') }}</router-link>
   </div>
 </header>
 </template>
@@ -20,6 +20,9 @@
 <script setup>
 import Logo3D from './Logo3D.vue'
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+function setLang(l){ locale.value = l; try { localStorage.setItem('lang', l) } catch(e){}; document.documentElement.lang = l }
 onMounted(() => {
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('scrolled', scrollY>10);

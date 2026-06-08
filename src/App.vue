@@ -7,12 +7,17 @@
 </template>
 
 <script setup>
-import { onMounted, nextTick } from 'vue'
+import { onMounted, nextTick, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import router from './router'
+
 import IconDefs from './components/IconDefs.vue'
 import NetworkBg from './components/NetworkBg.vue'
 import SiteNav from './components/SiteNav.vue'
 import SiteFooter from './components/SiteFooter.vue'
+
+const { locale, t } = useI18n()
+watch(locale, (l) => { document.documentElement.lang = l; document.title = t('metaTitle') }, { immediate: true })
 
 function observeReveals() {
   const io = new IntersectionObserver(

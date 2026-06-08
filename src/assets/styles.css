@@ -363,3 +363,11 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--brand)}
 .cform .btn{margin-top:20px;width:100%}
 @media(max-width:860px){.val-grid{grid-template-columns:1fr}.cap5{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr;gap:28px}.page-hero h1{font-size:34px}}
+
+
+/* language toggle */
+.lang{display:flex;align-items:center;gap:7px}
+.lang-btn{background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--ink-3);padding:2px 3px;transition:color .2s}
+.lang-btn:hover{color:var(--ink-1)}
+.lang-btn.on{color:var(--brand-ink);font-weight:700}
+.lang-sep{color:var(--line-2);font-size:12px}

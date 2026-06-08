@@ -4,13 +4,13 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="foot-lockup"><Logo3D /><img src="/assets/wordmark-black.svg" alt="SANCTWARD"></div>
-        <p>森沃科技股份有限公司 · SANCTWARD CO., LTD.<br>AI 時代的企業信任作業系統。</p>
+        <p>{{ $t('k7') }}<br>{{ $t('k8') }}</p>
       </div>
-      <div class="foot-col"><h4>平台</h4><a href="#">IAM / SSO</a><a href="#">特權存取 PAM</a><a href="#">零信任 ZTA</a><a href="#">端點艦隊</a><a href="#">合規稽核</a></div>
-      <div class="foot-col"><h4>資源</h4><a href="#">應用案例</a><a href="#">產品總覽</a><a href="#">課程與培訓</a><a href="#">技術文件</a></div>
-      <div class="foot-col"><h4>公司</h4><router-link to="/about">關於我們</router-link><router-link to="/contact">預約 Demo</router-link><router-link to="/contact">聯絡我們</router-link><a href="#">隱私權政策</a></div>
+      <div class="foot-col"><h4>{{ $t('k0') }}</h4><a href="#">IAM / SSO</a><a href="#">{{ $t('k9') }}</a><a href="#">{{ $t('k10') }}</a><a href="#">{{ $t('k11') }}</a><a href="#">{{ $t('k12') }}</a></div>
+      <div class="foot-col"><h4>{{ $t('k13') }}</h4><a href="#">{{ $t('k2') }}</a><a href="#">{{ $t('k14') }}</a><a href="#">{{ $t('k15') }}</a><a href="#">{{ $t('k16') }}</a></div>
+      <div class="foot-col"><h4>{{ $t('k17') }}</h4><router-link to="/about">{{ $t('k4') }}</router-link><router-link to="/contact">{{ $t('k6') }}</router-link><router-link to="/contact">{{ $t('k18') }}</router-link><a href="#">{{ $t('k19') }}</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 森沃科技股份有限公司 SANCTWARD CO., LTD. 版權所有</span><span>台灣 · 日本 · 北美</span></div>
+    <div class="foot-bottom"><span>{{ $t('k20') }}</span><span>{{ $t('k21') }}</span></div>
   </div>
 </footer>
 </template>
