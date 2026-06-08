@@ -7,6 +7,7 @@ const routes = [
   { path: '/contact', name: 'contact', component: () => import('../views/Contact.vue') },
   { path: '/solutions', name: 'solutions', component: () => import('../views/Solutions.vue') },
   { path: '/cases', name: 'cases', component: () => import('../views/Cases.vue') },
+  { path: '/platform', name: 'platform', component: () => import('../views/Platform.vue') },
 ]
 
 export default createRouter({

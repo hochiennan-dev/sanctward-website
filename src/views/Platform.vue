@@ -1,0 +1,116 @@
+<template>
+  <section class="band page-hero">
+    <div class="container reveal">
+      <span class="eyebrow">Platform · 平台</span>
+      <h1>{{ $t('pf_h1') }}</h1>
+      <p>{{ $t('pf_intro') }}</p>
+    </div>
+  </section>
+
+  <section class="band tight">
+    <div class="container">
+      <div class="shead reveal"><span class="eyebrow">Signal Chain</span><h2>{{ $t('pf_chain_h') }}</h2><p>{{ $t('pf_chain_p') }}</p></div>
+      <div class="pf-chain reveal"><svg viewBox="0 0 780 250" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfsc" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <path d="M170 121 H224" stroke="#2DA23F" stroke-width="2.2"/><path d="M218 114 l8 7 -8 7" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M386 121 H442" stroke="#2DA23F" stroke-width="2.2"/><path d="M436 114 l8 7 -8 7" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M588 121 H624" stroke="#2DA23F" stroke-width="2.2"/><path d="M618 114 l8 7 -8 7" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M306 196 V154" stroke="#2DA23F" stroke-width="2" stroke-dasharray="2 5"/><path d="M299 160 l7 -8 7 8" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfsc)"><rect x="42" y="92" width="128" height="58" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g><text x="106" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#1B8F34">{{ $t('pfd_identity') }}</text>
+ <g filter="url(#pfsc)"><rect x="228" y="90" width="158" height="62" rx="14" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/></g><text x="307" y="126" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1B8F34">{{ $t('pfd_trust') }}</text>
+ <g filter="url(#pfsc)"><rect x="444" y="92" width="144" height="58" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g><text x="516" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#1B8F34">{{ $t('pfd_access') }}</text>
+ <g filter="url(#pfsc)"><rect x="626" y="92" width="120" height="58" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g><text x="686" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#1B8F34">{{ $t('pfd_audit') }}</text>
+ <g filter="url(#pfsc)"><rect x="228" y="196" width="158" height="44" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g><text x="307" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#3B4540">{{ $t('pfd_device') }}</text>
+ <text x="197" y="111" text-anchor="middle" font-size="10.5" fill="#7E8C85">{{ $t('pfd_feeds') }}</text>
+ <text x="414" y="111" text-anchor="middle" font-size="10.5" fill="#7E8C85">{{ $t('pfd_drives') }}</text>
+ <text x="606" y="111" text-anchor="middle" font-size="10.5" fill="#7E8C85">{{ $t('pfd_writes') }}</text>
+ <text x="396" y="180" text-anchor="middle" font-size="10.5" fill="#7E8C85">{{ $t('pfd_affects') }}</text>
+</svg></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container"><div class="sols">
+      <div class="soln"><div class="sol-copy reveal"><span class="sol-k">IAM / SSO</span><h3>{{ $t('k76') }}</h3><p class="intro">{{ $t('k87') }}</p><div class="plist fix"><div class="ph">{{ $t('pf_how') }}</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k88') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k89') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k90') }}</span></div></div><div class="example"><span class="ex-h">{{ $t('pf_eg') }}</span><p>{{ $t('pf_iam_eg') }}</p></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 300" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfi" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <g filter="url(#pfi)"><rect x="20" y="118" width="96" height="60" rx="13" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><circle cx="44" cy="142" r="9" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><rect x="58" y="138" width="40" height="6" rx="3" fill="#9AA9A1"/><rect x="34" y="160" width="60" height="5" rx="2.5" fill="#D2DAD4"/>
+ <text x="22" y="196" font-size="12" font-weight="600" fill="#46554E">{{ $t('pfd_user') }}</text>
+ <path d="M116 148 H180" stroke="#2DA23F" stroke-width="2.2"/><path d="M174 141 l8 7 -8 7" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfi)"><rect x="182" y="112" width="130" height="76" rx="16" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/></g>
+ <path d="M247 126 l16 6 v11 c0 10-6 16-16 20 -10-4-16-10-16-20 v-11 z" fill="#fff" stroke="#1B8F34" stroke-width="2"/><path d="M240 146 l5 5 10-11" stroke="#1B8F34" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="247" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#1B8F34">{{ $t('pfd_sso') }}</text>
+ <g transform="translate(150,236)"><rect width="92" height="26" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/><text x="46" y="17" text-anchor="middle" font-size="11" font-weight="600" fill="#1B8F34">{{ $t('pfd_sync') }}</text></g>
+ <g transform="translate(250,236)"><rect width="62" height="26" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/><text x="31" y="17" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">MFA</text></g>
+ <path d="M312 148 H372" stroke="#2DA23F" stroke-width="2.2"/><path d="M366 141 l8 7 -8 7" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g font-size="12" font-weight="700" fill="#3B4540">
+  <g filter="url(#pfi)"><rect x="374" y="92" width="60" height="46" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><text x="404" y="119" text-anchor="middle">SAP</text>
+  <g filter="url(#pfi)"><rect x="444" y="92" width="62" height="46" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><text x="475" y="119" text-anchor="middle">Git</text>
+  <g filter="url(#pfi)"><rect x="374" y="148" width="60" height="46" rx="11" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><text x="404" y="175" text-anchor="middle">QNAP</text>
+  <g filter="url(#pfi)"><rect x="444" y="148" width="62" height="46" rx="11" fill="#fff" stroke="#E6E0E0" stroke-width="1.4"/></g><text x="475" y="171" text-anchor="middle" font-size="10.5" fill="#7E8C85">{{ $t('pfd_legacy') }}</text></g>
+</svg></div></div><div class="soln rev"><div class="sol-copy reveal"><span class="sol-k">PAM</span><h3>{{ $t('k78') }}</h3><p class="intro">{{ $t('k92') }}</p><div class="plist fix"><div class="ph">{{ $t('pf_how') }}</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k93') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k94') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k95') }}</span></div></div><div class="example"><span class="ex-h">{{ $t('pf_eg') }}</span><p>{{ $t('pf_pam_eg') }}</p></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 300" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfp" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <g filter="url(#pfp)"><rect x="14" y="120" width="92" height="56" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><circle cx="36" cy="142" r="8" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><rect x="50" y="139" width="40" height="6" rx="3" fill="#9AA9A1"/><text x="16" y="194" font-size="11.5" font-weight="600" fill="#46554E">{{ $t('pfd_maint') }}</text>
+ <path d="M106 148 H140" stroke="#9AA9A1" stroke-width="2"/><path d="M135 142 l7 6 -7 6" stroke="#9AA9A1" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfp)"><rect x="142" y="120" width="96" height="56" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="190" y="152" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B8F34">{{ $t('pfd_jit') }}</text>
+ <path d="M238 148 H272" stroke="#2DA23F" stroke-width="2.2"/><path d="M266 142 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfp)"><rect x="274" y="108" width="120" height="80" rx="14" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/></g>
+ <circle cx="292" cy="126" r="5" fill="#D2473F"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle><text x="302" y="130" font-size="10" font-weight="700" fill="#C2362E">REC</text>
+ <text x="334" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">{{ $t('pfd_gw') }}</text>
+ <text x="334" y="174" text-anchor="middle" font-size="10" fill="#1B8F34">{{ $t('pfd_ocr') }}</text>
+ <path d="M394 148 H430" stroke="#2DA23F" stroke-width="2.2"/><path d="M424 142 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfp)"><rect x="432" y="118" width="74" height="60" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><rect x="446" y="134" width="46" height="14" rx="4" fill="#F1F5F2" stroke="#E1E8E3" stroke-width="1.2"/><circle cx="455" cy="141" r="2.4" fill="#2DA23F"/><text x="469" y="172" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7E8C85">{{ $t('pfd_server') }}</text>
+</svg></div></div><div class="soln"><div class="sol-copy reveal"><span class="sol-k">ZTA</span><h3>{{ $t('k80') }}</h3><p class="intro">{{ $t('k98') }}</p><div class="plist fix"><div class="ph">{{ $t('pf_how') }}</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k99') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k100') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k101') }}</span></div></div><div class="example"><span class="ex-h">{{ $t('pf_eg') }}</span><p>{{ $t('pf_zta_eg') }}</p></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 300" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfz" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <g font-size="10.5" font-weight="600" fill="#46554E">
+  <g filter="url(#pfz)"><rect x="14" y="40" width="120" height="26" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="26" y="57">Geo-IP</text>
+  <g filter="url(#pfz)"><rect x="14" y="76" width="120" height="26" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="26" y="93">{{ $t('pfd_travel') }}</text>
+  <g filter="url(#pfz)"><rect x="14" y="112" width="120" height="26" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="26" y="129">{{ $t('pfd_baseline') }}</text>
+  <g filter="url(#pfz)"><rect x="14" y="148" width="120" height="26" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="26" y="165">{{ $t('pfd_posture') }}</text>
+  <g filter="url(#pfz)"><rect x="14" y="184" width="120" height="26" rx="7" fill="#fff" stroke="#E1E8E3" stroke-width="1.3"/></g><text x="26" y="201">{{ $t('pfd_intel') }}</text></g>
+ <path d="M134 124 C 170 124 180 124 206 124" stroke="#DDE7E0" stroke-width="2"/>
+ <g filter="url(#pfz)"><rect x="206" y="92" width="110" height="64" rx="15" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/></g><text x="261" y="120" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1B8F34">{{ $t('pfd_engine') }}</text><text x="261" y="140" text-anchor="middle" font-size="16" font-weight="800" fill="#1B8F34" font-family="Inter">0–100</text>
+ <path d="M316 124 H352" stroke="#2DA23F" stroke-width="2.2"/><path d="M346 118 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g font-size="11.5" font-weight="700">
+  <g filter="url(#pfz)"><rect x="354" y="74" width="152" height="38" rx="10" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/></g><text x="370" y="92" fill="#1B8F34">&gt;90</text><text x="404" y="92" fill="#3B4540">{{ $t('pfd_allow') }}</text>
+  <g filter="url(#pfz)"><rect x="354" y="118" width="152" height="38" rx="10" fill="#FDF6E9" stroke="#E2B25A" stroke-width="1.5"/></g><text x="368" y="136" fill="#B5740F">60–90</text><text x="412" y="136" fill="#3B4540">{{ $t('pfd_mfa') }}</text>
+  <g filter="url(#pfz)"><rect x="354" y="162" width="152" height="38" rx="10" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.5"/></g><text x="370" y="180" fill="#C2362E">&lt;60</text><text x="404" y="180" fill="#3B4540">{{ $t('pfd_deny') }}</text></g>
+</svg></div></div><div class="soln rev"><div class="sol-copy reveal"><span class="sol-k">Endpoint</span><h3>{{ $t('k82') }}</h3><p class="intro">{{ $t('k105') }}</p><div class="plist fix"><div class="ph">{{ $t('pf_how') }}</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k106') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k107') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k108') }}</span></div></div><div class="example"><span class="ex-h">{{ $t('pf_eg') }}</span><p>{{ $t('pf_ep_eg') }}</p></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 300" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfe" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <g font-size="11" font-weight="700" fill="#1B8F34">
+  <g filter="url(#pfe)"><rect x="16" y="70" width="100" height="50" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="66" y="92" text-anchor="middle">{{ $t('pfd_install') }}</text><text x="66" y="108" text-anchor="middle" font-size="9.5" fill="#7E8C85">.msi/.pkg/.deb</text>
+  <g filter="url(#pfe)"><rect x="16" y="138" width="100" height="46" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><text x="66" y="166" text-anchor="middle">{{ $t('pfd_enroll') }}</text>
+ </g>
+ <path d="M116 95 C 150 95 160 130 192 138" stroke="#DDE7E0" stroke-width="2"/>
+ <path d="M116 161 H190" stroke="#2DA23F" stroke-width="2.2"/><path d="M184 155 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfe)"><rect x="192" y="118" width="120" height="56" rx="13" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g><text x="252" y="150" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B8F34">{{ $t('pfd_approve') }}</text>
+ <path d="M312 146 H346" stroke="#2DA23F" stroke-width="2.2"/><path d="M340 140 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfe)"><rect x="348" y="118" width="120" height="56" rx="13" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2"/></g><text x="408" y="150" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B8F34">{{ $t('pfd_postcheck') }}</text>
+ <path d="M408 174 V210" stroke="#2DA23F" stroke-width="2" stroke-dasharray="2 5"/><path d="M401 204 l7 7 7 -7" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="408" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B8F34">{{ $t('pfd_feed') }}</text>
+</svg></div></div><div class="soln"><div class="sol-copy reveal"><span class="sol-k">Compliance</span><h3>{{ $t('k84') }}</h3><p class="intro">{{ $t('k111') }}</p><div class="plist fix"><div class="ph">{{ $t('pf_how') }}</div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k112') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k113') }}</span></div><div class="pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('k114') }}</span></div></div><div class="example"><span class="ex-h">{{ $t('pf_eg') }}</span><p>{{ $t('pf_ca_eg') }}</p></div></div><div class="sol-fig reveal"><svg viewBox="0 0 520 300" fill="none" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="pfc" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
+ <g filter="url(#pfc)"><rect x="14" y="118" width="96" height="60" rx="12" fill="#fff" stroke="#E1E8E3" stroke-width="1.4"/></g><rect x="28" y="134" width="68" height="7" rx="3.5" fill="#C8D2CC"/><rect x="28" y="148" width="54" height="6" rx="3" fill="#D7DFD9"/><rect x="28" y="160" width="60" height="6" rx="3" fill="#D7DFD9"/><text x="14" y="194" font-size="11" font-weight="600" fill="#46554E">{{ $t('pfd_events') }}</text>
+ <path d="M110 148 H150" stroke="#2DA23F" stroke-width="2.2"/><path d="M144 142 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g filter="url(#pfc)"><rect x="152" y="116" width="104" height="64" rx="15" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/></g>
+ <g transform="translate(204,140)" stroke="#1B8F34" stroke-width="2" fill="none"><circle r="9"/><path d="M0 -15 V-11 M0 11 V15 M-15 0 H-11 M11 0 H15"/></g>
+ <text x="204" y="172" text-anchor="middle" font-size="11" font-weight="700" fill="#1B8F34">{{ $t('pfd_adapter') }}</text>
+ <path d="M256 148 H292" stroke="#2DA23F" stroke-width="2.2"/><path d="M286 142 l7 6 -7 6" stroke="#2DA23F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <g font-size="11" font-weight="600" fill="#3B4540">
+  <g filter="url(#pfc)"><rect x="294" y="84" width="150" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.3"/></g><g transform="translate(308,97)"><circle r="7" fill="#EAF6EC"/><path d="M-3 0 l2 2 4-4.5" stroke="#1B8F34" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="322" y="101">ISO 27001:2022</text>
+  <g filter="url(#pfc)"><rect x="294" y="116" width="150" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.3"/></g><g transform="translate(308,129)"><circle r="7" fill="#EAF6EC"/><path d="M-3 0 l2 2 4-4.5" stroke="#1B8F34" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="322" y="133">NIST 800-207</text>
+  <g filter="url(#pfc)"><rect x="294" y="148" width="150" height="26" rx="7" fill="#fff" stroke="#CBE8D2" stroke-width="1.3"/></g><g transform="translate(308,161)"><circle r="7" fill="#EAF6EC"/><path d="M-3 0 l2 2 4-4.5" stroke="#1B8F34" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="322" y="165">APPI · TW Act</text></g>
+ <g filter="url(#pfc)"><rect x="454" y="110" width="54" height="58" rx="10" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/></g><path d="M466 122 h22 l8 8 v26 h-30 z" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.4"/><path d="M488 122 v8 h8" fill="none" stroke="#2DA23F" stroke-width="1.4"/><path d="M472 146 l4 4 8-9" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="481" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1B8F34">{{ $t('pfd_pack') }}</text>
+</svg></div></div>
+    </div></div>
+  </section>
+
+  <section class="cta">
+    <div class="container"><div class="cta-in reveal">
+      <h2>{{ $t('k344') }}</h2>
+      <p>{{ $t('k345') }}</p>
+      <div class="hs-cta"><router-link class="btn btn-primary btn-lg" to="/contact">{{ $t('k6') }}</router-link><router-link class="btn btn-ghost btn-lg" to="/solutions">{{ $t('k1') }}</router-link></div>
+    </div></div>
+  </section>
+</template>
+
+<script setup></script>

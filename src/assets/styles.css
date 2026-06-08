@@ -403,3 +403,12 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .dstack{display:flex;flex-direction:column;gap:54px;max-width:var(--maxw);margin:0 auto}
 .dslide.rev .dillu-wrap{order:2}
 @media(max-width:900px){.dslide{grid-template-columns:1fr}.dslide.rev .dillu-wrap{order:0}}
+
+
+/* platform page */
+.pf-chain{max-width:900px;margin:0 auto;background:linear-gradient(160deg,#EFF7F1,#fff);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.pf-chain svg{width:100%;height:auto;display:block}
+.example{margin-top:6px;background:linear-gradient(120deg,var(--brand-soft),#fff);border:1px solid rgba(45,162,63,.25);border-radius:12px;padding:15px 17px}
+.example .ex-h{display:inline-flex;align-items:center;gap:7px;font-family:'Inter';font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:7px}
+.example .ex-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.example p{font-size:13.5px;color:var(--ink-1);line-height:1.72}
