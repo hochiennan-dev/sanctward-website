@@ -17,7 +17,7 @@
         <div class="cpane on">
           <div class="cbox">
             <span class="ctag">{{ $t('k258') }}</span>
-            <h3>{{ $t('k259') }}</h3>
+            <h3>{{ $t('k259') }}</h3><p class="cctx">{{ $t('c1ctx') }}</p>
             <div class="c2">
               <div class="pain"><div class="h">{{ $t('k260') }}</div><ul>
                 <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k261') }}</li>
@@ -36,7 +36,7 @@
         <div class="cpane">
           <div class="cbox">
             <span class="ctag">{{ $t('k269') }}</span>
-            <h3>{{ $t('k63') }}</h3>
+            <h3>{{ $t('k63') }}</h3><p class="cctx">{{ $t('c2ctx') }}</p>
             <div class="c2">
               <div class="pain"><div class="h">{{ $t('k260') }}</div><ul>
                 <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k270') }}</li>
@@ -55,7 +55,7 @@
         <div class="cpane">
           <div class="cbox">
             <span class="ctag">{{ $t('k279') }}</span>
-            <h3>{{ $t('k280') }}</h3>
+            <h3>{{ $t('k280') }}</h3><p class="cctx">{{ $t('c3ctx') }}</p>
             <div class="c2">
               <div class="pain"><div class="h">{{ $t('k260') }}</div><ul>
                 <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k281') }}</li>
@@ -74,7 +74,7 @@
         <div class="cpane">
           <div class="cbox">
             <span class="ctag">{{ $t('k290') }}</span>
-            <h3>{{ $t('k291') }}</h3>
+            <h3>{{ $t('k291') }}</h3><p class="cctx">{{ $t('c4ctx') }}</p>
             <div class="c2">
               <div class="pain"><div class="h">{{ $t('k260') }}</div><ul>
                 <li><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k292') }}</li>

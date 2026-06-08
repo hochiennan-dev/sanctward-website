@@ -371,3 +371,13 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .lang-btn:hover{color:var(--ink-1)}
 .lang-btn.on{color:var(--brand-ink);font-weight:700}
 .lang-sep{color:var(--line-2);font-size:12px}
+
+
+/* solution education blocks */
+.edu{display:flex;flex-direction:column;gap:13px;margin:6px 0 16px;padding:16px 18px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px}
+.edu-h{display:flex;align-items:center;gap:7px;font-family:'Inter';font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:5px}
+.edu-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.edu-item p{font-size:13.5px;color:var(--ink-2);line-height:1.66}
+
+/* case context */
+.cctx{font-size:14.5px;color:var(--ink-2);line-height:1.72;margin:8px 0 20px;max-width:720px}
