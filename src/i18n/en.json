@@ -511,5 +511,8 @@
   "pp_s6h": "Your rights",
   "pp_s6": "Under the Personal Data Protection Act, you may request to access, review, obtain copies of, correct or delete your personal data, and to stop its collection, processing or use. To exercise these rights, contact us below.",
   "pp_s7h": "Contact us",
-  "pp_s7": "If you have any questions about this Privacy Policy or wish to exercise your rights, email us and we’ll respond promptly."
+  "pp_s7": "If you have any questions about this Privacy Policy or wish to exercise your rights, email us and we’ll respond promptly.",
+  "cf_sending": "Sending…",
+  "cf_sent": "Sent — we'll get back to you shortly.",
+  "cf_error": "Couldn't send. Please try again later, or email gary.ho@sanctward.com directly."
 }

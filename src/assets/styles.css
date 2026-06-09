@@ -424,3 +424,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .pp-body h2{font-size:19px;color:var(--brand-ink);margin:26px 0 8px}
 .pp-body p{font-size:15px;color:var(--ink-2);line-height:1.8;margin:0}
 .pp-body a{color:var(--brand-ink);font-weight:600}
+
+/* contact form status */
+.cf-msg{margin:12px 0 0;font-size:14px;font-weight:600}
+.cf-ok{color:var(--brand-ink)}
+.cf-err{color:#C2362E}
+.cform button[disabled]{opacity:.6;cursor:default}
