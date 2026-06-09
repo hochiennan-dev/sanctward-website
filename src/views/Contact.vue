@@ -57,15 +57,38 @@ function openMailClient() {
   window.location.href = `mailto:${MAIL}?subject=${subject}&body=${body}`
 }
 
+// 在前端取得來源 IP／國家／來源網路組織（Apps Script 伺服器端拿不到訪客 IP）
+async function getClientMeta() {
+  try {
+    const ctrl = new AbortController()
+    const t = setTimeout(() => ctrl.abort(), 1800)
+    const r = await fetch('https://ipapi.co/json/', { signal: ctrl.signal })
+    clearTimeout(t)
+    const j = await r.json()
+    return {
+      ip: j.ip || '',
+      country: j.country_name || '',
+      city: j.city || '',
+      org: j.org || '',
+    }
+  } catch (e) {
+    return { ip: '', country: '', city: '', org: '' }
+  }
+}
+
 async function submit() {
   if (!CONTACT_ENDPOINT) { openMailClient(); return }
   status.value = 'sending'
+  const meta = await getClientMeta()
   try {
     // Apps Script Web App 不回 CORS 標頭，故用 no-cors（送得出、信會寄；回應為 opaque）
     await fetch(CONTACT_ENDPOINT, {
       method: 'POST',
       mode: 'no-cors',
-      body: JSON.stringify({ name: f.name, company: f.company, email: f.email, msg: f.msg }),
+      body: JSON.stringify({
+        name: f.name, company: f.company, email: f.email, msg: f.msg,
+        ip: meta.ip, country: meta.country, city: meta.city, org: meta.org,
+      }),
     })
     status.value = 'sent'
     f.name = ''; f.company = ''; f.email = ''; f.msg = ''
