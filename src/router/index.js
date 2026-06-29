@@ -8,6 +8,12 @@ const routes = [
   { path: '/solutions', name: 'solutions', component: () => import('../views/Solutions.vue') },
   { path: '/cases', name: 'cases', component: () => import('../views/Cases.vue') },
   { path: '/platform', name: 'platform', component: () => import('../views/Platform.vue') },
+  { path: '/platform/sso', name: 'platform-sso', component: () => import('../views/platform/Sso.vue') },
+  { path: '/platform/pam', name: 'platform-pam', component: () => import('../views/platform/Pam.vue') },
+  { path: '/platform/zta', name: 'platform-zta', component: () => import('../views/platform/Zta.vue') },
+  { path: '/platform/iae', name: 'platform-iae', component: () => import('../views/platform/Iae.vue') },
+  { path: '/platform/compliance', name: 'platform-compliance', component: () => import('../views/platform/Compliance.vue') },
+  { path: '/platform/reports', name: 'platform-reports', component: () => import('../views/platform/Reports.vue') },
   { path: '/privacy', name: 'privacy', component: () => import('../views/Privacy.vue') },
 ]
 

@@ -3,7 +3,19 @@
   <div class="container nav-inner">
     <router-link class="brand" to="/"><Logo3D /><img src="/assets/wordmark-black.svg" alt="SANCTWARD"></router-link>
     <nav class="nav-links">
-      <router-link to="/platform">{{ $t('k0') }}</router-link><router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
+      <div class="nav-drop">
+        <router-link to="/platform">{{ $t('k0') }}</router-link>
+        <div class="mega">
+          <span class="mega-head">{{ $t('mm_head') }}</span>
+          <router-link class="mega-item" to="/platform/sso"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></span><span><span class="mi-t">{{ $t('mm_sso_t') }}</span><span class="mi-d">{{ $t('mm_sso_d') }}</span></span></router-link>
+          <router-link class="mega-item" to="/platform/pam"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span><span><span class="mi-t">{{ $t('mm_pam_t') }}</span><span class="mi-d">{{ $t('mm_pam_d') }}</span></span></router-link>
+          <router-link class="mega-item" to="/platform/zta"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><span><span class="mi-t">{{ $t('mm_zta_t') }}</span><span class="mi-d">{{ $t('mm_zta_d') }}</span></span></router-link>
+          <router-link class="mega-item" to="/platform/iae"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg></span><span><span class="mi-t">{{ $t('mm_iae_t') }}</span><span class="mi-d">{{ $t('mm_iae_d') }}</span></span></router-link>
+          <router-link class="mega-item" to="/platform/compliance"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span><span class="mi-t">{{ $t('mm_cmp_t') }}</span><span class="mi-d">{{ $t('mm_cmp_d') }}</span></span></router-link>
+          <router-link class="mega-item" to="/platform/reports"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span><span><span class="mi-t">{{ $t('mm_rpt_t') }}</span><span class="mi-d">{{ $t('mm_rpt_d') }}</span></span></router-link>
+        </div>
+      </div>
+      <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
     </nav>
     <div class="nav-right">
       <span class="lang"><button type="button" class="lang-btn" :class="{ on: locale === 'zh-Hant' }" @click="setLang('zh-Hant')">繁</button><span class="lang-sep">/</span><button type="button" class="lang-btn" :class="{ on: locale === 'en' }" @click="setLang('en')">EN</button></span>
@@ -12,7 +24,14 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <router-link to="/platform">{{ $t('k0') }}</router-link><router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
+    <router-link to="/platform">{{ $t('k0') }}</router-link>
+    <router-link class="mm-sub" to="/platform/sso">{{ $t('mm_sso_t') }}</router-link>
+    <router-link class="mm-sub" to="/platform/pam">{{ $t('mm_pam_t') }}</router-link>
+    <router-link class="mm-sub" to="/platform/zta">{{ $t('mm_zta_t') }}</router-link>
+    <router-link class="mm-sub" to="/platform/iae">{{ $t('mm_iae_t') }}</router-link>
+    <router-link class="mm-sub" to="/platform/compliance">{{ $t('mm_cmp_t') }}</router-link>
+    <router-link class="mm-sub" to="/platform/reports">{{ $t('mm_rpt_t') }}</router-link>
+    <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
   </div>
 </header>
 </template>
