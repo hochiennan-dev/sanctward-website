@@ -1,7 +1,7 @@
 <template>
-  <section class="band page-hero">
-    <div class="container reveal">
-      <span class="eyebrow">{{ $t('pf_eyebrow') }}</span>
+  <section class="page-banner">
+    <div class="page-banner-inner reveal">
+      <span class="pb-eye">{{ $t('pf_eyebrow') }}</span>
       <h1>{{ $t('pf_h1') }}</h1>
       <p>{{ $t('pf_intro') }}</p>
     </div>

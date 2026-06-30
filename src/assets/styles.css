@@ -337,6 +337,14 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .page-hero .eyebrow{justify-content:center}
 .page-hero h1{font-size:44px;margin:16px 0 16px;line-height:1.16}
 .page-hero p{font-size:18px;color:var(--ink-2);max-width:700px;margin:0 auto}
+
+/* full-width dark page title banner (platform pages) */
+.page-banner{background:linear-gradient(135deg,#0E1714,#13251A 58%,#0E1714);padding:92px 0 78px;position:relative;z-index:1;overflow:hidden}
+.page-banner-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;text-align:center;color:#E9EFEC;position:relative;z-index:1}
+.page-banner .pb-eye{display:inline-block;font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:.1em;color:#54DA6C;background:rgba(45,162,63,.16);border:1px solid rgba(84,218,108,.32);padding:7px 17px;border-radius:30px;text-transform:uppercase}
+.page-banner h1{font-size:46px;margin:22px auto 16px;max-width:900px;color:#fff;line-height:1.16}
+.page-banner p{font-size:18px;color:#B9C7C0;max-width:780px;margin:0 auto;line-height:1.72}
+@media(max-width:860px){.page-banner{padding:66px 0 56px}.page-banner h1{font-size:32px}.page-banner p{font-size:16px}}
 .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cap5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 
