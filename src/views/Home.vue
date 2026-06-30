@@ -34,21 +34,21 @@
 
         <div class="hslide">
           <div>
-            <span class="eyebrow hs-eye t-amber">{{ $t('k33') }}</span>
+            <span class="eyebrow hs-eye">{{ $t('k33') }}</span>
             <h1>{{ $t('k34') }}<br><span class="g">{{ $t('k35') }}</span></h1>
             <p>{{ $t('k36') }}</p>
             <div class="hs-cta">
-              <a class="btn btn-primary btn-lg" href="#diff">{{ $t('k37') }}</a>
+              <router-link class="btn btn-primary btn-lg" to="/platform/iae">{{ $t('k37') }}</router-link>
               <a class="btn btn-ghost btn-lg" href="#contact">{{ $t('k6') }}<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
           <div class="viz">
-            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clip"/></svg>CLIPBOARD DLP · LIVE</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg>IAE · IDENTITY CORE</span><span class="dot3"><i></i><i></i><i></i></span></div>
             <div class="mock">
-              <div class="mrow block"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k38') }}<span class="who">→ chatgpt.com</span></div>
-              <div class="mrow block"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>{{ $t('k39') }}<span class="who">→ claude.ai</span></div>
-              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--amber)"><use href="#i-alert"/></svg>{{ $t('k40') }}<span class="who">→ gemini</span></div>
-              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>{{ $t('k41') }}<span class="who">{{ $t('k42') }}</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>{{ $t('k38') }}<span class="who">IdP · Relay · M2M</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>{{ $t('k39') }}<span class="who">IdP · SP · SLO</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>{{ $t('k40') }}<span class="who">Passkey · TOTP · OTP</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>{{ $t('k41') }}<span class="who">CoA · RadSec</span></div>
             </div>
             <div class="note" style="border-color:var(--brand-soft2);background:var(--brand-soft);color:var(--brand-ink)"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-shield"/></svg><div><b>{{ $t('k43') }}</b>{{ $t('k44') }}</div></div>
           </div>
@@ -287,70 +287,60 @@
 <section class="band" id="diff">
   <div class="container">
     <div class="shead reveal" style="max-width:820px;margin:0 auto 44px;text-align:center">
-      <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
-      <h2 style="margin-top:16px">{{ $t('k115') }}</h2>
+      <h2>{{ $t('k115') }}</h2>
       <p>{{ $t('k116') }}</p>
     </div>
     <div class="dstack reveal">
 
-        <!-- Slide 1: Shadow AI -->
+        <!-- Slide 1: IAE -->
         <div class="dslide">
           <div class="dillu-wrap">
-            <svg class="dillu" viewBox="0 0 560 320" fill="none" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Noto Sans TC','Inter',sans-serif">
- <defs>
-   <filter id="sshad" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter>
-   <path id="passPath" d="M104 150 H472"/>
-   <path id="blockPath" d="M104 150 H272 V236"/>
- </defs>
+            <svg class="dillu" viewBox="0 0 560 320" fill="none" aria-hidden="true" font-family="'Noto Sans TC','Inter',sans-serif">
+ <defs><filter id="iaeShad" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16782A" flood-opacity="0.12"/></filter></defs>
  <circle cx="92" cy="56" r="86" fill="#2DA23F" opacity=".045"/>
  <circle cx="474" cy="276" r="110" fill="#2DA23F" opacity=".05"/>
 
- <!-- channels -->
- <path d="M104 150 H472" stroke="#E3EAE5" stroke-width="11" stroke-linecap="round"/>
- <path d="M272 150 V232" stroke="#F1D7D5" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 11"/>
+ <!-- connectors: clients -> core -->
+ <line x1="98" y1="86" x2="236" y2="150" stroke="#2DA23F" stroke-width="2"/><line x1="98" y1="86" x2="236" y2="150" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
+ <line x1="98" y1="160" x2="236" y2="160" stroke="#2DA23F" stroke-width="2"/><line x1="98" y1="160" x2="236" y2="160" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
+ <line x1="98" y1="234" x2="236" y2="170" stroke="#2DA23F" stroke-width="2"/><line x1="98" y1="234" x2="236" y2="170" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
 
- <!-- source endpoint -->
- <g filter="url(#sshad)"><rect x="18" y="120" width="76" height="60" rx="12" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g>
- <rect x="33" y="135" width="42" height="6" rx="3" fill="#9AA9A1"/>
- <rect x="33" y="148" width="48" height="4" rx="2" fill="#D2DAD4"/>
- <rect x="33" y="158" width="32" height="4" rx="2" fill="#D2DAD4"/>
- <text x="19" y="200" font-size="11" font-weight="600" fill="#46554E">{{ $t('k117') }}</text>
+ <!-- connectors: core -> protocols -->
+ <line x1="316" y1="150" x2="410" y2="87" stroke="#2DA23F" stroke-width="2"/><line x1="316" y1="150" x2="410" y2="87" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
+ <line x1="316" y1="158" x2="410" y2="133" stroke="#2DA23F" stroke-width="2"/><line x1="316" y1="158" x2="410" y2="133" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
+ <line x1="316" y1="166" x2="410" y2="179" stroke="#2DA23F" stroke-width="2"/><line x1="316" y1="166" x2="410" y2="179" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
+ <line x1="316" y1="174" x2="410" y2="225" stroke="#2DA23F" stroke-width="2"/><line x1="316" y1="174" x2="410" y2="225" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line>
 
- <!-- green packets (pass) -->
- <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="0s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
- <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="1.13s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="1.13s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
- <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.6"/><rect x="-10" y="-5" width="20" height="3" rx="1.5" fill="#2DA23F" opacity=".55"/><rect x="-10" y="2" width="13" height="3" rx="1.5" fill="#2DA23F" opacity=".35"/><animateMotion dur="3.4s" begin="2.26s" repeatCount="indefinite"><mpath xlink:href="#passPath"/></animateMotion><animate attributeName="opacity" dur="3.4s" begin="2.26s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.9;1"/></g>
+ <!-- client sources -->
+ <g filter="url(#iaeShad)"><rect x="14" y="66" width="84" height="40" rx="11" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><rect x="28" y="80" width="40" height="5" rx="2.5" fill="#9AA9A1"/><rect x="28" y="91" width="30" height="4" rx="2" fill="#D2DAD4"/>
+ <g filter="url(#iaeShad)"><rect x="14" y="140" width="84" height="40" rx="11" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><rect x="28" y="154" width="40" height="5" rx="2.5" fill="#9AA9A1"/><rect x="28" y="165" width="30" height="4" rx="2" fill="#D2DAD4"/>
+ <g filter="url(#iaeShad)"><rect x="14" y="214" width="84" height="40" rx="11" fill="#fff" stroke="#E4EAE6" stroke-width="1.5"/></g><rect x="28" y="228" width="40" height="5" rx="2.5" fill="#9AA9A1"/><rect x="28" y="239" width="30" height="4" rx="2" fill="#D2DAD4"/>
+ <text x="16" y="278" font-size="10.5" font-weight="600" fill="#46554E">{{ $t('k117') }}</text>
 
- <!-- red packet (sensitive -> blocked) -->
- <g opacity="0"><rect x="-17" y="-12" width="34" height="24" rx="6" fill="#FBEEEE" stroke="#D2473F" stroke-width="1.7"/><path d="M0 -6 V1" stroke="#D2473F" stroke-width="2.4" stroke-linecap="round"/><circle cx="0" cy="5.5" r="1.5" fill="#D2473F"/><animateMotion dur="4s" begin="0.6s" repeatCount="indefinite" keyPoints="0;0.66;0.66;1" keyTimes="0;0.45;0.62;1" calcMode="linear"><mpath xlink:href="#blockPath"/></animateMotion><animate attributeName="opacity" dur="4s" begin="0.6s" repeatCount="indefinite" values="0;1;1;1;0" keyTimes="0;0.05;0.62;0.93;1"/></g>
+ <!-- top badge -->
+ <path d="M276 64 V120" stroke="#2DA23F" stroke-width="1.5" stroke-dasharray="2 5" opacity=".5"/>
+ <g transform="translate(276,40)"><rect x="-104" y="-20" width="208" height="40" rx="20" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><text x="0" y="6" text-anchor="middle" font-size="14" font-weight="800" fill="#1B8F34">{{ $t('k119') }}</text></g>
 
- <!-- magnifier -->
- <g transform="translate(272,150)">
-   <circle r="28" fill="#ffffff" fill-opacity="0.5" stroke="#1B8F34" stroke-width="3.2"/>
-   <line x1="20" y1="20" x2="40" y2="40" stroke="#1B8F34" stroke-width="5.5" stroke-linecap="round"/>
-   <circle r="16" fill="none" stroke="#2DA23F" stroke-width="2"><animate attributeName="r" values="13;30" dur="1.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.55;0" dur="1.9s" repeatCount="indefinite"/></circle>
- </g>
- <path d="M272 60 V120" stroke="#2DA23F" stroke-width="1.5" stroke-dasharray="2 5" opacity=".5"/><g transform="translate(272,40)"><rect x="-95" y="-20" width="190" height="40" rx="20" fill="#EAF6EC" stroke="#2DA23F" stroke-width="1.5"/><text x="0" y="6" text-anchor="middle" font-size="15.5" font-weight="800" fill="#1B8F34">{{ $t('k118') }}</text></g>
+ <!-- identity core -->
+ <g filter="url(#iaeShad)"><rect x="236" y="120" width="80" height="80" rx="20" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.6"/></g>
+ <circle cx="276" cy="160" r="44" fill="none" stroke="#2DA23F" stroke-width="2" opacity="0"><animate attributeName="r" values="44;58" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+ <path d="M276 134 l16 6 v11 c0 10-6 16-16 20 -10-4-16-10-16-20 v-11 z" fill="#fff" stroke="#1B8F34" stroke-width="2"/>
+ <path d="M269 158 l5 5 10-11" stroke="#1B8F34" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="276" y="222" text-anchor="middle" font-size="11" font-weight="800" fill="#1B8F34">{{ $t('k118') }}</text>
 
- <!-- pass card -->
- <g filter="url(#sshad)"><rect x="406" y="118" width="146" height="62" rx="14" fill="#fff" stroke="#CBE8D2" stroke-width="1.6"/></g>
- <g transform="translate(426,149)"><circle r="13" fill="#EAF6EC"/><path d="M-5 0 l3.5 3.5 6.5-7.5" stroke="#1B8F34" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
- <text x="450" y="144" font-size="12" font-weight="700" fill="#3B4540">{{ $t('k119') }}</text>
- <text x="450" y="163" font-size="10" font-weight="600" fill="#1B8F34">{{ $t('k120') }}</text>
-
- <!-- blocked bin -->
- <g filter="url(#sshad)"><rect x="206" y="236" width="134" height="52" rx="13" fill="#fff" stroke="#F0D2D0" stroke-width="1.6"/></g>
- <g transform="translate(228,262)"><circle r="13" fill="#FBEEEE"/><path d="M-5 -5 L5 5 M5 -5 L-5 5" stroke="#D2473F" stroke-width="2.3" stroke-linecap="round"/></g>
- <text x="250" y="258" font-size="12" font-weight="700" fill="#3B4540">{{ $t('k121') }}</text>
- <text x="250" y="277" font-size="10" font-weight="600" fill="#C2362E">{{ $t('k122') }}</text>
+ <!-- protocol outputs -->
+ <g filter="url(#iaeShad)"><rect x="410" y="70" width="130" height="34" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(426,87)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="444" y="91" font-size="11.5" font-weight="700" fill="#3B4540">OIDC</text>
+ <g filter="url(#iaeShad)"><rect x="410" y="116" width="130" height="34" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(426,133)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="444" y="137" font-size="11.5" font-weight="700" fill="#3B4540">SAML</text>
+ <g filter="url(#iaeShad)"><rect x="410" y="162" width="130" height="34" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(426,179)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="444" y="183" font-size="11.5" font-weight="700" fill="#3B4540">MFA</text>
+ <g filter="url(#iaeShad)"><rect x="410" y="208" width="130" height="34" rx="9" fill="#fff" stroke="#CBE8D2" stroke-width="1.4"/></g><g transform="translate(426,225)"><circle r="8" fill="#EAF6EC"/><path d="M-3.5 0 l2.5 2.5 4.5-5" stroke="#1B8F34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="444" y="229" font-size="11.5" font-weight="700" fill="#3B4540">RADIUS</text>
 </svg>
           </div>
           <div class="dcopy">
-            <span class="badge road"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Roadmap 2026</span>
+            <span class="badge live"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('iae_mat_done') }}</span>
             <h3>{{ $t('k123') }}</h3>
             <p class="lead">{{ $t('k124') }}</p>
             <p class="body">{{ $t('k125') }}</p><div class="edu"><div class="edu-item"><span class="edu-h">{{ $t('eduWhy') }}</span><p>{{ $t('d1why') }}</p></div><div class="edu-item"><span class="edu-h">{{ $t('eduHow') }}</span><p>{{ $t('d1how') }}</p></div></div>
-            <div class="metric"><b>94%</b><span>{{ $t('k126') }}<br>{{ $t('k127') }}</span></div>
+            <div class="metric"><b>4</b><span>{{ $t('k126') }}<br>{{ $t('k127') }}</span></div>
           </div>
         </div>
 
