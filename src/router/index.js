@@ -6,6 +6,7 @@ const routes = [
   { path: '/about', name: 'about', component: () => import('../views/About.vue') },
   { path: '/contact', name: 'contact', component: () => import('../views/Contact.vue') },
   { path: '/solutions', name: 'solutions', component: () => import('../views/Solutions.vue') },
+  { path: '/msp', name: 'msp', component: () => import('../views/Msp.vue') },
   { path: '/cases', name: 'cases', component: () => import('../views/Cases.vue') },
   { path: '/platform', name: 'platform', component: () => import('../views/Platform.vue') },
   { path: '/platform/sso', name: 'platform-sso', component: () => import('../views/platform/Sso.vue') },

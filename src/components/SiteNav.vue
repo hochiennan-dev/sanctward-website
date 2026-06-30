@@ -16,7 +16,7 @@
           <router-link class="mega-item" to="/platform/reports"><span class="mi-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span><span><span class="mi-t">{{ $t('mm_rpt_t') }}</span><span class="mi-d">{{ $t('mm_rpt_d') }}</span></span></router-link>
         </div>
       </div>
-      <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
+      <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/msp">{{ $t('msp_nav') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
     </nav>
     <div class="nav-right">
       <span class="lang"><button type="button" class="lang-btn" :class="{ on: locale === 'zh-Hant' }" @click="setLang('zh-Hant')">繁</button><span class="lang-sep">/</span><button type="button" class="lang-btn" :class="{ on: locale === 'en' }" @click="setLang('en')">EN</button></span>
@@ -33,7 +33,7 @@
     <router-link class="mm-sub" to="/platform/iae">{{ $t('mm_iae_t') }}</router-link>
     <router-link class="mm-sub" to="/platform/compliance">{{ $t('mm_cmp_t') }}</router-link>
     <router-link class="mm-sub" to="/platform/reports">{{ $t('mm_rpt_t') }}</router-link>
-    <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
+    <router-link to="/solutions">{{ $t('k1') }}</router-link><router-link to="/msp">{{ $t('msp_nav') }}</router-link><router-link to="/cases">{{ $t('k2') }}</router-link><router-link to="/about">{{ $t('k4') }}</router-link>
   </div>
 </header>
 </template>
