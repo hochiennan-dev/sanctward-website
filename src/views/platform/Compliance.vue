@@ -23,6 +23,26 @@
     </div>
   </section>
 
+  <!-- 內建合規框架(完整清單) -->
+  <section class="band">
+    <div class="container">
+      <div class="shead reveal"><span class="eyebrow">{{ $t('cmp_fw_eye') }}</span><h2>{{ $t('cmp_fw_h') }}</h2><p>{{ $t('cmp_fw_p') }}</p></div>
+      <div class="cmp-stat reveal">
+        <span class="num">{{ $t('cmp_fw_stat_n') }}</span>
+        <span class="meta"><span class="l">{{ $t('cmp_fw_stat_l') }}</span><span class="s">{{ $t('cmp_fw_stat_s') }}</span></span>
+      </div>
+      <div class="cmp-fw-groups reveal">
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g1_t') }}<span class="cnt">10</span></h4><div class="cmp-chips"><span>ISO/IEC 27001:2022</span><span>ISO/IEC 27017:2015</span><span>ISO/IEC 27018:2019</span><span>ISO/IEC 27011:2022</span><span>NIST SP 800-207</span><span>NIST SP 800-53 Rev.5</span><span>CIS Controls v8</span><span>SOC 2 Type II</span><span>PCI DSS v4.0</span><span>IEC 62443</span></div></div>
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g2_t') }}<span class="cnt">6</span></h4><div class="cmp-chips"><span>{{ $t('cmp_fw_g2_1') }}</span><span>{{ $t('cmp_fw_g2_2') }}</span><span>{{ $t('cmp_fw_g2_3') }}</span><span>{{ $t('cmp_fw_g2_4') }}</span><span>{{ $t('cmp_fw_g2_5') }}</span><span>{{ $t('cmp_fw_g2_6') }}</span></div></div>
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g3_t') }}<span class="cnt">6</span></h4><div class="cmp-chips"><span>HIPAA §164.312</span><span>HITRUST CSF</span><span>NY DFS 23 NYCRR 500</span><span>NAIC MDL-668</span><span>CMMC v2.0</span><span>{{ $t('cmp_fw_g3_6') }}</span></div></div>
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g4_t') }}<span class="cnt">3</span></h4><div class="cmp-chips"><span>{{ $t('cmp_fw_g4_1') }}</span><span>{{ $t('cmp_fw_g4_2') }}</span><span>{{ $t('cmp_fw_g4_3') }}</span></div></div>
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g5_t') }}<span class="cnt">3</span></h4><div class="cmp-chips"><span>GDPR Art.32</span><span>{{ $t('cmp_fw_g5_2') }}</span><span>EASA Part-IS</span></div></div>
+        <div class="cmp-fw-grp"><h4>{{ $t('cmp_fw_g6_t') }}<span class="cnt">3</span></h4><div class="cmp-chips"><span>{{ $t('cmp_fw_g6_1') }}</span><span>{{ $t('cmp_fw_g6_2') }}</span><span>{{ $t('cmp_fw_g6_3') }}</span></div></div>
+      </div>
+      <p class="cmp-fw-note reveal">{{ $t('cmp_fw_note') }}</p>
+    </div>
+  </section>
+
   <section class="band">
     <div class="container">
       <div class="shead reveal"><span class="eyebrow">{{ $t('compliance_cap_eye') }}</span><h2>{{ $t('compliance_cap_h') }}</h2><p>{{ $t('compliance_cap_p') }}</p></div>
@@ -74,3 +94,22 @@
 </template>
 
 <script setup></script>
+
+<style scoped>
+.cmp-stat{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--line);border-radius:18px;padding:24px 30px;max-width:760px;margin:0 auto 30px}
+.cmp-stat .num{font-family:'Inter';font-weight:800;font-size:56px;line-height:1;letter-spacing:-.02em;color:var(--brand)}
+.cmp-stat .meta{display:flex;flex-direction:column;gap:5px}
+.cmp-stat .meta .l{font-size:18px;font-weight:800;color:var(--brand-ink)}
+.cmp-stat .meta .s{font-size:13.5px;color:var(--ink-2);line-height:1.6;max-width:420px}
+
+.cmp-fw-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.cmp-fw-grp{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.cmp-fw-grp h4{margin:0 0 12px;font-size:14px;color:var(--brand-ink);display:flex;align-items:center;gap:9px}
+.cmp-fw-grp h4 .cnt{font-size:11px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:20px;padding:2px 9px}
+.cmp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cmp-chips span{font-size:12px;color:var(--ink-1);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:5px 10px;transition:border-color .2s,color .2s}
+.cmp-chips span:hover{border-color:var(--brand);color:var(--brand-ink)}
+.cmp-fw-note{text-align:center;font-size:13px;color:var(--ink-2);margin:24px auto 0;max-width:760px;line-height:1.7}
+
+@media(max-width:860px){.cmp-fw-groups{grid-template-columns:1fr}.cmp-stat .num{font-size:46px}}
+</style>
