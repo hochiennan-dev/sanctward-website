@@ -336,11 +336,9 @@
 </svg>
           </div>
           <div class="dcopy">
-            <span class="badge live"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('iae_mat_done') }}</span>
             <h3>{{ $t('k123') }}</h3>
             <p class="lead">{{ $t('k124') }}</p>
             <p class="body">{{ $t('k125') }}</p><div class="edu"><div class="edu-item"><span class="edu-h">{{ $t('eduWhy') }}</span><p>{{ $t('d1why') }}</p></div><div class="edu-item"><span class="edu-h">{{ $t('eduHow') }}</span><p>{{ $t('d1how') }}</p></div></div>
-            <div class="metric"><b>4</b><span>{{ $t('k126') }}<br>{{ $t('k127') }}</span></div>
           </div>
         </div>
 

@@ -124,7 +124,7 @@
   "k122": "No data leakage",
   "k123": "Intelligent Auth Engine · IAE",
   "k124": "One identity core, three roles, four protocols — new and legacy apps, unified.",
-  "k125": "IAE is at once an identity provider (OIDC/SAML), a federation gateway for external identity sources, and a phishing-resistant passwordless front door. Unique protocol bridging lets any upstream identity source reach any downstream app; OIDC, SAML, MFA and RADIUS are all built in with per-tenant signing — all shipped and e2e-verified.",
+  "k125": "IAE is at once an identity provider (OIDC/SAML), a federation gateway for external identity sources, and a phishing-resistant passwordless front door. Unique protocol bridging lets any upstream identity source reach any downstream app; OIDC, SAML, MFA and RADIUS are all built in with per-tenant signing.",
   "k126": "shipped protocols",
   "k127": "OIDC·SAML·MFA·RADIUS",
   "k128": "AI agents arrive",
