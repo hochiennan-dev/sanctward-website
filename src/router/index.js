@@ -14,6 +14,7 @@ const routes = [
   { path: '/platform/zta', name: 'platform-zta', component: () => import('../views/platform/Zta.vue') },
   { path: '/platform/dlp', name: 'platform-dlp', component: () => import('../views/platform/Dlp.vue') },
   { path: '/platform/iae', name: 'platform-iae', component: () => import('../views/platform/Iae.vue') },
+  { path: '/platform/hsm', name: 'platform-hsm', component: () => import('../views/platform/Hsm.vue') },
   { path: '/platform/compliance', name: 'platform-compliance', component: () => import('../views/platform/Compliance.vue') },
   { path: '/platform/reports', name: 'platform-reports', component: () => import('../views/platform/Reports.vue') },
   { path: '/privacy', name: 'privacy', component: () => import('../views/Privacy.vue') },

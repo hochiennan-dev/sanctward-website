@@ -189,6 +189,7 @@
         <button class="tab" data-p="2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg></span><div><span class="k">ZTA</span><h4>{{ $t('k80') }}</h4><p>{{ $t('k81') }}</p></div></button>
         <button class="tab" data-p="3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></span><div><span class="k">Endpoint</span><h4>{{ $t('k82') }}</h4><p>{{ $t('k83') }}</p></div></button>
         <button class="tab" data-p="4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><div><span class="k">Compliance</span><h4>{{ $t('k84') }}</h4><p>{{ $t('k85') }}</p></div></button>
+        <button class="tab" data-p="5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><div><span class="k">Sanctseal</span><h4>{{ $t('hp_ss_h4') }}</h4><p>{{ $t('hp_ss_p') }}</p></div></button>
       </div>
       <div class="panel" id="ppanel">
         <div class="pane on">
@@ -275,6 +276,25 @@
               <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--ink-3)"><use href="#i-doc"/></svg>USER_DISABLED · admin.lin<span class="who">delta ✓</span></div>
               <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--ink-3)"><use href="#i-doc"/></svg>SESSION_RECORDED · srv-db-01<span class="who">WORM</span></div>
               <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-shield"/></svg>Merkle root verified<span class="who">#1045</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="pcopy">
+            <h3>{{ $t('hp_ss_h3') }}</h3>
+            <p>{{ $t('hp_ss_pp') }}</p>
+            <div class="flist">
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('hp_ss_1') }}</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('hp_ss_2') }}</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('hp_ss_3') }}</div>
+            </div>
+          </div>
+          <div class="viz" style="box-shadow:none">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg>SANCTSEAL · CERT CENTER</span></div>
+            <div class="mock">
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>Tenant Root CA · RSA-4096<span class="who">valid · 20y</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>Agent mTLS · 1,482 certs<span class="who">auto-renew</span></div>
+              <div class="mrow"><svg class="ic" viewBox="0 0 24 24" style="color:var(--amber)"><use href="#i-alert"/></svg>*.app.acme · Let's Encrypt<span class="who">renews 12d</span></div>
             </div>
           </div>
         </div>
