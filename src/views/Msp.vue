@@ -89,11 +89,11 @@
     </div>
   </section>
 
-  <!-- 平台地基（三根柱子） -->
+  <!-- 平台地基（四根柱子） -->
   <section class="band">
     <div class="container">
       <div class="shead reveal"><span class="eyebrow">{{ $t('msp_pf_eye') }}</span><h2>{{ $t('msp_pf_h') }}</h2><p>{{ $t('msp_pf_p') }}</p></div>
-      <div class="sp-grid3 reveal">
+      <div class="sp-grid2 reveal">
         <div class="sp-capcard">
           <h3>{{ $t('msp_pf1_t') }}</h3>
           <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf1_b1') }}</span></div>
@@ -101,16 +101,22 @@
           <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf1_b3') }}</span></div>
         </div>
         <div class="sp-capcard">
-          <h3>{{ $t('msp_pf2_t') }}</h3>
-          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b1') }}</span></div>
-          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b2') }}</span></div>
-          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b3') }}</span></div>
-        </div>
-        <div class="sp-capcard">
           <h3>{{ $t('msp_pf3_t') }}</h3>
           <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf3_b1') }}</span></div>
           <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf3_b2') }}</span></div>
           <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf3_b3') }}</span></div>
+        </div>
+        <div class="sp-capcard">
+          <h3>{{ $t('msp_pf4_t') }}</h3>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf4_b1') }}</span></div>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf4_b2') }}</span></div>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf4_b3') }}</span></div>
+        </div>
+        <div class="sp-capcard">
+          <h3>{{ $t('msp_pf2_t') }}</h3>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b1') }}</span></div>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b2') }}</span></div>
+          <div class="sp-pi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>{{ $t('msp_pf2_b3') }}</span></div>
         </div>
       </div>
     </div>
