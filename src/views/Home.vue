@@ -324,24 +324,17 @@
   </div>
 </section>
 
-<!-- PLATFORM FOUNDATION · Sanct family -->
-<section class="band tight">
+<!-- DIFFERENTIATORS / 特色 bento -->
+<section class="band" id="diff">
   <div class="container">
-    <div class="shead reveal" style="max-width:780px;margin:0 auto 44px;text-align:center"><span class="eyebrow">{{ $t('hp_pf_eye') }}</span><h2>{{ $t('hp_pf_h') }}</h2><p>{{ $t('hp_pf_p') }}</p></div>
-    <div class="sp-grid3 reveal">
+    <div class="shead reveal" style="max-width:820px;margin:0 auto 40px;text-align:center">
+      <h2>{{ $t('k115') }}</h2>
+      <p>{{ $t('k116') }}</p>
+    </div>
+    <div class="sp-grid3 reveal" style="margin-bottom:34px">
       <div class="sp-card"><h3>{{ $t('hp_pf1_t') }}</h3><p>{{ $t('hp_pf1_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/platform/hsm">{{ $t('learn_more') }} →</router-link></p></div>
       <div class="sp-card"><h3>{{ $t('hp_pf2_t') }}</h3><p>{{ $t('hp_pf2_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/msp">{{ $t('learn_more') }} →</router-link></p></div>
       <div class="sp-card"><h3>{{ $t('hp_pf3_t') }}</h3><p>{{ $t('hp_pf3_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/msp">{{ $t('learn_more') }} →</router-link></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- DIFFERENTIATORS bento -->
-<section class="band" id="diff">
-  <div class="container">
-    <div class="shead reveal" style="max-width:820px;margin:0 auto 44px;text-align:center">
-      <h2>{{ $t('k115') }}</h2>
-      <p>{{ $t('k116') }}</p>
     </div>
     <div class="dstack reveal">
 
