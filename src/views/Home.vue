@@ -34,6 +34,27 @@
 
         <div class="hslide">
           <div>
+            <span class="eyebrow hs-eye t-amber">{{ $t('hp_msp_eye') }}</span>
+            <h1>{{ $t('hp_msp_h1a') }}<br><span class="g">{{ $t('hp_msp_h1b') }}</span></h1>
+            <p>{{ $t('hp_msp_p') }}</p>
+            <div class="hs-cta">
+              <router-link class="btn btn-primary btn-lg" to="/msp">{{ $t('hp_msp_cta') }}</router-link>
+              <a class="btn btn-ghost btn-lg" href="#contact">{{ $t('k6') }}<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="viz">
+            <div class="viz-head"><span class="lbl"><svg class="ic" viewBox="0 0 24 24"><use href="#i-users"/></svg>MSP · MULTI-TENANT</span><span class="dot3"><i></i><i></i><i></i></span></div>
+            <div class="mock">
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>Tenant · ACME Corp<span class="who">{{ $t('hp_msp_v1') }}</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>Tenant · Globex<span class="who">{{ $t('hp_msp_v2') }}</span></div>
+              <div class="mrow ok"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-check"/></svg>Tenant · Initech<span class="who">{{ $t('hp_msp_v3') }}</span></div>
+            </div>
+            <div class="note" style="border-color:var(--brand-soft2);background:var(--brand-soft);color:var(--brand-ink)"><svg class="ic" viewBox="0 0 24 24" style="color:var(--brand)"><use href="#i-shield"/></svg><div><b>{{ $t('hp_msp_note_b') }}</b>{{ $t('hp_msp_note') }}</div></div>
+          </div>
+        </div>
+
+        <div class="hslide">
+          <div>
             <span class="eyebrow hs-eye">{{ $t('k33') }}</span>
             <h1>{{ $t('k34') }}<br><span class="g">{{ $t('k35') }}</span></h1>
             <p>{{ $t('k36') }}</p>
@@ -102,7 +123,7 @@
       </div>
     </div>
     <div class="hero-foot">
-      <div class="hero-dots" id="heroDots"><button class="on"></button><button></button><button></button><button></button></div>
+      <div class="hero-dots" id="heroDots"><button class="on"></button><button></button><button></button><button></button><button></button></div>
       <div class="hero-meta">
         <div><b>50+</b>{{ $t('k59') }}</div><div><b>1,500</b>{{ $t('k60') }}</div><div><b>1/3</b>{{ $t('k61') }}</div>
       </div>
@@ -189,7 +210,7 @@
         <button class="tab" data-p="2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg></span><div><span class="k">ZTA</span><h4>{{ $t('k80') }}</h4><p>{{ $t('k81') }}</p></div></button>
         <button class="tab" data-p="3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></span><div><span class="k">Endpoint</span><h4>{{ $t('k82') }}</h4><p>{{ $t('k83') }}</p></div></button>
         <button class="tab" data-p="4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><div><span class="k">Compliance</span><h4>{{ $t('k84') }}</h4><p>{{ $t('k85') }}</p></div></button>
-        <button class="tab" data-p="5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><div><span class="k">Sanctseal</span><h4>{{ $t('hp_ss_h4') }}</h4><p>{{ $t('hp_ss_p') }}</p></div></button>
+        <button class="tab" data-p="5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><div><span class="k">SanctSeal</span><h4>{{ $t('hp_ss_h4') }}</h4><p>{{ $t('hp_ss_p') }}</p></div></button>
       </div>
       <div class="panel" id="ppanel">
         <div class="pane on">
@@ -299,6 +320,18 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM FOUNDATION · Sanct family -->
+<section class="band tight">
+  <div class="container">
+    <div class="shead reveal" style="max-width:780px;margin:0 auto 44px;text-align:center"><span class="eyebrow">{{ $t('hp_pf_eye') }}</span><h2>{{ $t('hp_pf_h') }}</h2><p>{{ $t('hp_pf_p') }}</p></div>
+    <div class="sp-grid3 reveal">
+      <div class="sp-card"><h3>{{ $t('hp_pf1_t') }}</h3><p>{{ $t('hp_pf1_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/platform/hsm">{{ $t('learn_more') }} →</router-link></p></div>
+      <div class="sp-card"><h3>{{ $t('hp_pf2_t') }}</h3><p>{{ $t('hp_pf2_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/msp">{{ $t('learn_more') }} →</router-link></p></div>
+      <div class="sp-card"><h3>{{ $t('hp_pf3_t') }}</h3><p>{{ $t('hp_pf3_d') }}</p><p style="margin-top:13px"><router-link class="btn btn-ghost" to="/msp">{{ $t('learn_more') }} →</router-link></p></div>
     </div>
   </div>
 </section>
@@ -463,17 +496,23 @@
 </section>
 
 
-<!-- VS LEGACY -->
+<!-- CAPABILITY BREADTH -->
 <section class="band tight">
   <div class="container">
-    <div class="shead reveal"><span class="eyebrow">Sanctward vs Legacy</span><h2>{{ $t('k301') }}</h2></div>
-    <div class="cmp reveal">
-      <div class="cmp-row cmp-head"><div>{{ $t('k302') }}</div><div>{{ $t('k303') }}</div><div class="c-s">Sanctward</div></div>
-      <div class="cmp-row"><div class="label">{{ $t('k304') }}</div><div class="dim">{{ $t('k305') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('k306') }}</div></div>
-      <div class="cmp-row"><div class="label">{{ $t('k307') }}</div><div class="dim">{{ $t('k308') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('k309') }}</div></div>
-      <div class="cmp-row"><div class="label">{{ $t('k310') }}</div><div class="dim">{{ $t('k311') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('k312') }}</div></div>
-      <div class="cmp-row"><div class="label">{{ $t('k313') }}</div><div class="dim">{{ $t('k314') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('k315') }}</div></div>
-      <div class="cmp-row"><div class="label">{{ $t('k316') }}</div><div class="dim">{{ $t('k317') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('k318') }}</div></div>
+    <div class="shead reveal" style="max-width:780px;margin:0 auto 40px;text-align:center"><span class="eyebrow">{{ $t('hp_adv_eye') }}</span><h2>{{ $t('hp_adv_h') }}</h2><p>{{ $t('hp_adv_p') }}</p></div>
+    <div class="feat-grid reveal">
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg><span>{{ $t('hp_f_sso') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>{{ $t('hp_f_pam') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>{{ $t('hp_f_zta') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>{{ $t('hp_f_dlp') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg><span>{{ $t('hp_f_iae') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg><span>{{ $t('hp_f_seal') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg><span>{{ $t('hp_f_cmp') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg><span>{{ $t('hp_f_rpt') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-users"/></svg><span>{{ $t('hp_f_msp') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg><span>{{ $t('hp_f_link') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-eye"/></svg><span>{{ $t('hp_f_pact') }}</span></div>
+      <div class="feat"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg><span>{{ $t('hp_f_ai') }}</span></div>
     </div>
   </div>
 </section>

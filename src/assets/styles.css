@@ -345,6 +345,13 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .page-banner h1{font-size:46px;margin:22px auto 16px;max-width:900px;color:#fff;line-height:1.16}
 .page-banner p{font-size:18px;color:#B9C7C0;max-width:780px;margin:0 auto;line-height:1.72}
 @media(max-width:860px){.page-banner{padding:66px 0 56px}.page-banner h1{font-size:32px}.page-banner p{font-size:16px}}
+
+/* capability breadth icon grid (homepage) */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feat{display:flex;align-items:center;gap:11px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:600;color:var(--ink-1);transition:border-color .2s,transform .2s}
+.feat:hover{border-color:var(--brand);transform:translateY(-2px)}
+.feat .ic{width:20px;height:20px;color:var(--brand);flex:none}
+@media(max-width:860px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
 .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cap5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 
