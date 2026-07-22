@@ -1383,5 +1383,22 @@
   "sol_acme_ca": "Pluggable multi-CA",
   "sol_acme_engine": "ACME engine",
   "sol_acme_conv": "Format conversion",
-  "sol_acme_deploy": "Deploy targets"
+  "sol_acme_deploy": "Deploy targets",
+  "sol_cert_eye": "Market shift · Regulation",
+  "sol_cert_h": "TLS certificate lifetimes are collapsing — 47 days by 2029",
+  "sol_cert_p": "The CA/Browser Forum has passed SC‑081v3 (proposed by Apple, 29 votes to none): the maximum lifetime of a public TLS certificate drops from 398 days to 47 days in stages (in practice you must renew before expiry, so the cadence lands around monthly); domain control validation (DCV) also shrinks to every 10 days. Renewal volumes multiply by tens of times — manual scheduling and SOPs are bound to miss a certificate and cause an outage. Certificate automation and key governance have gone from nice-to-have to mandatory.",
+  "sol_cert_now": "Today",
+  "sol_cert_unit": "days max validity",
+  "sol_cert_dcv": "Domain validation (DCV) also shrinks to every 10 days",
+  "sol_cert_ind_h": "Industries hit first",
+  "sol_cert_i1": "Finance / Banking",
+  "sol_cert_i2": "Healthcare / Insurance",
+  "sol_cert_i3": "Government / Public sector",
+  "sol_cert_i4": "Telecom / MSP",
+  "sol_cert_i5": "IoT / Manufacturing",
+  "sol_cert_i6": "E-commerce / SaaS",
+  "sol_cert_ans_h": "SanctWard covers it in one platform",
+  "sol_cert_ans1": "ACME auto-issues/renews and rotates in place before expiry — no matter how often, nothing is missed and nothing goes down.",
+  "sol_cert_ans2": "SanctSeal guards keys in three-tier HSM with a per-tenant CA, so even short-lived certs can be issued at scale, securely.",
+  "sol_cert_src": "Source: CA/Browser Forum Ballot SC‑081v3 (approved Apr 2025). Schedule: 398 → 200 days (Mar 2026) → 100 days (Mar 2027) → 47 days (Mar 2029)."
 }

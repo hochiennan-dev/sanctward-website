@@ -1383,5 +1383,22 @@
   "sol_acme_ca": "多 CA 可插拔",
   "sol_acme_engine": "ACME 引擎",
   "sol_acme_conv": "格式轉換",
-  "sol_acme_deploy": "派送目標"
+  "sol_acme_deploy": "派送目標",
+  "sol_cert_eye": "市場趨勢 · 法規要求",
+  "sol_cert_h": "憑證效期正快速縮短——2029 年只剩 47 天",
+  "sol_cert_p": "CA/Browser Forum 已通過 SC‑081v3（由 Apple 提案、29 票全數贊成），公開 TLS 憑證的最長效期將從 398 天逐步縮到 47 天（實務上須在到期前提早換發，換證週期約每月一次）；連網域驗證（DCV）也縮到每 10 天重跑一次。換證頻率暴增數十倍，靠人工排程與 SOP 必然漏證、釀成對外服務中斷。憑證自動化與金鑰治理，已從「加分項」變成「必要條件」。",
+  "sol_cert_now": "現行",
+  "sol_cert_unit": "天最長效期",
+  "sol_cert_dcv": "網域驗證（DCV）同步縮到每 10 天重跑一次",
+  "sol_cert_ind_h": "首當其衝的產業",
+  "sol_cert_i1": "金融／銀行",
+  "sol_cert_i2": "醫療／保險",
+  "sol_cert_i3": "政府／公部門",
+  "sol_cert_i4": "電信／MSP",
+  "sol_cert_i5": "IoT／製造",
+  "sol_cert_i6": "電商／SaaS",
+  "sol_cert_ans_h": "SanctWard 一次補齊",
+  "sol_cert_ans1": "ACME 全自動簽發／續期，到期前原地輪替——換證再頻繁也不漏、不停機。",
+  "sol_cert_ans2": "SanctSeal 以三層 HSM 保管金鑰、每租戶自有 CA，短命憑證也能大量、安全地簽發。",
+  "sol_cert_src": "資料依據：CA/Browser Forum Ballot SC‑081v3（2025 年 4 月通過）。時程：398 天 → 200 天（2026/3）→ 100 天（2027/3）→ 47 天（2029/3）。"
 }
