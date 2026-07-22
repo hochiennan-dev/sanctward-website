@@ -27,13 +27,37 @@
   <section class="band tight">
     <div class="container">
       <div class="shead reveal"><span class="eyebrow">{{ $t('abt_why_eye') }}</span><h2>{{ $t('abt_why_h') }}</h2><p>{{ $t('abt_why_p') }}</p></div>
-      <div class="cmp reveal">
-        <div class="cmp-row cmp-head"><div>{{ $t('abt_why_c0') }}</div><div>{{ $t('abt_why_c1') }}</div><div class="c-s">{{ $t('abt_why_c2') }}</div></div>
-        <div class="cmp-row"><div class="label">{{ $t('abt_w1_a') }}</div><div class="dim">{{ $t('abt_w1_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w1_c') }}</div></div>
-        <div class="cmp-row"><div class="label">{{ $t('abt_w2_a') }}</div><div class="dim">{{ $t('abt_w2_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w2_c') }}</div></div>
-        <div class="cmp-row"><div class="label">{{ $t('abt_w3_a') }}</div><div class="dim">{{ $t('abt_w3_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w3_c') }}</div></div>
-        <div class="cmp-row"><div class="label">{{ $t('abt_w4_a') }}</div><div class="dim">{{ $t('abt_w4_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w4_c') }}</div></div>
-        <div class="cmp-row"><div class="label">{{ $t('abt_w5_a') }}</div><div class="dim">{{ $t('abt_w5_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w5_c') }}</div></div>
+      <div class="qa-grid reveal">
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q1_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q1_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q1_t') }}</span>
+        </div>
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q2_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q2_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q2_t') }}</span>
+        </div>
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q3_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q3_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q3_t') }}</span>
+        </div>
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q4_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q4_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q4_t') }}</span>
+        </div>
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q5_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q5_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q5_t') }}</span>
+        </div>
+        <div class="qa-item">
+          <h3 class="qa-q"><i>Q</i>{{ $t('abt_q6_q') }}</h3>
+          <p class="qa-a">{{ $t('abt_q6_a') }}</p>
+          <span class="qa-t">{{ $t('abt_q6_t') }}</span>
+        </div>
       </div>
     </div>
   </section>
