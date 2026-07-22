@@ -475,3 +475,34 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
 .cf-ok{color:var(--brand-ink)}
 .cf-err{color:#C2362E}
 .cform button[disabled]{opacity:.6;cursor:default}
+
+/* MSP 上線流程:階段動畫軌 */
+.stg-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1040px;margin:38px auto 0}
+.stg{position:relative;text-align:center;opacity:.55;transition:opacity .45s ease;animation:stgOn 13.2s linear infinite;animation-delay:calc(var(--i) * 2.2s)}
+.stg::after{content:'';position:absolute;top:27px;left:calc(50% + 34px);width:calc(100% + 16px - 68px);height:2px;background:var(--line);border-radius:2px}
+.stg::before{content:'';position:absolute;z-index:1;top:27px;left:calc(50% + 34px);width:calc(100% + 16px - 68px);height:2px;background:var(--brand);border-radius:2px;transform:scaleX(0);transform-origin:left center;animation:stgLineX 13.2s linear infinite;animation-delay:calc(var(--i) * 2.2s)}
+.stg:last-child::after,.stg:last-child::before{display:none}
+.stg-top{position:relative;z-index:2;width:56px;height:56px;margin:0 auto 14px}
+.stg-ic{width:56px;height:56px;border-radius:18px;background:var(--surface-2);border:1.5px solid var(--line);color:var(--ink-3);display:grid;place-items:center;transition:all .45s ease;animation:stgIc 13.2s linear infinite;animation-delay:calc(var(--i) * 2.2s)}
+.stg-ic .ic{width:26px;height:26px}
+.stg-n{position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;background:#fff;border:1.5px solid var(--line-2);color:var(--ink-3);font-family:'Inter';font-size:11px;font-weight:800;display:grid;place-items:center;transition:all .45s ease;animation:stgNum 13.2s linear infinite;animation-delay:calc(var(--i) * 2.2s)}
+.stg-who{display:block;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--ink-3);margin-bottom:5px}
+.stg-tx h4{font-size:14.5px;font-weight:800;color:var(--brand-ink);line-height:1.45;margin:0 0 6px}
+.stg-tx p{font-size:12.5px;color:var(--ink-2);line-height:1.65;margin:0}
+@keyframes stgOn{0%,1%{opacity:.55}3%,16%{opacity:1}20%,100%{opacity:.55}}
+@keyframes stgIc{0%,1%{background:var(--surface-2);border-color:var(--line);color:var(--ink-3);box-shadow:none;transform:translateY(0)}3%,16%{background:var(--brand-soft2);border-color:var(--brand);color:var(--brand-ink);box-shadow:0 12px 24px -16px var(--brand);transform:translateY(-3px)}20%,100%{background:var(--surface-2);border-color:var(--line);color:var(--ink-3);box-shadow:none;transform:translateY(0)}}
+@keyframes stgNum{0%,1%{background:#fff;border-color:var(--line-2);color:var(--ink-3)}3%,16%{background:var(--brand);border-color:var(--brand);color:#fff}20%,100%{background:#fff;border-color:var(--line-2);color:var(--ink-3)}}
+@keyframes stgLineX{0%,10%{transform:scaleX(0)}17%,100%{transform:scaleX(1)}}
+@keyframes stgLineY{0%,10%{transform:scaleY(0)}17%,100%{transform:scaleY(1)}}
+@media(max-width:860px){
+  .stg-rail{grid-template-columns:1fr;gap:0;max-width:520px}
+  .stg{display:grid;grid-template-columns:56px 1fr;column-gap:16px;text-align:left;padding-bottom:26px}
+  .stg::after,.stg::before{top:56px;left:27px;width:2px;height:calc(100% - 56px)}
+  .stg::before{transform:scaleY(0);transform-origin:center top;animation-name:stgLineY}
+  .stg-top{margin:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .stg,.stg-ic,.stg-n,.stg::before{animation:none}
+  .stg{opacity:1}
+  .stg::before{transform:none}
+}

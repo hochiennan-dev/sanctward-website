@@ -83,11 +83,36 @@
     </div>
   </section>
 
-  <!-- 上線流程 (動畫泳道) -->
+  <!-- 上線流程 (階段動畫) -->
   <section class="band tight">
     <div class="container">
       <div class="shead reveal"><span class="eyebrow">{{ $t('msp_flow_eye') }}</span><h2>{{ $t('msp_flow_h') }}</h2><p>{{ $t('msp_flow_p') }}</p></div>
-      <div class="sp-flow reveal"><svg viewBox="0 0 720 374" fill="none" font-family="'Noto Sans TC','Inter',sans-serif" style="display:block;width:100%;height:auto;margin-top:.6rem"><line x1="120" y1="70" x2="120" y2="358" stroke="#D7E3DB" stroke-width="1.5" stroke-dasharray="3 4"/><rect x="50" y="30" width="140" height="40" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/><text x="120" y="55" text-anchor="middle" font-size="12" font-weight="800" fill="#1B8F34">{{ $t('msp_lane_msp') }}</text><line x1="360" y1="70" x2="360" y2="358" stroke="#D7E3DB" stroke-width="1.5" stroke-dasharray="3 4"/><rect x="290" y="30" width="140" height="40" rx="12" fill="#EAF6EC" stroke="#2DA23F" stroke-width="2.2"/><text x="360" y="55" text-anchor="middle" font-size="12" font-weight="800" fill="#1B8F34">{{ $t('msp_lane_sw') }}</text><line x1="600" y1="70" x2="600" y2="358" stroke="#D7E3DB" stroke-width="1.5" stroke-dasharray="3 4"/><rect x="530" y="30" width="140" height="40" rx="12" fill="#fff" stroke="#CBE8D2" stroke-width="1.5"/><text x="600" y="55" text-anchor="middle" font-size="12" font-weight="800" fill="#1B8F34">{{ $t('msp_lane_cust') }}</text><line x1="120" y1="104" x2="360" y2="104" stroke="#2DA23F" stroke-width="2"/><line x1="120" y1="104" x2="360" y2="104" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line><path d="M360 104 l-10 -6 M360 104 l-10 6" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round"/><text x="240" y="96" text-anchor="middle" font-size="11" font-weight="600" fill="#46554E">{{ $t('msp_f1') }}</text><circle cx="120" cy="104" r="8.5" fill="#2DA23F"/><text x="120" y="107" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">1</text><line x1="120" y1="150" x2="360" y2="150" stroke="#2DA23F" stroke-width="2"/><line x1="120" y1="150" x2="360" y2="150" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line><path d="M360 150 l-10 -6 M360 150 l-10 6" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round"/><text x="240" y="142" text-anchor="middle" font-size="11" font-weight="600" fill="#46554E">{{ $t('msp_f2') }}</text><circle cx="120" cy="150" r="8.5" fill="#2DA23F"/><text x="120" y="153" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">2</text><line x1="360" y1="196" x2="600" y2="196" stroke="#2DA23F" stroke-width="2"/><line x1="360" y1="196" x2="600" y2="196" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line><path d="M600 196 l-10 -6 M600 196 l-10 6" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round"/><text x="480" y="188" text-anchor="middle" font-size="11" font-weight="600" fill="#46554E">{{ $t('msp_f3') }}</text><circle cx="360" cy="196" r="8.5" fill="#2DA23F"/><text x="360" y="199" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">3</text><rect x="512" y="230" width="176" height="24" rx="10" fill="#F4FAF6" stroke="#CBE8D2" stroke-width="1.4"/><text x="600" y="246" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B8F34">{{ $t('msp_f4') }}</text><circle cx="512" cy="242" r="8.5" fill="#2DA23F"/><text x="512" y="245" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">4</text><line x1="600" y1="288" x2="360" y2="288" stroke="#2DA23F" stroke-width="2"/><line x1="600" y1="288" x2="360" y2="288" stroke="#7FE8A6" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.1s" repeatCount="indefinite"/></line><path d="M360 288 l10 -6 M360 288 l10 6" stroke="#2DA23F" stroke-width="2" fill="none" stroke-linecap="round"/><text x="480" y="280" text-anchor="middle" font-size="11" font-weight="600" fill="#46554E">{{ $t('msp_f5') }}</text><circle cx="600" cy="288" r="8.5" fill="#2DA23F"/><text x="600" y="291" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">5</text><rect x="272" y="322" width="176" height="24" rx="10" fill="#F4FAF6" stroke="#CBE8D2" stroke-width="1.4"/><text x="360" y="338" text-anchor="middle" font-size="10" font-weight="700" fill="#1B8F34">{{ $t('msp_f6') }}</text><circle cx="272" cy="334" r="8.5" fill="#2DA23F"/><text x="272" y="337" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">6</text></svg></div>
+      <div class="stg-rail reveal">
+        <div class="stg" style="--i:0">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div><span class="stg-n">1</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_msp') }}</span><h4>{{ $t('msp_f1') }}</h4><p>{{ $t('msp_f1_d') }}</p></div>
+        </div>
+        <div class="stg" style="--i:1">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div><span class="stg-n">2</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_msp') }}</span><h4>{{ $t('msp_f2') }}</h4><p>{{ $t('msp_f2_d') }}</p></div>
+        </div>
+        <div class="stg" style="--i:2">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></div><span class="stg-n">3</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_sw') }}</span><h4>{{ $t('msp_f3') }}</h4><p>{{ $t('msp_f3_d') }}</p></div>
+        </div>
+        <div class="stg" style="--i:3">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg></div><span class="stg-n">4</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_cust') }}</span><h4>{{ $t('msp_f4') }}</h4><p>{{ $t('msp_f4_d') }}</p></div>
+        </div>
+        <div class="stg" style="--i:4">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></div><span class="stg-n">5</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_cust') }}</span><h4>{{ $t('msp_f5') }}</h4><p>{{ $t('msp_f5_d') }}</p></div>
+        </div>
+        <div class="stg" style="--i:5">
+          <div class="stg-top"><div class="stg-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-eye"/></svg></div><span class="stg-n">6</span></div>
+          <div class="stg-tx"><span class="stg-who">{{ $t('msp_lane_msp') }}</span><h4>{{ $t('msp_f6') }}</h4><p>{{ $t('msp_f6_d') }}</p></div>
+        </div>
+      </div>
     </div>
   </section>
 

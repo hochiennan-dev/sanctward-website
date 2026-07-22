@@ -1499,5 +1499,11 @@
   "brg_flow_n3_t": "Downstream app",
   "brg_flow_n3_s": "OIDC / SAML / RADIUS",
   "brg_flow_r1": "In",
-  "brg_flow_r2": "Out"
+  "brg_flow_r2": "Out",
+  "msp_f1_d": "Enter the domain and admin email — tenant data and keys are provisioned isolated from the start.",
+  "msp_f2_d": "Grant seats, storage and module flags per plan; adjust any time without rebuilding.",
+  "msp_f3_d": "The platform emails an activation link; the tenant admin is forced through MFA on first login.",
+  "msp_f4_d": "Apply the customer’s own identity and Root CA — endpoints only ever see their brand.",
+  "msp_f5_d": "Push agents with a one-line installer, or enroll via ACME / agentless.",
+  "msp_f6_d": "One console for every tenant’s health and usage, with billing reports straight out of it."
 }
