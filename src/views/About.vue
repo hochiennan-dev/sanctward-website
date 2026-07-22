@@ -26,7 +26,7 @@
 
   <section class="band tight">
     <div class="container">
-      <div class="shead reveal"><span class="eyebrow">{{ $t('abt_why_eye') }}</span><h2>{{ $t('abt_why_h') }}</h2><p>{{ $t('abt_why_p') }}</p></div>
+      <div class="shead reveal"><h2>{{ $t('abt_why_h') }}</h2><p>{{ $t('abt_why_p') }}</p></div>
       <div class="qa-grid reveal">
         <div class="qa-item">
           <h3 class="qa-q"><i>Q</i>{{ $t('abt_q1_q') }}</h3>
