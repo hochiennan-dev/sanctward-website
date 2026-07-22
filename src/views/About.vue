@@ -9,12 +9,7 @@
 
   <section class="band tight">
     <div class="container reveal">
-      <div class="abt-facts">
-        <div><span>{{ $t('abt_fact1_k') }}</span><b>{{ $t('abt_fact1_v') }}</b></div>
-        <div><span>{{ $t('abt_fact2_k') }}</span><b>{{ $t('k351') }}</b></div>
-        <div><span>{{ $t('abt_fact3_k') }}</span><b>{{ $t('abt_fact3_v') }}</b></div>
-        <div><span>{{ $t('abt_fact4_k') }}</span><b>{{ $t('abt_fact4_v') }}</b></div>
-      </div>
+      <p class="abt-facts">{{ $t('abt_fact1_v') }}<i>|</i>{{ $t('k351') }}<i>|</i>{{ $t('abt_fact3_v') }}</p>
     </div>
   </section>
 
