@@ -1437,5 +1437,6 @@
   "hsm_dep_c3_b1": "支援 ACME 的伺服器／設備直接向 SanctSeal 自助申請與續期",
   "hsm_dep_c3_b2": "相容 certbot／Caddy／Traefik 等標準用戶端",
   "hsm_dep_c3_b3": "免裝代理、免中央推送，端點自助續期",
-  "hsm_dep_c3_b4": "最適合大量、短命憑證的高頻自動化"
+  "hsm_dep_c3_b4": "最適合大量、短命憑證的高頻自動化",
+  "msp_arch_feat_h": "每個隔離租戶，都完整內建整套能力"
 }

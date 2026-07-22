@@ -1437,5 +1437,6 @@
   "hsm_dep_c3_b1": "ACME-capable servers/devices request and renew directly from SanctSeal",
   "hsm_dep_c3_b2": "Compatible with standard clients like certbot / Caddy / Traefik",
   "hsm_dep_c3_b3": "No agent, no central push — endpoints self-renew",
-  "hsm_dep_c3_b4": "Best fit for high-frequency automation of many short-lived certs"
+  "hsm_dep_c3_b4": "Best fit for high-frequency automation of many short-lived certs",
+  "msp_arch_feat_h": "Every isolated tenant gets the full capability set built in"
 }
