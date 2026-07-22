@@ -1508,7 +1508,7 @@
   "msp_f6_d": "單一控制台看所有租戶健康度與用量，直接產出計費報表。",
   "abt_fact1_v": "森沃科技有限公司 · SANCTWARD CO., LTD.",
   "abt_fact3_v": "On-Premises／私有雲 · 資料留在企業機房",
-  "abt_why_h": "客戶常問的6大問題",
+  "abt_why_h": "導入前，客戶最常問的六件事",
   "abt_m_dlp_d": "33 種偵測樣板，剪貼簿與檔案傳輸即時阻擋",
   "abt_m_iae_d": "OIDC／SAML／RADIUS 同一核心，協定橋接與統一 MFA",
   "abt_m_seal_d": "三層 HSM 保管金鑰，憑證簽發與到期自動續期",
