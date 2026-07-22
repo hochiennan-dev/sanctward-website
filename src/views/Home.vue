@@ -480,9 +480,9 @@
 <section class="band tight">
   <div class="container reveal">
     <div class="mband">
-      <div class="mi"><b>50+</b><span>{{ $t('k247') }}</span></div>
-      <div class="mi"><b>99.9%</b><span>{{ $t('k248') }}</span></div>
       <div class="mi"><b>100+</b><span>{{ $t('k249') }}</span></div>
+      <div class="mi"><b>22</b><span>{{ $t('hp_mt_tpl') }}</span></div>
+      <div class="mi"><b>33</b><span>{{ $t('hp_mt_dlp') }}</span></div>
       <div class="mi"><b>{{ $t('k250') }}</b><span>{{ $t('k251') }}</span></div>
     </div>
   </div>

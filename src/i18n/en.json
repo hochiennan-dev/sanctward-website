@@ -1549,5 +1549,7 @@
   "abt_std5": "SOC 2",
   "abt_std6": "GDPR",
   "abt_std7": "NIS2",
-  "abt_cmp_note": "Coverage is stated honestly: evidence comes from platform access and audit logs, giving verifiable coverage of identity, access control, audit trails, privileged access and incident response. Controls that cannot be evidenced from access data — network segmentation, encryption, physical security — are marked N/A in the report."
+  "abt_cmp_note": "Coverage is stated honestly: evidence comes from platform access and audit logs, giving verifiable coverage of identity, access control, audit trails, privileged access and incident response. Controls that cannot be evidenced from access data — network segmentation, encryption, physical security — are marked N/A in the report.",
+  "hp_mt_tpl": "built-in app templates · no rewrite for legacy systems",
+  "hp_mt_dlp": "DLP detection templates across 6 categories"
 }
