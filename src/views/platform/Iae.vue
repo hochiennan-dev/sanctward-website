@@ -153,22 +153,6 @@
     </div>
   </section>
 
-  <!-- 完工狀態 -->
-  <section class="band">
-    <div class="container">
-      <div class="shead reveal"><span class="eyebrow">{{ $t('iae_mat_eye') }}</span><h2>{{ $t('iae_mat_h') }}</h2><p>{{ $t('iae_mat_p') }}</p></div>
-      <div class="mat-list reveal">
-        <div class="mat-row"><span>{{ $t('iae_mat_1') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_2') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_3') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_4') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_5') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_6') }}</span><span class="badge done">{{ $t('iae_mat_done') }}</span></div>
-        <div class="mat-row"><span>{{ $t('iae_mat_roadmap_t') }}</span><span class="badge road">{{ $t('iae_mat_roadmap_b') }}</span></div>
-      </div>
-    </div>
-  </section>
-
   <section class="cta">
     <div class="container"><div class="cta-in reveal">
       <h2>{{ $t('k344') }}</h2>
