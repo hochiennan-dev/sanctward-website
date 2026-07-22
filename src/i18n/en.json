@@ -1425,5 +1425,6 @@
   "hsm_dep_c2_b1": "Central push via SSH / WinRM / ACME / REST API",
   "hsm_dep_c2_b2": "Nothing installed on hosts — meets no-agent security policies",
   "hsm_dep_c2_b3": "Reaches F5 / load balancers, firewalls, network gear and IoT",
-  "hsm_dep_c2_b4": "Connects directly to any ACME-capable device"
+  "hsm_dep_c2_b4": "Connects directly to any ACME-capable device",
+  "sol_hsm_fix5": "Agent and agentless delivery — certificates reach servers and network devices alike"
 }

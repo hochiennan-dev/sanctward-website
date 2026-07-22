@@ -1425,5 +1425,6 @@
   "hsm_dep_c2_b1": "中央透過 SSH／WinRM／ACME／REST API 推送",
   "hsm_dep_c2_b2": "主機端不裝任何東西，符合禁裝 Agent 政策",
   "hsm_dep_c2_b3": "直達 F5／負載平衡器、防火牆、網通設備、IoT",
-  "hsm_dep_c2_b4": "可直接對接支援 ACME 的設備"
+  "hsm_dep_c2_b4": "可直接對接支援 ACME 的設備",
+  "sol_hsm_fix5": "Agent／Agentless 兩種派送模式，憑證直達伺服器與網通設備"
 }
