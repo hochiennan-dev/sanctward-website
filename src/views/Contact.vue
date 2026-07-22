@@ -39,20 +39,22 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 // ── 部署 Apps Script 後，把 Web App 的 /exec 網址貼在這裡 ──
 // 例：'https://script.google.com/macros/s/AKfycb.../exec'
 // 留空時會自動退回「開啟郵件軟體」模式，網站不會壞。
 const CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzDKMJOpKEjpJqykNoCpfKqqU-DlBLeymn9-vxCj6urY_4FIApjR1qmr1bp5w0J0DkSHQ/exec'
 
+const { t } = useI18n()
 const MAIL = 'gary.ho@sanctward.com'
 const f = reactive({ name: '', company: '', email: '', msg: '' })
 const status = ref('idle') // idle | sending | sent | error
 
 function openMailClient() {
-  const subject = encodeURIComponent('[官網聯絡] ' + (f.company || f.name || '需求洽詢'))
+  const subject = encodeURIComponent(t('cf_mail_subject') + ' ' + (f.company || f.name || t('cf_mail_fallback')))
   const body = encodeURIComponent(
-    `姓名：${f.name}\n公司／單位：${f.company}\nEmail：${f.email}\n\n需求說明：\n${f.msg}`
+    `${t('k354').replace(' *', '')}: ${f.name}\n${t('k355')}: ${f.company}\nEmail: ${f.email}\n\n${t('k356')}:\n${f.msg}`
   )
   window.location.href = `mailto:${MAIL}?subject=${subject}&body=${body}`
 }

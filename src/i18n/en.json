@@ -1544,5 +1544,11 @@
   "abt_q5_t": "Single console · automated certificate renewal",
   "abt_q6_q": "What happens when we extend this to subsidiaries or customers?",
   "abt_q6_a": "Multi-tenancy is the foundation, not an add-on module. Tenant isolation, delegated administration, white-label branding and metering are built in: whether you add a subsidiary or serve downstream customers as an MSP, it is the same platform held to the same audit standard.",
-  "abt_q6_t": "Tenant isolation · white-label · metering"
+  "abt_q6_t": "Tenant isolation · white-label · metering",
+  "pf_rpt_pdf": "PDF report",
+  "pf_rpt_sig": "CA-signed · Merkle",
+  "pf_rpt_deliver": "Deliver",
+  "sol_host_inout": "Internal / external hosts",
+  "cf_mail_subject": "[Website enquiry]",
+  "cf_mail_fallback": "General enquiry"
 }
