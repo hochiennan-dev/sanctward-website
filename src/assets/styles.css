@@ -506,3 +506,18 @@ footer{border-top:1px solid var(--line);padding:60px 0 38px;background:linear-gr
   .stg{opacity:1}
   .stg::before{transform:none}
 }
+
+/* 關於我們:公司速覽 / 對照表 RWD / 可點能力卡 */
+.abt-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.abt-facts>div{background:#fff;padding:20px 22px}
+.abt-facts span{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-3);margin-bottom:7px}
+.abt-facts b{font-size:14.5px;font-weight:700;color:var(--brand-ink);line-height:1.55}
+.val-card.lnk{display:block;color:inherit;text-decoration:none}
+.abt-note{max-width:820px;margin:22px auto 0;text-align:center;font-size:12.5px;color:var(--ink-3);line-height:1.72}
+@media(max-width:860px){
+  .abt-facts{grid-template-columns:1fr}
+  .cmp-row{grid-template-columns:1fr}
+  .cmp-row>div{padding:13px 18px}
+  .cmp-row:not(:last-child)>div:not(:last-child){border-bottom:1px solid var(--line)}
+  .cmp-head{display:none}
+}

@@ -8,6 +8,17 @@
   </section>
 
   <section class="band tight">
+    <div class="container reveal">
+      <div class="abt-facts">
+        <div><span>{{ $t('abt_fact1_k') }}</span><b>{{ $t('abt_fact1_v') }}</b></div>
+        <div><span>{{ $t('abt_fact2_k') }}</span><b>{{ $t('k351') }}</b></div>
+        <div><span>{{ $t('abt_fact3_k') }}</span><b>{{ $t('abt_fact3_v') }}</b></div>
+        <div><span>{{ $t('abt_fact4_k') }}</span><b>{{ $t('abt_fact4_v') }}</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight">
     <div class="container">
       <div class="shead reveal"><span class="eyebrow">Mission &amp; Vision</span><h2>{{ $t('k328') }}</h2></div>
       <div class="val-grid reveal">
@@ -20,16 +31,34 @@
 
   <section class="band tight">
     <div class="container">
+      <div class="shead reveal"><span class="eyebrow">{{ $t('abt_why_eye') }}</span><h2>{{ $t('abt_why_h') }}</h2><p>{{ $t('abt_why_p') }}</p></div>
+      <div class="cmp reveal">
+        <div class="cmp-row cmp-head"><div>{{ $t('abt_why_c0') }}</div><div>{{ $t('abt_why_c1') }}</div><div class="c-s">{{ $t('abt_why_c2') }}</div></div>
+        <div class="cmp-row"><div class="label">{{ $t('abt_w1_a') }}</div><div class="dim">{{ $t('abt_w1_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w1_c') }}</div></div>
+        <div class="cmp-row"><div class="label">{{ $t('abt_w2_a') }}</div><div class="dim">{{ $t('abt_w2_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w2_c') }}</div></div>
+        <div class="cmp-row"><div class="label">{{ $t('abt_w3_a') }}</div><div class="dim">{{ $t('abt_w3_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w3_c') }}</div></div>
+        <div class="cmp-row"><div class="label">{{ $t('abt_w4_a') }}</div><div class="dim">{{ $t('abt_w4_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w4_c') }}</div></div>
+        <div class="cmp-row"><div class="label">{{ $t('abt_w5_a') }}</div><div class="dim">{{ $t('abt_w5_b') }}</div><div class="c-s"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_w5_c') }}</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight">
+    <div class="container">
       <div class="shead reveal"><span class="eyebrow">Platform</span><h2>{{ $t('k335') }}</h2><p>{{ $t('k336') }}</p></div>
-      <div class="cap5 reveal">
-        <div class="val-card"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></div><span class="k">IAM / SSO</span><h3>{{ $t('k76') }}</h3><p>{{ $t('k77') }}</p></div>
-        <div class="val-card"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg></div><span class="k">PAM</span><h3>{{ $t('k78') }}</h3><p>{{ $t('k79') }}</p></div>
-        <div class="val-card"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg></div><span class="k">ZTA</span><h3>{{ $t('k80') }}</h3><p>{{ $t('k81') }}</p></div>
-        <div class="val-card"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></div><span class="k">Endpoint</span><h3>{{ $t('k82') }}</h3><p>{{ $t('k83') }}</p></div>
-        <div class="val-card"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></div><span class="k">Compliance</span><h3>{{ $t('k84') }}</h3><p>{{ $t('k85') }}</p></div>
+      <div class="val-grid reveal">
+        <router-link class="val-card lnk" to="/platform/sso"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-id"/></svg></div><span class="k">IAM / SSO</span><h3>{{ $t('hp_f_sso') }}</h3><p>{{ $t('k77') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/pam"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-key"/></svg></div><span class="k">PAM</span><h3>{{ $t('hp_f_pam') }}</h3><p>{{ $t('k79') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/zta"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scan"/></svg></div><span class="k">ZTA / Endpoint</span><h3>{{ $t('hp_f_zta') }}</h3><p>{{ $t('k81') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/dlp"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-eye"/></svg></div><span class="k">DLP</span><h3>{{ $t('hp_f_dlp') }}</h3><p>{{ $t('abt_m_dlp_d') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/iae"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-users"/></svg></div><span class="k">IAE</span><h3>{{ $t('hp_f_iae') }}</h3><p>{{ $t('abt_m_iae_d') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/hsm"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div><span class="k">SanctSeal</span><h3>{{ $t('hp_f_seal') }}</h3><p>{{ $t('abt_m_seal_d') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/compliance"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></div><span class="k">Compliance</span><h3>{{ $t('hp_f_cmp') }}</h3><p>{{ $t('k85') }}</p></router-link>
+        <router-link class="val-card lnk" to="/platform/reports"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clip"/></svg></div><span class="k">Reports</span><h3>{{ $t('hp_f_rpt') }}</h3><p>{{ $t('abt_m_rpt_d') }}</p></router-link>
+        <router-link class="val-card lnk" to="/msp"><div class="vi"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div><span class="k">MSP</span><h3>{{ $t('hp_f_msp') }}</h3><p>{{ $t('abt_m_msp_d') }}</p></router-link>
       </div>
       <div class="reveal" style="text-align:center;margin-top:28px">
-        <router-link class="btn btn-ghost btn-lg" to="/#platform">{{ $t('k337') }}<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></router-link>
+        <router-link class="btn btn-ghost btn-lg" to="/platform">{{ $t('k337') }}<svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></router-link>
       </div>
     </div>
   </section>
@@ -45,6 +74,22 @@
     </div>
   </section>
 
+  <section class="band tight">
+    <div class="container">
+      <div class="shead reveal"><span class="eyebrow">{{ $t('abt_cmp_eye') }}</span><h2>{{ $t('abt_cmp_h') }}</h2><p>{{ $t('abt_cmp_p') }}</p></div>
+      <div class="chips reveal" style="justify-content:center">
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std1') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std2') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std3') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std4') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std5') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std6') }}</span>
+        <span class="chip"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg>{{ $t('abt_std7') }}</span>
+      </div>
+      <p class="abt-note reveal">{{ $t('abt_cmp_note') }}</p>
+    </div>
+  </section>
+
   <section class="cta">
     <div class="container">
       <div class="cta-in reveal">
@@ -52,7 +97,7 @@
         <p>{{ $t('k345') }}</p>
         <div class="hs-cta">
           <router-link class="btn btn-primary btn-lg" to="/contact">{{ $t('k6') }}</router-link>
-          <router-link class="btn btn-ghost btn-lg" to="/#platform">{{ $t('k25') }}</router-link>
+          <router-link class="btn btn-ghost btn-lg" to="/platform">{{ $t('k25') }}</router-link>
         </div>
       </div>
     </div>
