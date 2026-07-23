@@ -44,8 +44,9 @@
 import Logo3D from './Logo3D.vue'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { applyLocaleMeta } from '../seo'
 const { locale } = useI18n()
-function setLang(l){ locale.value = l; try { localStorage.setItem('lang', l) } catch(e){}; document.documentElement.lang = l }
+function setLang(l){ locale.value = l; try { localStorage.setItem('lang', l) } catch(e){}; applyLocaleMeta(l) }
 onMounted(() => {
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('scrolled', scrollY>10);

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import { applyRouteMeta } from '../seo'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -20,7 +21,7 @@ const routes = [
   { path: '/privacy', name: 'privacy', component: () => import('../views/Privacy.vue') },
 ]
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to) {
@@ -33,3 +34,7 @@ export default createRouter({
     return { top: 0 }
   },
 })
+
+router.afterEach(to => applyRouteMeta(to.path))
+
+export default router

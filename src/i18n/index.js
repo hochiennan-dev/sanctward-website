@@ -2,10 +2,16 @@ import { createI18n } from 'vue-i18n'
 import zhHant from './zh-Hant.json'
 import en from './en.json'
 
-// 預設語言為英文；使用者切換過才以 localStorage 的選擇為準
-const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 'en'
+import { applyLocaleMeta, LOCALES } from '../seo'
 
-if (typeof document !== 'undefined') document.documentElement.lang = saved
+// 語言決定順序：網址 ?lang= > localStorage > 預設英文
+const query = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('lang') : null
+const fromQuery = LOCALES.includes(query) ? query : null
+const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('lang') : null
+const saved = fromQuery || (LOCALES.includes(stored) ? stored : null) || 'en'
+
+if (fromQuery) { try { localStorage.setItem('lang', fromQuery) } catch (e) {} }
+applyLocaleMeta(saved)
 
 export default createI18n({
   legacy: false,
