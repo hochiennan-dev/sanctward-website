@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import { applyRouteMeta } from '../seo'
+import { applyRouteMeta, applyPageMeta } from '../seo'
+import i18n from '../i18n'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -35,6 +36,9 @@ const router = createRouter({
   },
 })
 
-router.afterEach(to => applyRouteMeta(to.path))
+router.afterEach(to => {
+  applyRouteMeta(to.path)
+  applyPageMeta(to.path, i18n.global.t)
+})
 
 export default router

@@ -44,9 +44,11 @@
 import Logo3D from './Logo3D.vue'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { applyLocaleMeta } from '../seo'
-const { locale } = useI18n()
-function setLang(l){ locale.value = l; try { localStorage.setItem('lang', l) } catch(e){}; applyLocaleMeta(l) }
+import { applyLocaleMeta, applyPageMeta } from '../seo'
+import { useRoute } from 'vue-router'
+const { locale, t } = useI18n()
+const route = useRoute()
+function setLang(l){ locale.value = l; try { localStorage.setItem('lang', l) } catch(e){}; applyLocaleMeta(l); applyPageMeta(route.path, t) }
 onMounted(() => {
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('scrolled', scrollY>10);

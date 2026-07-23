@@ -1550,5 +1550,7 @@
   "pf_rpt_deliver": "Deliver",
   "sol_host_inout": "Internal / external hosts",
   "cf_mail_subject": "[Website enquiry]",
-  "cf_mail_fallback": "General enquiry"
+  "cf_mail_fallback": "General enquiry",
+  "seo_home_t": "The Enterprise Trust Operating System for the AI Era",
+  "seo_about_t": "About Sanctward | Every connection, under control"
 }
